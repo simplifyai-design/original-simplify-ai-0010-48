@@ -365,12 +365,13 @@ const Index = () => {
             </div>
 
             <div className="relative">
-              <div className="w-full h-96 bg-gradient-to-br from-blue-500 to-purple-600 rounded-3xl flex items-center justify-center text-white shadow-2xl">
-                <div className="text-center">
-                  <div className="text-6xl mb-4">🤖</div>
-                  <h2 className="text-3xl font-bold mb-2">AI & Automation</h2>
-                  <p className="text-xl opacity-90">Intelligent Solutions for Modern Business</p>
-                </div>
+              <div className="bg-gradient-to-br from-blue-600 to-purple-600 rounded-2xl p-12 text-white text-center">
+                <img 
+                  src="/lovable-uploads/c9c6b8d6-b4a3-4fce-98c6-3b7f8a9b9c1f.png" 
+                  alt="Automate AI Design"
+                  className="w-full h-auto max-w-sm mx-auto"
+                  style={{filter: 'brightness(0) invert(1)'}}
+                />
               </div>
               <div className="absolute -bottom-6 left-1/2 transform -translate-x-1/2 animate-bounce">
                 <ArrowDown className="w-8 h-8 text-blue-600" />
