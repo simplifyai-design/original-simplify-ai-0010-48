@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -369,7 +370,7 @@ const Index = () => {
                   <img 
                     src="/lovable-uploads/ca5460a3-54d1-4046-b177-6c67f04511ea.png"
                     alt="Automate AI Design"
-                    className="w-full h-auto max-w-sm mx-auto"
+                    className="w-full h-auto max-w-sm mx-auto filter invert brightness-0 invert"
                   />
                 </CardContent>
               </Card>
