@@ -364,12 +364,12 @@ const Index = () => {
             </div>
 
             <div className="relative">
-              <Card className="relative bg-gradient-to-br from-blue-600 via-purple-600 to-emerald-500 border-0 shadow-2xl">
+              <Card className="relative bg-white border-0 shadow-2xl">
                 <CardContent className="p-8">
                   <img 
-                    src="/lovable-uploads/ca5460a3-54d1-4046-b177-6c67f04511ea.png"
+                    src="/lovable-uploads/bd091be5-04a1-4a31-9d17-c4607fc90ddd.png"
                     alt="Automate AI Design"
-                    className="w-full h-auto max-w-sm mx-auto filter invert brightness-0 invert"
+                    className="w-full h-auto max-w-sm mx-auto"
                     key={Date.now()}
                   />
                 </CardContent>
