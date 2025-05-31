@@ -31,74 +31,268 @@ const Index = () => {
 
   const services = [
     {
-      id: 'ai-strategy',
-      icon: Brain,
-      title: "AI Strategy Consultation",
-      description: "One-on-one advisory sessions to identify automation opportunities and select the right AI tools for your business. Get expert guidance on what to automate and which tools to use. Perfect for business owners ready to leverage AI but unsure where to start.",
-      tags: ["1-2 Hour Sessions", "$125/hour", "Automation Roadmap"],
-      gradient: "from-blue-500 to-indigo-600",
+      id: 'ai-coaching',
+      title: 'AI Coaching & Advising',
+      description: 'One-on-one guidance to help business owners understand and leverage AI. Learn which processes to automate, discover the best AI tools for your needs, and get step-by-step implementation guidance.',
+      gradient: 'from-blue-500 to-indigo-600',
+      tags: ['1-on-1 Sessions', '$125/hour', 'Implementation Guidance'],
       imageUrl: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
-      fallbackText: "AI Strategy"
+      fallbackText: "AI Coaching",
+      expandedContent: (
+        <div>
+          <p className="mb-4">Personal AI coaching sessions designed to demystify AI and show you exactly how to use it in your business.</p>
+          <h3 className="text-xl font-bold mb-3">What We Cover:</h3>
+          <ul className="mb-6 space-y-2">
+            <li>• Identify automation opportunities in your business</li>
+            <li>• Review and recommend specific AI tools</li>
+            <li>• Step-by-step implementation guidance</li>
+            <li>• Best practices and common pitfalls to avoid</li>
+          </ul>
+          <div className="bg-gray-50 p-6 rounded-lg">
+            <h3 className="text-xl font-bold mb-3">Success Story</h3>
+            <p className="mb-3">A restaurant owner learned to use ChatGPT for menu descriptions, social media posts, and email campaigns. Now creates a week's worth of content in 30 minutes.</p>
+            <div className="bg-blue-50 p-4 rounded">
+              <p className="font-bold">Results:</p>
+              <p>• 10 hours saved weekly on marketing</p>
+              <p>• 3x more social media engagement</p>
+              <p>• Consistent brand voice across all channels</p>
+            </div>
+          </div>
+        </div>
+      )
     },
     {
-      id: 'automation-assessment',
-      icon: BarChart3,
-      title: "Automation Assessment",
-      description: "Comprehensive analysis of your current processes to identify automation opportunities that will deliver the highest ROI.",
-      tags: ["Process Analysis", "ROI Projections", "Priority Ranking"],
-      gradient: "from-emerald-500 to-green-600",
+      id: 'workflow-automation',
+      title: 'Workflow & Process Automation',
+      description: 'Complete automation solutions from audit to implementation. We review your processes, design automated workflows, build the system, and train your team.',
+      gradient: 'from-emerald-500 to-teal-600',
+      tags: ['Process Audit', 'Custom Build', 'User Training'],
       imageUrl: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
-      fallbackText: "Assessment"
+      fallbackText: "Workflow Automation",
+      expandedContent: (
+        <div>
+          <h3 className="text-xl font-bold mb-3">Our Process:</h3>
+          <ol className="mb-6 space-y-3">
+            <li><strong>1. Process Audit:</strong> Map your current workflows and identify bottlenecks</li>
+            <li><strong>2. Design Framework:</strong> Create automated workflow with user-friendly interface</li>
+            <li><strong>3. Implementation:</strong> Build and deploy the automation</li>
+            <li><strong>4. Training:</strong> Ensure your team can use and maintain the system</li>
+          </ol>
+          <div className="bg-gray-50 p-6 rounded-lg">
+            <h3 className="text-xl font-bold mb-3">Manufacturing Client Success</h3>
+            <p className="mb-3">Automated their entire order-to-delivery process, connecting sales, inventory, and shipping systems.</p>
+            <div className="bg-green-50 p-4 rounded">
+              <p className="font-bold">Results:</p>
+              <p>• Order processing: 45 min → 5 min</p>
+              <p>• Zero inventory errors</p>
+              <p>• $50K annual labor savings</p>
+            </div>
+          </div>
+        </div>
+      )
     },
     {
-      id: 'ai-tool-selection',
-      icon: Target,
-      title: "AI Tool Selection",
-      description: "Expert guidance on choosing the right AI tools and platforms for your specific business needs and budget.",
-      tags: ["Vendor Comparison", "Budget Planning", "Integration Guide"],
-      gradient: "from-purple-500 to-violet-600",
+      id: 'custom-ai-agents',
+      title: 'Custom AI Agents',
+      description: 'Build intelligent AI assistants tailored to your business. From customer service bots to internal knowledge assistants.',
+      gradient: 'from-purple-500 to-pink-600',
+      tags: ['Custom Development', 'AI Training', 'Integration'],
       imageUrl: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
-      fallbackText: "Tool Selection"
+      fallbackText: "AI Agents",
+      expandedContent: (
+        <div>
+          <h3 className="text-xl font-bold mb-3">Featured AI Agents:</h3>
+          <div className="space-y-4 mb-6">
+            <div className="bg-purple-50 p-4 rounded-lg">
+              <h4 className="font-bold text-purple-800">ConfirmAI - Appointment Assistant</h4>
+              <p>AI voice agent that calls patients to confirm appointments</p>
+              <p className="text-sm mt-2">842 appointments confirmed this week | 94% success rate</p>
+            </div>
+            <div className="bg-purple-50 p-4 rounded-lg">
+              <h4 className="font-bold text-purple-800">Customer Service Bot</h4>
+              <p>24/7 AI assistant handling inquiries, orders, and support tickets</p>
+            </div>
+            <div className="bg-purple-50 p-4 rounded-lg">
+              <h4 className="font-bold text-purple-800">Internal Knowledge Assistant</h4>
+              <p>AI trained on your company data to answer employee questions instantly</p>
+            </div>
+          </div>
+          <p className="text-gray-600">Each agent is custom-built and trained specifically for your business needs.</p>
+        </div>
+      )
     },
     {
-      id: 'custom-implementation',
-      icon: Settings,
-      title: "Custom Implementation",
-      description: "Hands-on development and deployment of automation solutions, from simple workflows to complex AI integrations.",
-      tags: ["Full Development", "API Integration", "Custom Solutions"],
-      gradient: "from-amber-500 to-orange-600",
+      id: 'consulting-services',
+      title: 'Full Consulting Services',
+      description: 'Comprehensive AI and automation consulting covering strategy, implementation, optimization, and ongoing support.',
+      gradient: 'from-orange-500 to-red-600',
+      tags: ['End-to-End', 'Strategic Planning', 'Full Implementation'],
       imageUrl: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
-      fallbackText: "Implementation"
+      fallbackText: "Consulting",
+      expandedContent: (
+        <div>
+          <h3 className="text-xl font-bold mb-3">Complete Transformation Package</h3>
+          <p className="mb-4">Our full consulting service includes everything:</p>
+          <ul className="space-y-2 mb-6">
+            <li>✓ Initial assessment and strategy</li>
+            <li>✓ Tool selection and procurement</li>
+            <li>✓ Process optimization</li>
+            <li>✓ Custom development</li>
+            <li>✓ Implementation and integration</li>
+            <li>✓ Team training</li>
+            <li>✓ Ongoing optimization</li>
+          </ul>
+          <div className="bg-gray-50 p-6 rounded-lg">
+            <h3 className="text-xl font-bold mb-3">Healthcare Provider Transformation</h3>
+            <p className="mb-3">Complete digital transformation including patient portal, automated scheduling, AI triage, and staff workflows.</p>
+            <div className="bg-orange-50 p-4 rounded">
+              <p className="font-bold">Results:</p>
+              <p>• 60% reduction in administrative work</p>
+              <p>• Patient satisfaction up 45%</p>
+              <p>• ROI achieved in 6 months</p>
+            </div>
+          </div>
+        </div>
+      )
     },
     {
-      id: 'process-optimization',
-      icon: Zap,
-      title: "Process Optimization",
-      description: "Streamline your workflows, eliminate bottlenecks, and create scalable systems that grow with your business.",
-      tags: ["Workflow Design", "Efficiency Gains", "Scalable Systems"],
-      gradient: "from-cyan-500 to-blue-600",
-      imageUrl: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
-      fallbackText: "Optimization"
-    },
-    {
-      id: 'team-training',
-      icon: GraduationCap,
-      title: "Team Training",
-      description: "Empower your team with the knowledge and skills to effectively use and maintain your new automation tools.",
-      tags: ["Custom Videos", "Live Sessions", "Documentation"],
-      gradient: "from-emerald-500 to-teal-600",
+      id: 'training-videos',
+      title: 'Training & Education',
+      description: 'Professional AI and automation training videos custom-created for your team. From Disney Pixar style to corporate professional.',
+      gradient: 'from-green-500 to-emerald-600',
+      tags: ['Custom Videos', 'Multiple Styles', 'Team Training'],
       imageUrl: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
-      fallbackText: "Training"
+      fallbackText: "Training",
+      expandedContent: (
+        <div>
+          <h3 className="text-xl font-bold mb-4">Custom Training Videos</h3>
+          <p className="mb-6">We create engaging training content in any style to match your company culture.</p>
+          <div className="grid gap-4">
+            <a href="https://youtu.be/9MPf-pO5mhI" target="_blank" className="bg-gray-50 p-4 rounded-lg hover:bg-gray-100 transition">
+              <h4 className="font-bold text-green-800 mb-2">The Power of Feedback</h4>
+              <p className="text-gray-600">Disney Pixar style - Perfect for engaging team training</p>
+              <p className="text-blue-600 mt-2">▶ Watch Video</p>
+            </a>
+            <a href="https://youtu.be/3nd54SrD6-0" target="_blank" className="bg-gray-50 p-4 rounded-lg hover:bg-gray-100 transition">
+              <h4 className="font-bold text-green-800 mb-2">Our Home, Planet Earth</h4>
+              <p className="text-gray-600">Modern style - Environmental awareness training</p>
+              <p className="text-blue-600 mt-2">▶ Watch Video</p>
+            </a>
+            <a href="https://youtu.be/ZusJ_Sy3kbY" target="_blank" className="bg-gray-50 p-4 rounded-lg hover:bg-gray-100 transition">
+              <h4 className="font-bold text-green-800 mb-2">Spread Kindness</h4>
+              <p className="text-gray-600">Character animation - Culture and values training</p>
+              <p className="text-blue-600 mt-2">▶ Watch Video</p>
+            </a>
+          </div>
+        </div>
+      )
+    },
+    {
+      id: 'website-design',
+      title: 'Website Design & Development',
+      description: 'Professional websites that convert visitors into customers. Integrated with your automation systems for seamless operations.',
+      gradient: 'from-indigo-500 to-purple-600',
+      tags: ['Custom Design', 'Conversion Focused', 'Automation Ready'],
+      imageUrl: "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+      fallbackText: "Website Design",
+      expandedContent: (
+        <div>
+          <h3 className="text-xl font-bold mb-4">Professional Web Development</h3>
+          <div className="space-y-6">
+            <a href="https://jcwindowcovering.com" target="_blank" className="block bg-gray-900 text-white p-6 rounded-lg hover:bg-gray-800 transition">
+              <h4 className="text-2xl font-bold mb-2">J&C Window Covering</h4>
+              <p className="text-lg mb-2">Premium Blinds Installation - $45/window</p>
+              <p className="text-gray-300">Features: Automated scheduling, instant quotes, payment processing</p>
+              <p className="text-blue-400 mt-3">Visit Live Site →</p>
+            </a>
+            <div className="bg-gray-50 p-6 rounded-lg">
+              <h4 className="font-bold mb-2">What We Build:</h4>
+              <ul className="space-y-2">
+                <li>• Service business websites</li>
+                <li>• E-commerce platforms</li>
+                <li>• Professional portfolios</li>
+                <li>• Automated booking systems</li>
+                <li>• Integrated payment processing</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      )
+    },
+    {
+      id: 'app-design',
+      title: 'App Design & Development',
+      description: 'Custom mobile and web applications that streamline your operations and enhance customer experience.',
+      gradient: 'from-cyan-500 to-blue-600',
+      tags: ['Mobile Apps', 'Web Apps', 'Custom Solutions'],
+      imageUrl: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+      fallbackText: "App Development",
+      expandedContent: (
+        <div>
+          <h3 className="text-xl font-bold mb-4">Custom App Development</h3>
+          <div className="space-y-4">
+            <div className="bg-blue-50 p-4 rounded-lg">
+              <h4 className="font-bold text-blue-800 mb-2">MeasurePro</h4>
+              <p>Window measurement app for contractors</p>
+              <p className="text-sm mt-2">• Voice recording • PDF estimates • 75% faster quotes</p>
+            </div>
+            <div className="bg-blue-50 p-4 rounded-lg">
+              <h4 className="font-bold text-blue-800 mb-2">CloserCoach</h4>
+              <p>AI training app for sales teams</p>
+              <p className="text-sm mt-2">• Voice practice • Real scenarios • 35% better close rates</p>
+            </div>
+          </div>
+          <h4 className="font-bold mt-6 mb-2">We Build:</h4>
+          <ul className="space-y-2">
+            <li>• Customer portals</li>
+            <li>• Internal tools</li>
+            <li>• Mobile-first applications</li>
+            <li>• AI-powered interfaces</li>
+          </ul>
+        </div>
+      )
     },
     {
       id: 'ongoing-support',
-      icon: Shield,
-      title: "Ongoing Support",
-      description: "Continuous optimization and support to ensure your automation solutions evolve with your business needs.",
-      tags: ["Monthly Retainer", "Priority Support", "Continuous Improvement"],
-      gradient: "from-indigo-500 to-purple-600",
+      title: 'Ongoing Support & Optimization',
+      description: 'Keep your systems running perfectly with continuous monitoring, updates, and optimization.',
+      gradient: 'from-gray-600 to-gray-800',
+      tags: ['Monthly Plans', 'Continuous Updates', '24/7 Monitoring'],
       imageUrl: "https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
-      fallbackText: "Support"
+      fallbackText: "Support",
+      expandedContent: (
+        <div>
+          <h3 className="text-xl font-bold mb-4">Support Plans</h3>
+          <div className="space-y-4">
+            <div className="bg-gray-50 p-4 rounded-lg">
+              <h4 className="font-bold mb-2">Basic Support - $500/month</h4>
+              <ul className="text-sm space-y-1">
+                <li>• Monthly system check</li>
+                <li>• Bug fixes</li>
+                <li>• Email support</li>
+              </ul>
+            </div>
+            <div className="bg-gray-50 p-4 rounded-lg">
+              <h4 className="font-bold mb-2">Active Support - $1,500/month</h4>
+              <ul className="text-sm space-y-1">
+                <li>• Weekly optimization</li>
+                <li>• Priority fixes</li>
+                <li>• Phone support</li>
+                <li>• Minor updates included</li>
+              </ul>
+            </div>
+            <div className="bg-gray-50 p-4 rounded-lg">
+              <h4 className="font-bold mb-2">Full Service - $3,000+/month</h4>
+              <ul className="text-sm space-y-1">
+                <li>• Daily monitoring</li>
+                <li>• Immediate response</li>
+                <li>• Continuous improvement</li>
+                <li>• New features monthly</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      )
     }
   ];
 
@@ -198,51 +392,48 @@ const Index = () => {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {services.map((service, index) => {
-              const IconComponent = service.icon;
-              return (
-                <Card key={index} className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-0 shadow-lg cursor-pointer"
-                      onClick={() => setExpandedService(service)}>
-                  <div className={`h-48 bg-gradient-to-br ${service.gradient} relative overflow-hidden rounded-t-lg`}>
-                    <img 
-                      src={service.imageUrl} 
-                      alt={service.title}
-                      className="absolute inset-0 w-full h-full object-cover opacity-30"
-                      onError={(e) => {
-                        e.currentTarget.style.display = 'none';
-                      }}
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-                    <div className="relative z-10 h-full flex items-center justify-center text-white">
-                      <h3 className="text-2xl font-bold text-center px-4">{service.fallbackText}</h3>
-                    </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+            {services.map((service, index) => (
+              <Card key={index} className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-0 shadow-lg cursor-pointer"
+                    onClick={() => setExpandedService(service)}>
+                <div className={`h-48 bg-gradient-to-br ${service.gradient} relative overflow-hidden rounded-t-lg`}>
+                  <img 
+                    src={service.imageUrl} 
+                    alt={service.title}
+                    className="absolute inset-0 w-full h-full object-cover opacity-30"
+                    onError={(e) => {
+                      e.currentTarget.style.display = 'none';
+                    }}
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                  <div className="relative z-10 h-full flex items-center justify-center text-white">
+                    <h3 className="text-lg font-bold text-center px-4">{service.fallbackText}</h3>
                   </div>
-                  
-                  <CardHeader>
-                    <CardTitle className="text-xl">{service.title}</CardTitle>
-                    <CardDescription className="text-gray-600 leading-relaxed">
-                      {service.description}
-                    </CardDescription>
-                  </CardHeader>
+                </div>
+                
+                <CardHeader>
+                  <CardTitle className="text-lg">{service.title}</CardTitle>
+                  <CardDescription className="text-gray-600 leading-relaxed text-sm">
+                    {service.description}
+                  </CardDescription>
+                </CardHeader>
 
-                  <CardContent className="space-y-4">
-                    <div className="flex flex-wrap gap-2">
-                      {service.tags.map((tag, tagIndex) => (
-                        <span key={tagIndex} className="bg-blue-100 text-blue-800 text-sm px-3 py-1 rounded-full">
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
+                <CardContent className="space-y-4">
+                  <div className="flex flex-wrap gap-2">
+                    {service.tags.map((tag, tagIndex) => (
+                      <span key={tagIndex} className="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
 
-                    <div className="flex items-center gap-2 text-blue-600 font-semibold hover:text-blue-700 transition-colors">
-                      View Case Study
-                      <ChevronDown className="w-5 h-5" />
-                    </div>
-                  </CardContent>
-                </Card>
-              );
-            })}
+                  <div className="flex items-center gap-2 text-blue-600 font-semibold hover:text-blue-700 transition-colors">
+                    Learn More
+                    <ChevronDown className="w-4 h-4" />
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
           </div>
         </div>
       </section>
@@ -254,119 +445,7 @@ const Index = () => {
             <div className="bg-white rounded-lg max-w-4xl mx-auto p-8" onClick={(e) => e.stopPropagation()}>
               <button onClick={() => setExpandedService(null)} className="float-right text-2xl hover:text-gray-600">✕</button>
               <h2 className="text-3xl font-bold mb-6">{expandedService.title}</h2>
-              
-              {expandedService.id === 'ai-strategy' && (
-                <div>
-                  <div className="bg-gray-50 p-6 rounded-lg mb-6">
-                    <h3 className="text-xl font-bold mb-3">Dental Practice Success Story</h3>
-                    <p className="mb-3">A busy dental office was losing money from missed appointments. Staff spent 15+ hours weekly on phone calls.</p>
-                    <p className="mb-3"><strong>Solution:</strong> AI system for automatic appointment reminders.</p>
-                    <div className="bg-blue-50 p-4 rounded">
-                      <p className="font-bold">Results:</p>
-                      <p>• 15 hours saved weekly</p>
-                      <p>• 85% fewer no-shows</p>
-                      <p>• $12,000 more monthly revenue</p>
-                    </div>
-                  </div>
-                </div>
-              )}
-
-              {expandedService.id === 'automation-assessment' && (
-                <div>
-                  <div className="bg-gray-50 p-6 rounded-lg mb-6">
-                    <h3 className="text-xl font-bold mb-3">Manufacturing Client Assessment</h3>
-                    <p className="mb-3">A mid-size manufacturer was struggling with manual inventory tracking and order processing inefficiencies.</p>
-                    <p className="mb-3"><strong>Solution:</strong> Comprehensive process analysis and automation roadmap.</p>
-                    <div className="bg-green-50 p-4 rounded">
-                      <p className="font-bold">Results:</p>
-                      <p>• Identified $50K annual savings</p>
-                      <p>• 40% reduction in order processing time</p>
-                      <p>• 15 automation opportunities mapped</p>
-                    </div>
-                  </div>
-                </div>
-              )}
-
-              {expandedService.id === 'ai-tool-selection' && (
-                <div>
-                  <div className="bg-gray-50 p-6 rounded-lg mb-6">
-                    <h3 className="text-xl font-bold mb-3">ConfirmAI Implementation</h3>
-                    <p className="mb-3">A healthcare practice needed reliable appointment confirmation but struggled with staff availability.</p>
-                    <p className="mb-3"><strong>Solution:</strong> ConfirmAI - AI voice assistant for automatic appointment confirmations.</p>
-                    <div className="bg-purple-50 p-4 rounded">
-                      <p className="font-bold">Results:</p>
-                      <p>• 842 appointments confirmed this week</p>
-                      <p>• 94% success rate</p>
-                      <p>• 10+ hours saved weekly</p>
-                    </div>
-                  </div>
-                </div>
-              )}
-
-              {expandedService.id === 'custom-implementation' && (
-                <div>
-                  <div className="bg-gray-50 p-6 rounded-lg mb-6">
-                    <h3 className="text-xl font-bold mb-3">MeasurePro for Contractors</h3>
-                    <p className="mb-3">Window contractors spent hours measuring and creating quotes manually, leading to delays and errors.</p>
-                    <p className="mb-3"><strong>Solution:</strong> MeasurePro - Voice-recording measurement tool with instant PDF generation.</p>
-                    <div className="bg-orange-50 p-4 rounded">
-                      <p className="font-bold">Results:</p>
-                      <p>• Voice recording during measurements</p>
-                      <p>• Instant PDF estimates</p>
-                      <p>• 75% reduction in quote time</p>
-                    </div>
-                  </div>
-                </div>
-              )}
-
-              {expandedService.id === 'process-optimization' && (
-                <div>
-                  <div className="bg-gray-50 p-6 rounded-lg mb-6">
-                    <h3 className="text-xl font-bold mb-3">Retail Chain Optimization</h3>
-                    <p className="mb-3">A growing retail chain was overwhelmed by manual order processing and inventory management challenges.</p>
-                    <p className="mb-3"><strong>Solution:</strong> Streamlined workflows and automated inventory management system.</p>
-                    <div className="bg-cyan-50 p-4 rounded">
-                      <p className="font-bold">Results:</p>
-                      <p>• Order processing: 45 min → 5 min</p>
-                      <p>• Automated inventory management</p>
-                      <p>• 60% reduction in support tickets</p>
-                    </div>
-                  </div>
-                </div>
-              )}
-
-              {expandedService.id === 'team-training' && (
-                <div>
-                  <div className="bg-gray-50 p-6 rounded-lg mb-6">
-                    <h3 className="text-xl font-bold mb-3">CloserCoach for Public Adjusters</h3>
-                    <p className="mb-3">Public adjusters needed better training methods to improve their client closing rates and sales techniques.</p>
-                    <p className="mb-3"><strong>Solution:</strong> CloserCoach - AI-powered training with voice scenarios and real-time feedback.</p>
-                    <div className="bg-green-50 p-4 rounded">
-                      <p className="font-bold">Results:</p>
-                      <p>• Voice-based practice scenarios</p>
-                      <p>• Real-time AI feedback</p>
-                      <p>• 35% increase in close rates</p>
-                    </div>
-                  </div>
-                </div>
-              )}
-
-              {expandedService.id === 'ongoing-support' && (
-                <div>
-                  <div className="bg-gray-50 p-6 rounded-lg mb-6">
-                    <h3 className="text-xl font-bold mb-3">Continuous Partnership Success</h3>
-                    <p className="mb-3">Long-term clients benefit from our ongoing optimization and support to ensure their systems evolve with their business.</p>
-                    <p className="mb-3"><strong>Solution:</strong> Monthly reviews, performance monitoring, and continuous improvements.</p>
-                    <div className="bg-indigo-50 p-4 rounded">
-                      <p className="font-bold">Support Services:</p>
-                      <p>• Monthly optimization reviews</p>
-                      <p>• Performance monitoring and adjustments</p>
-                      <p>• New feature implementation</p>
-                      <p>• Team refresher training</p>
-                    </div>
-                  </div>
-                </div>
-              )}
+              {expandedService.expandedContent}
             </div>
           </div>
         </div>
