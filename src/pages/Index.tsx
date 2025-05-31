@@ -1,4 +1,5 @@
 
+
 import React, { useState } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -366,11 +367,13 @@ const Index = () => {
 
             <div className="relative">
               <Card className="relative bg-gradient-to-br from-blue-600 via-purple-600 to-emerald-500 border-0 shadow-2xl">
-                <CardContent className="p-8">
+                <CardContent className="p-8 relative">
+                  {/* Semi-transparent white overlay */}
+                  <div className="absolute inset-4 bg-white/20 rounded-lg"></div>
                   <img 
                     src="/lovable-uploads/bd091be5-04a1-4a31-9d17-c4607fc90ddd.png"
                     alt="Automate AI Design"
-                    className="w-full h-auto max-w-sm mx-auto"
+                    className="w-full h-auto max-w-sm mx-auto relative z-10 drop-shadow-[0_0_15px_rgba(255,255,255,0.5)]"
                     key={Date.now()}
                   />
                 </CardContent>
@@ -611,3 +614,4 @@ const Index = () => {
 };
 
 export default Index;
+
