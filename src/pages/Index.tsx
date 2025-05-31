@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -365,13 +364,14 @@ const Index = () => {
             </div>
 
             <div className="relative">
-              <div className="bg-gradient-to-br from-blue-600 to-purple-600 rounded-2xl p-12 text-white text-center">
-                <img 
-                  src="/lovable-uploads/c9c6b8d6-b4a3-4fce-98c6-3b7f8a9b9c1f.png" 
-                  alt="Automate AI Design"
-                  className="w-full h-auto max-w-sm mx-auto"
-                  style={{filter: 'brightness(0) invert(1)'}}
-                />
+              <div className="bg-gradient-to-br from-blue-600 to-purple-600 rounded-2xl p-12 flex items-center justify-center min-h-[400px]">
+                <div className="text-center">
+                  <img 
+                    src="/lovable-uploads/c9c6b8d6-b4a3-4fce-98c6-3b7f8a9b9c1f.png"
+                    alt="Automate AI Design" 
+                    className="h-48 w-auto mx-auto"
+                  />
+                </div>
               </div>
               <div className="absolute -bottom-6 left-1/2 transform -translate-x-1/2 animate-bounce">
                 <ArrowDown className="w-8 h-8 text-blue-600" />
