@@ -40,6 +40,8 @@ const Index = () => {
       description: "One-on-one advisory sessions to identify automation opportunities and select the right AI tools for your business. Get expert guidance on what to automate and which tools to use. Perfect for business owners ready to leverage AI but unsure where to start.",
       tags: ["1-2 Hour Sessions", "$125/hour", "Automation Roadmap"],
       gradient: "from-blue-500 to-indigo-600",
+      imageUrl: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+      fallbackText: "AI Strategy",
       examples: [
         "Helped a dental practice automate appointment reminders, saving 15 hours/week",
         "Designed AI customer service strategy for e-commerce store",
@@ -52,6 +54,8 @@ const Index = () => {
       description: "Comprehensive analysis of your current processes to identify automation opportunities that will deliver the highest ROI.",
       tags: ["Process Analysis", "ROI Projections", "Priority Ranking"],
       gradient: "from-emerald-500 to-green-600",
+      imageUrl: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+      fallbackText: "Assessment",
       examples: [
         "Identified $50K annual savings for manufacturing client",
         "Discovered 40% time reduction opportunity in order processing",
@@ -64,6 +68,8 @@ const Index = () => {
       description: "Expert guidance on choosing the right AI tools and platforms for your specific business needs and budget.",
       tags: ["Vendor Comparison", "Budget Planning", "Integration Guide"],
       gradient: "from-purple-500 to-violet-600",
+      imageUrl: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+      fallbackText: "Tool Selection",
       examples: [
         "🤖 ConfirmAI - AI voice assistant that automatically calls and confirms appointments",
         "842 Appointments Confirmed This Week",
@@ -76,6 +82,8 @@ const Index = () => {
       description: "Hands-on development and deployment of automation solutions, from simple workflows to complex AI integrations.",
       tags: ["Full Development", "API Integration", "Custom Solutions"],
       gradient: "from-amber-500 to-orange-600",
+      imageUrl: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+      fallbackText: "Implementation",
       examples: [
         "📏 MeasurePro - Professional window measurement tool for contractors",
         "✓ Voice recording during measurements",
@@ -88,6 +96,8 @@ const Index = () => {
       description: "Streamline your workflows, eliminate bottlenecks, and create scalable systems that grow with your business.",
       tags: ["Workflow Design", "Efficiency Gains", "Scalable Systems"],
       gradient: "from-cyan-500 to-blue-600",
+      imageUrl: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+      fallbackText: "Optimization",
       examples: [
         "Reduced order processing time from 45 min to 5 min",
         "Automated inventory management for retail chain",
@@ -100,6 +110,8 @@ const Index = () => {
       description: "Empower your team with the knowledge and skills to effectively use and maintain your new automation tools.",
       tags: ["Custom Videos", "Live Sessions", "Documentation"],
       gradient: "from-emerald-500 to-teal-600",
+      imageUrl: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+      fallbackText: "Training",
       examples: [
         "🎯 CloserCoach - AI-powered training for public adjusters",
         "✓ Voice-based practice scenarios",
@@ -112,6 +124,8 @@ const Index = () => {
       description: "Continuous optimization and support to ensure your automation solutions evolve with your business needs.",
       tags: ["Monthly Retainer", "Priority Support", "Continuous Improvement"],
       gradient: "from-indigo-500 to-purple-600",
+      imageUrl: "https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+      fallbackText: "Support",
       examples: [
         "Monthly optimization reviews",
         "Performance monitoring and adjustments",
@@ -222,9 +236,18 @@ const Index = () => {
               const IconComponent = service.icon;
               return (
                 <Card key={index} className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-0 shadow-lg">
-                  <div className={`h-48 bg-gradient-to-r ${service.gradient} relative overflow-hidden rounded-t-lg`}>
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <IconComponent className="w-16 h-16 text-white" />
+                  <div className={`h-48 bg-gradient-to-br ${service.gradient} relative overflow-hidden rounded-t-lg`}>
+                    <img 
+                      src={service.imageUrl} 
+                      alt={service.title}
+                      className="absolute inset-0 w-full h-full object-cover opacity-30"
+                      onError={(e) => {
+                        e.currentTarget.style.display = 'none';
+                      }}
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                    <div className="relative z-10 h-full flex items-center justify-center text-white">
+                      <h3 className="text-2xl font-bold text-center px-4">{service.fallbackText}</h3>
                     </div>
                   </div>
                   
