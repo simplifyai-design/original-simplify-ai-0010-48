@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -364,7 +365,7 @@ const Index = () => {
             </div>
 
             <div className="relative">
-              <Card className="relative bg-white border-0 shadow-2xl">
+              <Card className="relative bg-gradient-to-br from-blue-600 via-purple-600 to-emerald-500 border-0 shadow-2xl">
                 <CardContent className="p-8">
                   <img 
                     src="/lovable-uploads/bd091be5-04a1-4a31-9d17-c4607fc90ddd.png"
