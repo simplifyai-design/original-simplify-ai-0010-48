@@ -371,7 +371,7 @@ const Index = () => {
                   {/* Semi-transparent white overlay */}
                   <div className="absolute inset-4 bg-white/20 rounded-lg"></div>
                   <img 
-                    src="/lovable-uploads/bd091be5-04a1-4a31-9d17-c4607fc90ddd.png"
+                    src="/lovable-uploads/0936efd5-c4d0-4c4b-a0c2-50a2d59038eb.png"
                     alt="Automate AI Design"
                     className="w-full h-auto max-w-sm mx-auto relative z-10 drop-shadow-[0_0_15px_rgba(255,255,255,0.5)]"
                     key={Date.now()}
