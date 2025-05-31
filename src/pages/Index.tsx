@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -367,7 +368,7 @@ const Index = () => {
               <Card className="relative bg-gradient-to-br from-blue-600 via-purple-600 to-emerald-500 border-0 shadow-2xl">
                 <CardContent className="p-8">
                   <img 
-                    src="/lovable-uploads/ca5460a3-54d1-4046-b177-6c67f04511ea.png"
+                    src="/lovable-uploads/b39afccc-f40f-49fe-ac8e-a5bb2a8c37e6.png"
                     alt="Automate AI Design"
                     className="w-full h-auto max-w-sm mx-auto filter invert brightness-0 invert"
                     key={Date.now()}
