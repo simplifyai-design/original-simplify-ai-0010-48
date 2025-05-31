@@ -367,7 +367,7 @@ const Index = () => {
               <Card className="relative bg-gradient-to-br from-blue-600 via-purple-600 to-emerald-500 border-0 shadow-2xl">
                 <CardContent className="p-8">
                   <img 
-                    src="/lovable-uploads/474b3d4d-591d-4600-ac3b-b93d52e0bbe3.png"
+                    src="/lovable-uploads/ca5460a3-54d1-4046-b177-6c67f04511ea.png"
                     alt="Automate AI Design"
                     className="w-full h-auto max-w-sm mx-auto filter invert brightness-0 invert"
                     key={Date.now()}
