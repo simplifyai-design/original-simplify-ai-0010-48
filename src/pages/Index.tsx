@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -371,6 +370,15 @@ const Index = () => {
                     src="/lovable-uploads/ab4212de-ad4f-4057-bb06-ac5c1423b613.png"
                     alt="Automate AI Design"
                     className="w-full h-auto max-w-md mx-auto"
+                    onLoad={() => console.log('Image loaded successfully')}
+                    onError={(e) => {
+                      console.error('Image failed to load:', e);
+                      e.currentTarget.style.display = 'none';
+                      const fallback = document.createElement('div');
+                      fallback.className = 'w-full h-48 bg-white/20 rounded-lg flex items-center justify-center text-white text-xl font-bold';
+                      fallback.textContent = 'Automate AI Design';
+                      e.currentTarget.parentNode?.appendChild(fallback);
+                    }}
                   />
                 </CardContent>
               </Card>
