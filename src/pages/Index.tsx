@@ -325,8 +325,8 @@ const Index = () => {
       {/* Hero Section */}
       <section className="pt-24 pb-12 px-6 relative min-h-screen">
         <div className="max-w-7xl mx-auto relative z-10">
-          <div className="grid lg:grid-cols-2 gap-12 items-center min-h-[80vh]">
-            <div className="space-y-8">
+          <div className="grid lg:grid-cols-2 gap-16 items-center min-h-[80vh]">
+            <div className="space-y-8 lg:pl-8">
               <div className="space-y-6">
                 <p className="text-orange-400 font-semibold">Strategic Consulting & Implementation</p>
                 <h1 className="text-5xl lg:text-6xl font-bold text-white leading-tight">
@@ -377,8 +377,8 @@ const Index = () => {
             </div>
 
             {/* Right side card with uploaded image */}
-            <div className="flex justify-center lg:justify-end">
-              <Card className="w-80 h-80 border-2 border-orange-500/30 bg-gray-800/50 backdrop-blur-sm shadow-2xl">
+            <div className="flex justify-center lg:justify-start lg:pl-8">
+              <Card className="w-80 h-80 border-2 border-white bg-white shadow-2xl">
                 <CardContent className="p-0 h-full">
                   <img 
                     src="/lovable-uploads/bf995692-6730-4681-99e9-5f892949b37c.png"
