@@ -1,11 +1,10 @@
-
 import React, { useState, useEffect } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
-import { ChevronDown, Brain, BarChart3, Target, Settings, Zap, GraduationCap, Shield, ArrowDown } from 'lucide-react';
+import { ChevronDown, Brain, BarChart3, Target, Settings, Zap, GraduationCap, Shield } from 'lucide-react';
 
 const Index = () => {
   const [expandedService, setExpandedService] = useState<any>(null);
@@ -308,14 +307,14 @@ const Index = () => {
       {/* Header */}
       <header className="fixed top-0 w-full bg-gray-900/95 backdrop-blur-sm border-b border-gray-700 z-50">
         <nav className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-          <a href="#" className="text-2xl font-bold text-white">
+          <a href="#" className="text-2xl font-bold text-orange-500">
             Automate AI Design
           </a>
           <div className="hidden md:flex items-center space-x-8">
-            <a href="#services" className="text-gray-300 hover:text-white transition-colors">Services</a>
-            <a href="#how-we-work" className="text-gray-300 hover:text-white transition-colors">How We Work</a>
-            <a href="#pricing" className="text-gray-300 hover:text-white transition-colors">Pricing</a>
-            <Button asChild className="bg-white text-gray-900 hover:bg-gray-100">
+            <a href="#services" className="text-gray-300 hover:text-orange-400 transition-colors">Services</a>
+            <a href="#how-we-work" className="text-gray-300 hover:text-orange-400 transition-colors">How We Work</a>
+            <a href="#pricing" className="text-gray-300 hover:text-orange-400 transition-colors">Pricing</a>
+            <Button asChild className="bg-orange-500 text-white hover:bg-orange-600">
               <a href="#contact">Get Started</a>
             </Button>
           </div>
@@ -336,13 +335,13 @@ const Index = () => {
         <div className="absolute inset-0 bg-gradient-to-br from-gray-800/90 to-gray-900/90" />
         
         <div className="max-w-7xl mx-auto relative z-10">
-          <div className="grid lg:grid-cols-2 gap-12 items-center min-h-[80vh]">
-            <div className="space-y-8">
+          <div className="grid lg:grid-cols-1 gap-12 items-center min-h-[80vh]">
+            <div className="space-y-8 text-center max-w-4xl mx-auto">
               <div className="space-y-6">
-                <p className="text-white font-semibold">Strategic Consulting & Implementation</p>
+                <p className="text-orange-400 font-semibold">Strategic Consulting & Implementation</p>
                 <h1 className="text-5xl lg:text-6xl font-bold text-white leading-tight">
                   Transform Your Business with{' '}
-                  <span className="bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
+                  <span className="bg-gradient-to-r from-orange-400 to-green-400 bg-clip-text text-transparent">
                     AI-Powered Automation
                   </span>
                 </h1>
@@ -351,53 +350,34 @@ const Index = () => {
                 </p>
               </div>
               
-              <ul className="space-y-3">
+              <ul className="space-y-3 max-w-md mx-auto">
                 <li className="flex items-center gap-3 text-gray-300">
-                  <div className="w-5 h-5 bg-white rounded-full flex items-center justify-center">
-                    <span className="text-gray-900 text-xs">✓</span>
+                  <div className="w-5 h-5 bg-green-600 rounded-full flex items-center justify-center">
+                    <span className="text-white text-xs">✓</span>
                   </div>
                   Trusted by SMBs across industries
                 </li>
                 <li className="flex items-center gap-3 text-gray-300">
-                  <div className="w-5 h-5 bg-white rounded-full flex items-center justify-center">
-                    <span className="text-gray-900 text-xs">✓</span>
+                  <div className="w-5 h-5 bg-green-600 rounded-full flex items-center justify-center">
+                    <span className="text-white text-xs">✓</span>
                   </div>
                   100% Satisfaction Guaranteed
                 </li>
                 <li className="flex items-center gap-3 text-gray-300">
-                  <div className="w-5 h-5 bg-white rounded-full flex items-center justify-center">
-                    <span className="text-gray-900 text-xs">✓</span>
+                  <div className="w-5 h-5 bg-green-600 rounded-full flex items-center justify-center">
+                    <span className="text-white text-xs">✓</span>
                   </div>
                   Free Initial Consultation
                 </li>
               </ul>
 
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Button size="lg" asChild className="text-lg px-8 py-6 bg-white text-gray-900 hover:bg-gray-100">
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Button size="lg" asChild className="text-lg px-8 py-6 bg-orange-500 text-white hover:bg-orange-600">
                   <a href="#contact">Schedule Free Consultation</a>
                 </Button>
-                <Button variant="outline" size="lg" asChild className="text-lg px-8 py-6 border-white text-white hover:bg-white hover:text-gray-900">
+                <Button variant="outline" size="lg" asChild className="text-lg px-8 py-6 border-green-600 text-green-400 hover:bg-green-600 hover:text-white">
                   <a href="#services">Learn More</a>
                 </Button>
-              </div>
-            </div>
-
-            {/* Floating Automate AI Design Box */}
-            <div className="relative flex justify-center items-center">
-              <div 
-                className="bg-gray-900/80 border border-white/20 rounded-lg p-8 backdrop-blur-sm transition-transform duration-300 ease-out shadow-2xl"
-                style={{
-                  transform: `translateY(-${scrollY * 0.3}px)`
-                }}
-              >
-                <div className="text-center text-white">
-                  <h2 className="text-4xl font-bold mb-2">Automate</h2>
-                  <h2 className="text-6xl font-bold mb-2">AI</h2>
-                  <h2 className="text-4xl font-bold">Design</h2>
-                </div>
-              </div>
-              <div className="absolute -bottom-6 left-1/2 transform -translate-x-1/2 animate-bounce">
-                <ArrowDown className="w-8 h-8 text-white" />
               </div>
             </div>
           </div>
@@ -418,7 +398,7 @@ const Index = () => {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
             {services.map((service, index) => (
-              <Card key={index} className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-gray-700 shadow-lg cursor-pointer bg-gray-800/50 backdrop-blur-sm"
+              <Card key={index} className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-gray-700 shadow-lg cursor-pointer bg-gray-800/50 backdrop-blur-sm hover:border-orange-500/50"
                     onClick={() => setExpandedService(service)}>
                 <div className={`h-48 bg-gradient-to-br ${service.gradient} relative overflow-hidden rounded-t-lg`}>
                   <img 
@@ -436,7 +416,7 @@ const Index = () => {
                 </div>
                 
                 <CardHeader>
-                  <CardTitle className="text-lg text-white">{service.title}</CardTitle>
+                  <CardTitle className="text-lg text-white group-hover:text-orange-400 transition-colors">{service.title}</CardTitle>
                   <CardDescription className="text-gray-300 leading-relaxed text-sm">
                     {service.description}
                   </CardDescription>
@@ -445,13 +425,13 @@ const Index = () => {
                 <CardContent className="space-y-4">
                   <div className="flex flex-wrap gap-2">
                     {service.tags.map((tag, tagIndex) => (
-                      <span key={tagIndex} className="bg-gray-700 text-gray-200 text-xs px-2 py-1 rounded-full">
+                      <span key={tagIndex} className="bg-gray-700 text-gray-200 text-xs px-2 py-1 rounded-full group-hover:bg-green-600 transition-colors">
                         {tag}
                       </span>
                     ))}
                   </div>
 
-                  <div className="flex items-center gap-2 text-white font-semibold hover:text-gray-300 transition-colors">
+                  <div className="flex items-center gap-2 text-orange-400 font-semibold hover:text-orange-300 transition-colors">
                     Learn More
                     <ChevronDown className="w-4 h-4" />
                   </div>
@@ -466,9 +446,9 @@ const Index = () => {
       {expandedService && (
         <div className="fixed inset-0 bg-black bg-opacity-70 z-50 overflow-y-auto" onClick={() => setExpandedService(null)}>
           <div className="min-h-screen px-4 py-8">
-            <div className="bg-gray-800 text-white rounded-lg max-w-4xl mx-auto p-8" onClick={(e) => e.stopPropagation()}>
-              <button onClick={() => setExpandedService(null)} className="float-right text-2xl hover:text-gray-300">✕</button>
-              <h2 className="text-3xl font-bold mb-6">{expandedService.title}</h2>
+            <div className="bg-gray-800 text-white rounded-lg max-w-4xl mx-auto p-8 border border-orange-500/30" onClick={(e) => e.stopPropagation()}>
+              <button onClick={() => setExpandedService(null)} className="float-right text-2xl hover:text-orange-400 transition-colors">✕</button>
+              <h2 className="text-3xl font-bold mb-6 text-orange-400">{expandedService.title}</h2>
               {expandedService.expandedContent}
             </div>
           </div>
@@ -502,7 +482,7 @@ const Index = () => {
               }
             ].map((step, index) => (
               <div key={index} className="text-center">
-                <div className="w-20 h-20 bg-white text-gray-900 rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6">
+                <div className="w-20 h-20 bg-orange-500 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6 shadow-lg">
                   {step.number}
                 </div>
                 <h3 className="text-xl font-bold mb-4 text-white">{step.title}</h3>
@@ -518,8 +498,8 @@ const Index = () => {
         <div className="max-w-6xl mx-auto px-4">
           <h2 className="text-4xl font-bold text-center mb-12 text-white">Investment Options</h2>
           <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-white text-gray-900 rounded-lg p-8">
-              <h3 className="text-2xl font-bold mb-4">Strategy Session</h3>
+            <div className="bg-white text-gray-900 rounded-lg p-8 border-2 border-transparent hover:border-orange-500 transition-colors">
+              <h3 className="text-2xl font-bold mb-4 text-orange-600">Strategy Session</h3>
               <p className="text-4xl font-bold">$125/hour</p>
               <ul className="mt-6 space-y-2">
                 <li>✓ 1-2 hour sessions</li>
@@ -527,15 +507,18 @@ const Index = () => {
                 <li>✓ Tool recommendations</li>
               </ul>
             </div>
-            <div className="border-2 border-gray-600 bg-gray-800 text-white rounded-lg p-8">
-              <h3 className="text-2xl font-bold mb-4">Custom Projects</h3>
+            <div className="border-2 border-green-600 bg-gray-800 text-white rounded-lg p-8 relative">
+              <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
+                <span className="bg-green-600 text-white px-4 py-1 rounded-full text-sm font-semibold">Most Popular</span>
+              </div>
+              <h3 className="text-2xl font-bold mb-4 text-green-400">Custom Projects</h3>
               <p className="text-4xl font-bold">Quoted</p>
               <p className="mt-6">Simple: $2,500-5,000</p>
               <p>Medium: $5,000-15,000</p>
               <p>Complex: $15,000+</p>
             </div>
-            <div className="bg-gray-700 text-white rounded-lg p-8">
-              <h3 className="text-2xl font-bold mb-4">Ongoing Support</h3>
+            <div className="bg-gray-700 text-white rounded-lg p-8 border-2 border-transparent hover:border-green-600 transition-colors">
+              <h3 className="text-2xl font-bold mb-4 text-green-400">Ongoing Support</h3>
               <p className="text-4xl font-bold">Monthly</p>
               <p className="mt-6">Basic: $500/month</p>
               <p>Active: $1,500/month</p>
@@ -553,7 +536,7 @@ const Index = () => {
             <p className="text-xl text-gray-300">Ready to transform your business with AI automation?</p>
           </div>
 
-          <Card className="shadow-xl border-gray-600 bg-gray-900/50 backdrop-blur-sm">
+          <Card className="shadow-xl border-gray-600 bg-gray-900/50 backdrop-blur-sm border-orange-500/30">
             <CardContent className="p-8">
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-4">
@@ -606,7 +589,7 @@ const Index = () => {
                   />
                 </div>
 
-                <Button type="submit" size="lg" className="w-full text-lg py-6 bg-white text-gray-900 hover:bg-gray-100">
+                <Button type="submit" size="lg" className="w-full text-lg py-6 bg-orange-500 text-white hover:bg-orange-600">
                   Schedule Free Consultation
                 </Button>
               </form>
@@ -619,10 +602,10 @@ const Index = () => {
       <footer className="bg-gray-900 text-white py-12 px-6 border-t border-gray-700">
         <div className="max-w-4xl mx-auto text-center">
           <div className="flex justify-center gap-8 mb-8">
-            <a href="#services" className="hover:text-gray-300 transition-colors">Services</a>
-            <a href="#how-we-work" className="hover:text-gray-300 transition-colors">How We Work</a>
-            <a href="#pricing" className="hover:text-gray-300 transition-colors">Pricing</a>
-            <a href="#contact" className="hover:text-gray-300 transition-colors">Contact</a>
+            <a href="#services" className="hover:text-orange-400 transition-colors">Services</a>
+            <a href="#how-we-work" className="hover:text-orange-400 transition-colors">How We Work</a>
+            <a href="#pricing" className="hover:text-orange-400 transition-colors">Pricing</a>
+            <a href="#contact" className="hover:text-orange-400 transition-colors">Contact</a>
           </div>
           <p className="text-gray-400">© 2024 Automate AI Design. All rights reserved.</p>
         </div>
