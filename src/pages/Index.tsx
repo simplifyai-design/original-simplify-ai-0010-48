@@ -1,6 +1,5 @@
 
-
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -10,12 +9,19 @@ import { ChevronDown, Brain, BarChart3, Target, Settings, Zap, GraduationCap, Sh
 
 const Index = () => {
   const [expandedService, setExpandedService] = useState<any>(null);
+  const [scrollY, setScrollY] = useState(0);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     company: '',
     message: ''
   });
+
+  useEffect(() => {
+    const handleScroll = () => setScrollY(window.scrollY);
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({
@@ -298,18 +304,18 @@ const Index = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
+    <div className="min-h-screen bg-gradient-to-br from-gray-800 to-gray-900">
       {/* Header */}
-      <header className="fixed top-0 w-full bg-white/95 backdrop-blur-sm border-b border-gray-200 z-50">
+      <header className="fixed top-0 w-full bg-gray-900/95 backdrop-blur-sm border-b border-gray-700 z-50">
         <nav className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-          <a href="#" className="text-2xl font-bold text-blue-600">
+          <a href="#" className="text-2xl font-bold text-white">
             Automate AI Design
           </a>
           <div className="hidden md:flex items-center space-x-8">
-            <a href="#services" className="text-gray-700 hover:text-blue-600 transition-colors">Services</a>
-            <a href="#how-we-work" className="text-gray-700 hover:text-blue-600 transition-colors">How We Work</a>
-            <a href="#pricing" className="text-gray-700 hover:text-blue-600 transition-colors">Pricing</a>
-            <Button asChild>
+            <a href="#services" className="text-gray-300 hover:text-white transition-colors">Services</a>
+            <a href="#how-we-work" className="text-gray-300 hover:text-white transition-colors">How We Work</a>
+            <a href="#pricing" className="text-gray-300 hover:text-white transition-colors">Pricing</a>
+            <Button asChild className="bg-white text-gray-900 hover:bg-gray-100">
               <a href="#contact">Get Started</a>
             </Button>
           </div>
@@ -317,69 +323,81 @@ const Index = () => {
       </header>
 
       {/* Hero Section */}
-      <section className="pt-24 pb-12 px-6">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+      <section className="pt-24 pb-12 px-6 relative min-h-screen">
+        {/* Background Image */}
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-70"
+          style={{
+            backgroundImage: `url('/lovable-uploads/11f61c25-5de2-4d06-8665-d4999a6519f1.png')`
+          }}
+        />
+        
+        {/* Gradient Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-br from-gray-800/90 to-gray-900/90" />
+        
+        <div className="max-w-7xl mx-auto relative z-10">
+          <div className="grid lg:grid-cols-2 gap-12 items-center min-h-[80vh]">
             <div className="space-y-8">
               <div className="space-y-6">
-                <p className="text-blue-600 font-semibold">Strategic Consulting & Implementation</p>
-                <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
+                <p className="text-white font-semibold">Strategic Consulting & Implementation</p>
+                <h1 className="text-5xl lg:text-6xl font-bold text-white leading-tight">
                   Transform Your Business with{' '}
-                  <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                  <span className="bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
                     AI-Powered Automation
                   </span>
                 </h1>
-                <p className="text-xl text-gray-600 leading-relaxed">
+                <p className="text-xl text-gray-300 leading-relaxed">
                   Expert consulting for small to medium-sized businesses. We design and build intelligent automation systems that learn, adapt, and scale with your business.
                 </p>
               </div>
               
               <ul className="space-y-3">
-                <li className="flex items-center gap-3 text-gray-700">
-                  <div className="w-5 h-5 bg-green-500 rounded-full flex items-center justify-center">
-                    <span className="text-white text-xs">✓</span>
+                <li className="flex items-center gap-3 text-gray-300">
+                  <div className="w-5 h-5 bg-white rounded-full flex items-center justify-center">
+                    <span className="text-gray-900 text-xs">✓</span>
                   </div>
                   Trusted by SMBs across industries
                 </li>
-                <li className="flex items-center gap-3 text-gray-700">
-                  <div className="w-5 h-5 bg-green-500 rounded-full flex items-center justify-center">
-                    <span className="text-white text-xs">✓</span>
+                <li className="flex items-center gap-3 text-gray-300">
+                  <div className="w-5 h-5 bg-white rounded-full flex items-center justify-center">
+                    <span className="text-gray-900 text-xs">✓</span>
                   </div>
                   100% Satisfaction Guaranteed
                 </li>
-                <li className="flex items-center gap-3 text-gray-700">
-                  <div className="w-5 h-5 bg-green-500 rounded-full flex items-center justify-center">
-                    <span className="text-white text-xs">✓</span>
+                <li className="flex items-center gap-3 text-gray-300">
+                  <div className="w-5 h-5 bg-white rounded-full flex items-center justify-center">
+                    <span className="text-gray-900 text-xs">✓</span>
                   </div>
                   Free Initial Consultation
                 </li>
               </ul>
 
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button size="lg" asChild className="text-lg px-8 py-6">
+                <Button size="lg" asChild className="text-lg px-8 py-6 bg-white text-gray-900 hover:bg-gray-100">
                   <a href="#contact">Schedule Free Consultation</a>
                 </Button>
-                <Button variant="outline" size="lg" asChild className="text-lg px-8 py-6">
+                <Button variant="outline" size="lg" asChild className="text-lg px-8 py-6 border-white text-white hover:bg-white hover:text-gray-900">
                   <a href="#services">Learn More</a>
                 </Button>
               </div>
             </div>
 
-            <div className="relative">
-              <Card className="relative bg-gradient-to-br from-blue-600 via-purple-600 to-emerald-500 border-0 shadow-2xl">
-                <CardContent className="p-8 relative">
-                  {/* Semi-transparent white overlay */}
-                  <div className="absolute inset-4 bg-white/20 rounded-lg"></div>
-                  <img 
-                    src="/lovable-uploads/0936efd5-c4d0-4c4b-a0c2-50a2d59038eb.png"
-                    alt="Automate AI Design"
-                    className="w-full h-auto max-w-sm mx-auto relative z-10 drop-shadow-[0_0_15px_rgba(255,255,255,0.5)]"
-                    key={Date.now()}
-                  />
-                </CardContent>
-              </Card>
+            {/* Floating Automate AI Design Box */}
+            <div className="relative flex justify-center items-center">
+              <div 
+                className="bg-gray-900/80 border border-white/20 rounded-lg p-8 backdrop-blur-sm transition-transform duration-300 ease-out shadow-2xl"
+                style={{
+                  transform: `translateY(-${scrollY * 0.3}px)`
+                }}
+              >
+                <div className="text-center text-white">
+                  <h2 className="text-4xl font-bold mb-2">Automate</h2>
+                  <h2 className="text-6xl font-bold mb-2">AI</h2>
+                  <h2 className="text-4xl font-bold">Design</h2>
+                </div>
+              </div>
               <div className="absolute -bottom-6 left-1/2 transform -translate-x-1/2 animate-bounce">
-                <ArrowDown className="w-8 h-8 text-blue-600" />
+                <ArrowDown className="w-8 h-8 text-white" />
               </div>
             </div>
           </div>
@@ -387,20 +405,20 @@ const Index = () => {
       </section>
 
       {/* Services Section */}
-      <section id="services" className="py-20 px-6 bg-white">
+      <section id="services" className="py-20 px-6 bg-gray-900">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+            <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
               How We Can Transform Your Business
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
               From quick strategy sessions to full implementations, we offer flexible solutions that match your needs and budget
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
             {services.map((service, index) => (
-              <Card key={index} className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-0 shadow-lg cursor-pointer"
+              <Card key={index} className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-gray-700 shadow-lg cursor-pointer bg-gray-800/50 backdrop-blur-sm"
                     onClick={() => setExpandedService(service)}>
                 <div className={`h-48 bg-gradient-to-br ${service.gradient} relative overflow-hidden rounded-t-lg`}>
                   <img 
@@ -418,8 +436,8 @@ const Index = () => {
                 </div>
                 
                 <CardHeader>
-                  <CardTitle className="text-lg">{service.title}</CardTitle>
-                  <CardDescription className="text-gray-600 leading-relaxed text-sm">
+                  <CardTitle className="text-lg text-white">{service.title}</CardTitle>
+                  <CardDescription className="text-gray-300 leading-relaxed text-sm">
                     {service.description}
                   </CardDescription>
                 </CardHeader>
@@ -427,13 +445,13 @@ const Index = () => {
                 <CardContent className="space-y-4">
                   <div className="flex flex-wrap gap-2">
                     {service.tags.map((tag, tagIndex) => (
-                      <span key={tagIndex} className="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full">
+                      <span key={tagIndex} className="bg-gray-700 text-gray-200 text-xs px-2 py-1 rounded-full">
                         {tag}
                       </span>
                     ))}
                   </div>
 
-                  <div className="flex items-center gap-2 text-blue-600 font-semibold hover:text-blue-700 transition-colors">
+                  <div className="flex items-center gap-2 text-white font-semibold hover:text-gray-300 transition-colors">
                     Learn More
                     <ChevronDown className="w-4 h-4" />
                   </div>
@@ -446,10 +464,10 @@ const Index = () => {
 
       {/* Service Overlay */}
       {expandedService && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 z-50 overflow-y-auto" onClick={() => setExpandedService(null)}>
+        <div className="fixed inset-0 bg-black bg-opacity-70 z-50 overflow-y-auto" onClick={() => setExpandedService(null)}>
           <div className="min-h-screen px-4 py-8">
-            <div className="bg-white rounded-lg max-w-4xl mx-auto p-8" onClick={(e) => e.stopPropagation()}>
-              <button onClick={() => setExpandedService(null)} className="float-right text-2xl hover:text-gray-600">✕</button>
+            <div className="bg-gray-800 text-white rounded-lg max-w-4xl mx-auto p-8" onClick={(e) => e.stopPropagation()}>
+              <button onClick={() => setExpandedService(null)} className="float-right text-2xl hover:text-gray-300">✕</button>
               <h2 className="text-3xl font-bold mb-6">{expandedService.title}</h2>
               {expandedService.expandedContent}
             </div>
@@ -458,11 +476,11 @@ const Index = () => {
       )}
 
       {/* How We Work Section */}
-      <section id="how-we-work" className="py-20 px-6 bg-slate-50">
+      <section id="how-we-work" className="py-20 px-6 bg-gray-800">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">How We Work</h2>
-            <p className="text-xl text-gray-600">Simple, transparent, results-driven</p>
+            <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">How We Work</h2>
+            <p className="text-xl text-gray-300">Simple, transparent, results-driven</p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
@@ -484,11 +502,11 @@ const Index = () => {
               }
             ].map((step, index) => (
               <div key={index} className="text-center">
-                <div className="w-20 h-20 bg-blue-600 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6">
+                <div className="w-20 h-20 bg-white text-gray-900 rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6">
                   {step.number}
                 </div>
-                <h3 className="text-xl font-bold mb-4">{step.title}</h3>
-                <p className="text-gray-600">{step.description}</p>
+                <h3 className="text-xl font-bold mb-4 text-white">{step.title}</h3>
+                <p className="text-gray-300">{step.description}</p>
               </div>
             ))}
           </div>
@@ -496,11 +514,11 @@ const Index = () => {
       </section>
 
       {/* Pricing Section */}
-      <section id="pricing" className="py-20 bg-white">
+      <section id="pricing" className="py-20 bg-gray-900">
         <div className="max-w-6xl mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center mb-12">Investment Options</h2>
+          <h2 className="text-4xl font-bold text-center mb-12 text-white">Investment Options</h2>
           <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-blue-600 text-white rounded-lg p-8">
+            <div className="bg-white text-gray-900 rounded-lg p-8">
               <h3 className="text-2xl font-bold mb-4">Strategy Session</h3>
               <p className="text-4xl font-bold">$125/hour</p>
               <ul className="mt-6 space-y-2">
@@ -509,14 +527,14 @@ const Index = () => {
                 <li>✓ Tool recommendations</li>
               </ul>
             </div>
-            <div className="border-2 border-gray-300 rounded-lg p-8">
+            <div className="border-2 border-gray-600 bg-gray-800 text-white rounded-lg p-8">
               <h3 className="text-2xl font-bold mb-4">Custom Projects</h3>
               <p className="text-4xl font-bold">Quoted</p>
               <p className="mt-6">Simple: $2,500-5,000</p>
               <p>Medium: $5,000-15,000</p>
               <p>Complex: $15,000+</p>
             </div>
-            <div className="bg-gray-100 rounded-lg p-8">
+            <div className="bg-gray-700 text-white rounded-lg p-8">
               <h3 className="text-2xl font-bold mb-4">Ongoing Support</h3>
               <p className="text-4xl font-bold">Monthly</p>
               <p className="mt-6">Basic: $500/month</p>
@@ -528,30 +546,30 @@ const Index = () => {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-20 px-6 bg-slate-50">
+      <section id="contact" className="py-20 px-6 bg-gray-800">
         <div className="max-w-2xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">Get Started Today</h2>
-            <p className="text-xl text-gray-600">Ready to transform your business with AI automation?</p>
+            <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">Get Started Today</h2>
+            <p className="text-xl text-gray-300">Ready to transform your business with AI automation?</p>
           </div>
 
-          <Card className="shadow-xl border-0">
+          <Card className="shadow-xl border-gray-600 bg-gray-900/50 backdrop-blur-sm">
             <CardContent className="p-8">
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-4">
                   <div>
-                    <Label htmlFor="name">Name</Label>
+                    <Label htmlFor="name" className="text-white">Name</Label>
                     <Input
                       id="name"
                       name="name"
                       value={formData.name}
                       onChange={handleInputChange}
                       required
-                      className="mt-1"
+                      className="mt-1 bg-gray-800 border-gray-600 text-white"
                     />
                   </div>
                   <div>
-                    <Label htmlFor="email">Email</Label>
+                    <Label htmlFor="email" className="text-white">Email</Label>
                     <Input
                       id="email"
                       name="email"
@@ -559,36 +577,36 @@ const Index = () => {
                       value={formData.email}
                       onChange={handleInputChange}
                       required
-                      className="mt-1"
+                      className="mt-1 bg-gray-800 border-gray-600 text-white"
                     />
                   </div>
                 </div>
                 
                 <div>
-                  <Label htmlFor="company">Company</Label>
+                  <Label htmlFor="company" className="text-white">Company</Label>
                   <Input
                     id="company"
                     name="company"
                     value={formData.company}
                     onChange={handleInputChange}
-                    className="mt-1"
+                    className="mt-1 bg-gray-800 border-gray-600 text-white"
                   />
                 </div>
                 
                 <div>
-                  <Label htmlFor="message">Tell us about your automation needs</Label>
+                  <Label htmlFor="message" className="text-white">Tell us about your automation needs</Label>
                   <Textarea
                     id="message"
                     name="message"
                     value={formData.message}
                     onChange={handleInputChange}
                     rows={4}
-                    className="mt-1"
+                    className="mt-1 bg-gray-800 border-gray-600 text-white"
                     placeholder="Describe your current challenges and automation goals..."
                   />
                 </div>
 
-                <Button type="submit" size="lg" className="w-full text-lg py-6">
+                <Button type="submit" size="lg" className="w-full text-lg py-6 bg-white text-gray-900 hover:bg-gray-100">
                   Schedule Free Consultation
                 </Button>
               </form>
@@ -598,13 +616,13 @@ const Index = () => {
       </section>
 
       {/* Footer */}
-      <footer className="bg-gray-900 text-white py-12 px-6">
+      <footer className="bg-gray-900 text-white py-12 px-6 border-t border-gray-700">
         <div className="max-w-4xl mx-auto text-center">
           <div className="flex justify-center gap-8 mb-8">
-            <a href="#services" className="hover:text-blue-400 transition-colors">Services</a>
-            <a href="#how-we-work" className="hover:text-blue-400 transition-colors">How We Work</a>
-            <a href="#pricing" className="hover:text-blue-400 transition-colors">Pricing</a>
-            <a href="#contact" className="hover:text-blue-400 transition-colors">Contact</a>
+            <a href="#services" className="hover:text-gray-300 transition-colors">Services</a>
+            <a href="#how-we-work" className="hover:text-gray-300 transition-colors">How We Work</a>
+            <a href="#pricing" className="hover:text-gray-300 transition-colors">Pricing</a>
+            <a href="#contact" className="hover:text-gray-300 transition-colors">Contact</a>
           </div>
           <p className="text-gray-400">© 2024 Automate AI Design. All rights reserved.</p>
         </div>
@@ -614,4 +632,3 @@ const Index = () => {
 };
 
 export default Index;
-
