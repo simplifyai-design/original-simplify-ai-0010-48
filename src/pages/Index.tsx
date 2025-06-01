@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -341,7 +342,7 @@ const Index = () => {
                 <p className="text-orange-400 font-semibold">Strategic Consulting & Implementation</p>
                 <h1 className="text-5xl lg:text-6xl font-bold text-white leading-tight">
                   Transform Your Business with{' '}
-                  <span className="bg-gradient-to-r from-orange-400 to-green-400 bg-clip-text text-transparent">
+                  <span className="bg-gradient-to-r from-orange-400 to-purple-400 bg-clip-text text-transparent">
                     AI-Powered Automation
                   </span>
                 </h1>
@@ -352,19 +353,19 @@ const Index = () => {
               
               <ul className="space-y-3 max-w-md mx-auto">
                 <li className="flex items-center gap-3 text-gray-300">
-                  <div className="w-5 h-5 bg-green-600 rounded-full flex items-center justify-center">
+                  <div className="w-5 h-5 bg-purple-600 rounded-full flex items-center justify-center">
                     <span className="text-white text-xs">✓</span>
                   </div>
                   Trusted by SMBs across industries
                 </li>
                 <li className="flex items-center gap-3 text-gray-300">
-                  <div className="w-5 h-5 bg-green-600 rounded-full flex items-center justify-center">
+                  <div className="w-5 h-5 bg-purple-600 rounded-full flex items-center justify-center">
                     <span className="text-white text-xs">✓</span>
                   </div>
                   100% Satisfaction Guaranteed
                 </li>
                 <li className="flex items-center gap-3 text-gray-300">
-                  <div className="w-5 h-5 bg-green-600 rounded-full flex items-center justify-center">
+                  <div className="w-5 h-5 bg-purple-600 rounded-full flex items-center justify-center">
                     <span className="text-white text-xs">✓</span>
                   </div>
                   Free Initial Consultation
@@ -375,7 +376,7 @@ const Index = () => {
                 <Button size="lg" asChild className="text-lg px-8 py-6 bg-orange-500 text-white hover:bg-orange-600">
                   <a href="#contact">Schedule Free Consultation</a>
                 </Button>
-                <Button variant="outline" size="lg" asChild className="text-lg px-8 py-6 border-green-600 text-green-400 hover:bg-green-600 hover:text-white">
+                <Button variant="outline" size="lg" asChild className="text-lg px-8 py-6 border-purple-600 text-purple-400 hover:bg-purple-600 hover:text-white">
                   <a href="#services">Learn More</a>
                 </Button>
               </div>
@@ -425,7 +426,7 @@ const Index = () => {
                 <CardContent className="space-y-4">
                   <div className="flex flex-wrap gap-2">
                     {service.tags.map((tag, tagIndex) => (
-                      <span key={tagIndex} className="bg-gray-700 text-gray-200 text-xs px-2 py-1 rounded-full group-hover:bg-green-600 transition-colors">
+                      <span key={tagIndex} className="bg-gray-700 text-gray-200 text-xs px-2 py-1 rounded-full group-hover:bg-purple-600 transition-colors">
                         {tag}
                       </span>
                     ))}
@@ -507,18 +508,18 @@ const Index = () => {
                 <li>✓ Tool recommendations</li>
               </ul>
             </div>
-            <div className="border-2 border-green-600 bg-gray-800 text-white rounded-lg p-8 relative">
+            <div className="border-2 border-purple-600 bg-gray-800 text-white rounded-lg p-8 relative">
               <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
-                <span className="bg-green-600 text-white px-4 py-1 rounded-full text-sm font-semibold">Most Popular</span>
+                <span className="bg-purple-600 text-white px-4 py-1 rounded-full text-sm font-semibold">Most Popular</span>
               </div>
-              <h3 className="text-2xl font-bold mb-4 text-green-400">Custom Projects</h3>
+              <h3 className="text-2xl font-bold mb-4 text-purple-400">Custom Projects</h3>
               <p className="text-4xl font-bold">Quoted</p>
               <p className="mt-6">Simple: $2,500-5,000</p>
               <p>Medium: $5,000-15,000</p>
               <p>Complex: $15,000+</p>
             </div>
-            <div className="bg-gray-700 text-white rounded-lg p-8 border-2 border-transparent hover:border-green-600 transition-colors">
-              <h3 className="text-2xl font-bold mb-4 text-green-400">Ongoing Support</h3>
+            <div className="bg-gray-700 text-white rounded-lg p-8 border-2 border-transparent hover:border-purple-600 transition-colors">
+              <h3 className="text-2xl font-bold mb-4 text-purple-400">Ongoing Support</h3>
               <p className="text-4xl font-bold">Monthly</p>
               <p className="mt-6">Basic: $500/month</p>
               <p>Active: $1,500/month</p>
