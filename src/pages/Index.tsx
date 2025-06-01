@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -304,9 +303,9 @@ const Index = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-800 to-gray-900">
+    <div className="min-h-screen bg-gradient-to-br from-gray-700 via-gray-800 to-gray-900">
       {/* Header */}
-      <header className="fixed top-0 w-full bg-gray-900/95 backdrop-blur-sm border-b border-gray-700 z-50">
+      <header className="fixed top-0 w-full bg-gray-800/95 backdrop-blur-sm border-b border-gray-600 z-50">
         <nav className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
           <a href="#" className="text-2xl font-bold text-orange-500">
             Automate AI Design
@@ -326,14 +325,14 @@ const Index = () => {
       <section className="pt-24 pb-12 px-6 relative min-h-screen">
         {/* Background Image */}
         <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-70"
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-80"
           style={{
             backgroundImage: `url('/lovable-uploads/11f61c25-5de2-4d06-8665-d4999a6519f1.png')`
           }}
         />
         
         {/* Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-br from-gray-800/90 to-gray-900/90" />
+        <div className="absolute inset-0 bg-gradient-to-br from-gray-700/90 via-gray-800/90 to-gray-900/90" />
         
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="grid lg:grid-cols-1 gap-12 items-center min-h-[80vh]">
@@ -342,7 +341,7 @@ const Index = () => {
                 <p className="text-orange-400 font-semibold">Strategic Consulting & Implementation</p>
                 <h1 className="text-5xl lg:text-6xl font-bold text-white leading-tight">
                   Transform Your Business with{' '}
-                  <span className="bg-gradient-to-r from-orange-400 to-purple-400 bg-clip-text text-transparent">
+                  <span className="bg-gradient-to-r from-orange-400 to-purple-800 bg-clip-text text-transparent">
                     AI-Powered Automation
                   </span>
                 </h1>
@@ -353,19 +352,19 @@ const Index = () => {
               
               <ul className="space-y-3 max-w-md mx-auto">
                 <li className="flex items-center gap-3 text-gray-300">
-                  <div className="w-5 h-5 bg-purple-600 rounded-full flex items-center justify-center">
+                  <div className="w-5 h-5 bg-purple-800 rounded-full flex items-center justify-center">
                     <span className="text-white text-xs">✓</span>
                   </div>
                   Trusted by SMBs across industries
                 </li>
                 <li className="flex items-center gap-3 text-gray-300">
-                  <div className="w-5 h-5 bg-purple-600 rounded-full flex items-center justify-center">
+                  <div className="w-5 h-5 bg-purple-800 rounded-full flex items-center justify-center">
                     <span className="text-white text-xs">✓</span>
                   </div>
                   100% Satisfaction Guaranteed
                 </li>
                 <li className="flex items-center gap-3 text-gray-300">
-                  <div className="w-5 h-5 bg-purple-600 rounded-full flex items-center justify-center">
+                  <div className="w-5 h-5 bg-purple-800 rounded-full flex items-center justify-center">
                     <span className="text-white text-xs">✓</span>
                   </div>
                   Free Initial Consultation
@@ -376,7 +375,7 @@ const Index = () => {
                 <Button size="lg" asChild className="text-lg px-8 py-6 bg-orange-500 text-white hover:bg-orange-600">
                   <a href="#contact">Schedule Free Consultation</a>
                 </Button>
-                <Button variant="outline" size="lg" asChild className="text-lg px-8 py-6 border-purple-600 text-purple-400 hover:bg-purple-600 hover:text-white">
+                <Button variant="outline" size="lg" asChild className="text-lg px-8 py-6 border-purple-800 text-purple-300 hover:bg-purple-800 hover:text-white">
                   <a href="#services">Learn More</a>
                 </Button>
               </div>
@@ -386,7 +385,7 @@ const Index = () => {
       </section>
 
       {/* Services Section */}
-      <section id="services" className="py-20 px-6 bg-gray-900">
+      <section id="services" className="py-20 px-6 bg-gray-800">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
@@ -399,7 +398,7 @@ const Index = () => {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
             {services.map((service, index) => (
-              <Card key={index} className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-gray-700 shadow-lg cursor-pointer bg-gray-800/50 backdrop-blur-sm hover:border-orange-500/50"
+              <Card key={index} className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-gray-600 shadow-lg cursor-pointer bg-gray-700/50 backdrop-blur-sm hover:border-orange-500/50"
                     onClick={() => setExpandedService(service)}>
                 <div className={`h-48 bg-gradient-to-br ${service.gradient} relative overflow-hidden rounded-t-lg`}>
                   <img 
@@ -426,7 +425,7 @@ const Index = () => {
                 <CardContent className="space-y-4">
                   <div className="flex flex-wrap gap-2">
                     {service.tags.map((tag, tagIndex) => (
-                      <span key={tagIndex} className="bg-gray-700 text-gray-200 text-xs px-2 py-1 rounded-full group-hover:bg-purple-600 transition-colors">
+                      <span key={tagIndex} className="bg-gray-600 text-gray-200 text-xs px-2 py-1 rounded-full group-hover:bg-purple-800 transition-colors">
                         {tag}
                       </span>
                     ))}
@@ -447,7 +446,7 @@ const Index = () => {
       {expandedService && (
         <div className="fixed inset-0 bg-black bg-opacity-70 z-50 overflow-y-auto" onClick={() => setExpandedService(null)}>
           <div className="min-h-screen px-4 py-8">
-            <div className="bg-gray-800 text-white rounded-lg max-w-4xl mx-auto p-8 border border-orange-500/30" onClick={(e) => e.stopPropagation()}>
+            <div className="bg-gray-700 text-white rounded-lg max-w-4xl mx-auto p-8 border border-orange-500/30" onClick={(e) => e.stopPropagation()}>
               <button onClick={() => setExpandedService(null)} className="float-right text-2xl hover:text-orange-400 transition-colors">✕</button>
               <h2 className="text-3xl font-bold mb-6 text-orange-400">{expandedService.title}</h2>
               {expandedService.expandedContent}
@@ -457,7 +456,7 @@ const Index = () => {
       )}
 
       {/* How We Work Section */}
-      <section id="how-we-work" className="py-20 px-6 bg-gray-800">
+      <section id="how-we-work" className="py-20 px-6 bg-gray-700">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">How We Work</h2>
@@ -495,7 +494,7 @@ const Index = () => {
       </section>
 
       {/* Pricing Section */}
-      <section id="pricing" className="py-20 bg-gray-900">
+      <section id="pricing" className="py-20 bg-gray-800">
         <div className="max-w-6xl mx-auto px-4">
           <h2 className="text-4xl font-bold text-center mb-12 text-white">Investment Options</h2>
           <div className="grid md:grid-cols-3 gap-8">
@@ -508,18 +507,18 @@ const Index = () => {
                 <li>✓ Tool recommendations</li>
               </ul>
             </div>
-            <div className="border-2 border-purple-600 bg-gray-800 text-white rounded-lg p-8 relative">
+            <div className="border-2 border-purple-800 bg-gray-700 text-white rounded-lg p-8 relative">
               <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
-                <span className="bg-purple-600 text-white px-4 py-1 rounded-full text-sm font-semibold">Most Popular</span>
+                <span className="bg-purple-800 text-white px-4 py-1 rounded-full text-sm font-semibold">Most Popular</span>
               </div>
-              <h3 className="text-2xl font-bold mb-4 text-purple-400">Custom Projects</h3>
+              <h3 className="text-2xl font-bold mb-4 text-purple-300">Custom Projects</h3>
               <p className="text-4xl font-bold">Quoted</p>
               <p className="mt-6">Simple: $2,500-5,000</p>
               <p>Medium: $5,000-15,000</p>
               <p>Complex: $15,000+</p>
             </div>
-            <div className="bg-gray-700 text-white rounded-lg p-8 border-2 border-transparent hover:border-purple-600 transition-colors">
-              <h3 className="text-2xl font-bold mb-4 text-purple-400">Ongoing Support</h3>
+            <div className="bg-gray-600 text-white rounded-lg p-8 border-2 border-transparent hover:border-purple-800 transition-colors">
+              <h3 className="text-2xl font-bold mb-4 text-purple-300">Ongoing Support</h3>
               <p className="text-4xl font-bold">Monthly</p>
               <p className="mt-6">Basic: $500/month</p>
               <p>Active: $1,500/month</p>
@@ -530,14 +529,14 @@ const Index = () => {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-20 px-6 bg-gray-800">
+      <section id="contact" className="py-20 px-6 bg-gray-700">
         <div className="max-w-2xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">Get Started Today</h2>
             <p className="text-xl text-gray-300">Ready to transform your business with AI automation?</p>
           </div>
 
-          <Card className="shadow-xl border-gray-600 bg-gray-900/50 backdrop-blur-sm border-orange-500/30">
+          <Card className="shadow-xl border-gray-500 bg-gray-800/50 backdrop-blur-sm border-orange-500/30">
             <CardContent className="p-8">
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-4">
@@ -549,7 +548,7 @@ const Index = () => {
                       value={formData.name}
                       onChange={handleInputChange}
                       required
-                      className="mt-1 bg-gray-800 border-gray-600 text-white"
+                      className="mt-1 bg-gray-700 border-gray-500 text-white"
                     />
                   </div>
                   <div>
@@ -561,7 +560,7 @@ const Index = () => {
                       value={formData.email}
                       onChange={handleInputChange}
                       required
-                      className="mt-1 bg-gray-800 border-gray-600 text-white"
+                      className="mt-1 bg-gray-700 border-gray-500 text-white"
                     />
                   </div>
                 </div>
@@ -573,7 +572,7 @@ const Index = () => {
                     name="company"
                     value={formData.company}
                     onChange={handleInputChange}
-                    className="mt-1 bg-gray-800 border-gray-600 text-white"
+                    className="mt-1 bg-gray-700 border-gray-500 text-white"
                   />
                 </div>
                 
@@ -585,7 +584,7 @@ const Index = () => {
                     value={formData.message}
                     onChange={handleInputChange}
                     rows={4}
-                    className="mt-1 bg-gray-800 border-gray-600 text-white"
+                    className="mt-1 bg-gray-700 border-gray-500 text-white"
                     placeholder="Describe your current challenges and automation goals..."
                   />
                 </div>
@@ -600,7 +599,7 @@ const Index = () => {
       </section>
 
       {/* Footer */}
-      <footer className="bg-gray-900 text-white py-12 px-6 border-t border-gray-700">
+      <footer className="bg-gray-800 text-white py-12 px-6 border-t border-gray-600">
         <div className="max-w-4xl mx-auto text-center">
           <div className="flex justify-center gap-8 mb-8">
             <a href="#services" className="hover:text-orange-400 transition-colors">Services</a>
