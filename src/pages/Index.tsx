@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -41,7 +40,7 @@ const Index = () => {
       id: 'ai-coaching',
       title: 'AI Coaching & Advising',
       description: 'One-on-one guidance to help business owners understand and leverage AI. Learn which processes to automate, discover the best AI tools for your needs, and get step-by-step implementation guidance.',
-      gradient: 'from-blue-500 to-indigo-600',
+      gradient: 'from-orange-500 to-purple-900',
       tags: ['1-on-1 Sessions', '$125/hour', 'Implementation Guidance'],
       imageUrl: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
       fallbackText: "AI Coaching",
@@ -55,10 +54,10 @@ const Index = () => {
             <li>• Step-by-step implementation guidance</li>
             <li>• Best practices and common pitfalls to avoid</li>
           </ul>
-          <div className="bg-gray-50 p-6 rounded-lg">
+          <div className="bg-[#404040] p-6 rounded-lg">
             <h3 className="text-xl font-bold mb-3">Success Story</h3>
             <p className="mb-3">A restaurant owner learned to use ChatGPT for menu descriptions, social media posts, and email campaigns. Now creates a week's worth of content in 30 minutes.</p>
-            <div className="bg-blue-50 p-4 rounded">
+            <div className="bg-orange-500/20 p-4 rounded">
               <p className="font-bold">Results:</p>
               <p>• 10 hours saved weekly on marketing</p>
               <p>• 3x more social media engagement</p>
@@ -72,7 +71,7 @@ const Index = () => {
       id: 'workflow-automation',
       title: 'Workflow & Process Automation',
       description: 'Complete automation solutions from audit to implementation. We review your processes, design automated workflows, build the system, and train your team.',
-      gradient: 'from-emerald-500 to-teal-600',
+      gradient: 'from-purple-900 to-orange-500',
       tags: ['Process Audit', 'Custom Build', 'User Training'],
       imageUrl: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
       fallbackText: "Workflow Automation",
@@ -85,10 +84,10 @@ const Index = () => {
             <li><strong>3. Implementation:</strong> Build and deploy the automation</li>
             <li><strong>4. Training:</strong> Ensure your team can use and maintain the system</li>
           </ol>
-          <div className="bg-gray-50 p-6 rounded-lg">
+          <div className="bg-[#404040] p-6 rounded-lg">
             <h3 className="text-xl font-bold mb-3">Manufacturing Client Success</h3>
             <p className="mb-3">Automated their entire order-to-delivery process, connecting sales, inventory, and shipping systems.</p>
-            <div className="bg-green-50 p-4 rounded">
+            <div className="bg-purple-900/20 p-4 rounded">
               <p className="font-bold">Results:</p>
               <p>• Order processing: 45 min → 5 min</p>
               <p>• Zero inventory errors</p>
@@ -102,7 +101,7 @@ const Index = () => {
       id: 'custom-ai-agents',
       title: 'Custom AI Agents',
       description: 'Build intelligent AI assistants tailored to your business. From customer service bots to internal knowledge assistants.',
-      gradient: 'from-purple-500 to-pink-600',
+      gradient: 'from-orange-500 to-purple-900',
       tags: ['Custom Development', 'AI Training', 'Integration'],
       imageUrl: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
       fallbackText: "AI Agents",
@@ -110,21 +109,21 @@ const Index = () => {
         <div>
           <h3 className="text-xl font-bold mb-3">Featured AI Agents:</h3>
           <div className="space-y-4 mb-6">
-            <div className="bg-purple-50 p-4 rounded-lg">
-              <h4 className="font-bold text-purple-800">ConfirmAI - Appointment Assistant</h4>
+            <div className="bg-orange-500/20 p-4 rounded-lg">
+              <h4 className="font-bold text-orange-400">ConfirmAI - Appointment Assistant</h4>
               <p>AI voice agent that calls patients to confirm appointments</p>
               <p className="text-sm mt-2">842 appointments confirmed this week | 94% success rate</p>
             </div>
-            <div className="bg-purple-50 p-4 rounded-lg">
-              <h4 className="font-bold text-purple-800">Customer Service Bot</h4>
+            <div className="bg-orange-500/20 p-4 rounded-lg">
+              <h4 className="font-bold text-orange-400">Customer Service Bot</h4>
               <p>24/7 AI assistant handling inquiries, orders, and support tickets</p>
             </div>
-            <div className="bg-purple-50 p-4 rounded-lg">
-              <h4 className="font-bold text-purple-800">Internal Knowledge Assistant</h4>
+            <div className="bg-orange-500/20 p-4 rounded-lg">
+              <h4 className="font-bold text-orange-400">Internal Knowledge Assistant</h4>
               <p>AI trained on your company data to answer employee questions instantly</p>
             </div>
           </div>
-          <p className="text-gray-600">Each agent is custom-built and trained specifically for your business needs.</p>
+          <p className="text-gray-300">Each agent is custom-built and trained specifically for your business needs.</p>
         </div>
       )
     },
@@ -132,7 +131,7 @@ const Index = () => {
       id: 'consulting-services',
       title: 'Full Consulting Services',
       description: 'Comprehensive AI and automation consulting covering strategy, implementation, optimization, and ongoing support.',
-      gradient: 'from-orange-500 to-red-600',
+      gradient: 'from-purple-900 to-orange-500',
       tags: ['End-to-End', 'Strategic Planning', 'Full Implementation'],
       imageUrl: "https://images.unsplash.com/photo-1461749280684-dbebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
       fallbackText: "Consulting",
@@ -149,10 +148,10 @@ const Index = () => {
             <li>✓ Team training</li>
             <li>✓ Ongoing optimization</li>
           </ul>
-          <div className="bg-gray-50 p-6 rounded-lg">
+          <div className="bg-[#404040] p-6 rounded-lg">
             <h3 className="text-xl font-bold mb-3">Healthcare Provider Transformation</h3>
             <p className="mb-3">Complete digital transformation including patient portal, automated scheduling, AI triage, and staff workflows.</p>
-            <div className="bg-orange-50 p-4 rounded">
+            <div className="bg-purple-900/20 p-4 rounded">
               <p className="font-bold">Results:</p>
               <p>• 60% reduction in administrative work</p>
               <p>• Patient satisfaction up 45%</p>
@@ -166,7 +165,7 @@ const Index = () => {
       id: 'training-videos',
       title: 'Training & Education',
       description: 'Professional AI and automation training videos custom-created for your team. From Disney Pixar style to corporate professional.',
-      gradient: 'from-green-500 to-emerald-600',
+      gradient: 'from-orange-500 to-purple-900',
       tags: ['Custom Videos', 'Multiple Styles', 'Team Training'],
       imageUrl: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
       fallbackText: "Training",
@@ -175,20 +174,20 @@ const Index = () => {
           <h3 className="text-xl font-bold mb-4">Custom Training Videos</h3>
           <p className="mb-6">We create engaging training content in any style to match your company culture.</p>
           <div className="grid gap-4">
-            <a href="https://youtu.be/9MPf-pO5mhI" target="_blank" className="bg-gray-50 p-4 rounded-lg hover:bg-gray-100 transition">
-              <h4 className="font-bold text-green-800 mb-2">The Power of Feedback</h4>
-              <p className="text-gray-600">Disney Pixar style - Perfect for engaging team training</p>
-              <p className="text-blue-600 mt-2">▶ Watch Video</p>
+            <a href="https://youtu.be/9MPf-pO5mhI" target="_blank" className="bg-[#404040] p-4 rounded-lg hover:bg-[#3A3A3A] transition">
+              <h4 className="font-bold text-orange-400 mb-2">The Power of Feedback</h4>
+              <p className="text-gray-300">Disney Pixar style - Perfect for engaging team training</p>
+              <p className="text-orange-400 mt-2">▶ Watch Video</p>
             </a>
-            <a href="https://youtu.be/3nd54SrD6-0" target="_blank" className="bg-gray-50 p-4 rounded-lg hover:bg-gray-100 transition">
-              <h4 className="font-bold text-green-800 mb-2">Our Home, Planet Earth</h4>
-              <p className="text-gray-600">Modern style - Environmental awareness training</p>
-              <p className="text-blue-600 mt-2">▶ Watch Video</p>
+            <a href="https://youtu.be/3nd54SrD6-0" target="_blank" className="bg-[#404040] p-4 rounded-lg hover:bg-[#3A3A3A] transition">
+              <h4 className="font-bold text-orange-400 mb-2">Our Home, Planet Earth</h4>
+              <p className="text-gray-300">Modern style - Environmental awareness training</p>
+              <p className="text-orange-400 mt-2">▶ Watch Video</p>
             </a>
-            <a href="https://youtu.be/ZusJ_Sy3kbY" target="_blank" className="bg-gray-50 p-4 rounded-lg hover:bg-gray-100 transition">
-              <h4 className="font-bold text-green-800 mb-2">Spread Kindness</h4>
-              <p className="text-gray-600">Character animation - Culture and values training</p>
-              <p className="text-blue-600 mt-2">▶ Watch Video</p>
+            <a href="https://youtu.be/ZusJ_Sy3kbY" target="_blank" className="bg-[#404040] p-4 rounded-lg hover:bg-[#3A3A3A] transition">
+              <h4 className="font-bold text-orange-400 mb-2">Spread Kindness</h4>
+              <p className="text-gray-300">Character animation - Culture and values training</p>
+              <p className="text-orange-400 mt-2">▶ Watch Video</p>
             </a>
           </div>
         </div>
@@ -198,7 +197,7 @@ const Index = () => {
       id: 'website-design',
       title: 'Website Design & Development',
       description: 'Professional websites that convert visitors into customers. Integrated with your automation systems for seamless operations.',
-      gradient: 'from-indigo-500 to-purple-600',
+      gradient: 'from-purple-900 to-orange-500',
       tags: ['Custom Design', 'Conversion Focused', 'Automation Ready'],
       imageUrl: "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
       fallbackText: "Website Design",
@@ -206,13 +205,13 @@ const Index = () => {
         <div>
           <h3 className="text-xl font-bold mb-4">Professional Web Development</h3>
           <div className="space-y-6">
-            <a href="https://jcwindowcovering.com" target="_blank" className="block bg-gray-900 text-white p-6 rounded-lg hover:bg-gray-800 transition">
+            <a href="https://jcwindowcovering.com" target="_blank" className="block bg-[#262626] text-white p-6 rounded-lg hover:bg-[#3A3A3A] transition">
               <h4 className="text-2xl font-bold mb-2">J&C Window Covering</h4>
               <p className="text-lg mb-2">Premium Blinds Installation - $45/window</p>
               <p className="text-gray-300">Features: Automated scheduling, instant quotes, payment processing</p>
-              <p className="text-blue-400 mt-3">Visit Live Site →</p>
+              <p className="text-orange-400 mt-3">Visit Live Site →</p>
             </a>
-            <div className="bg-gray-50 p-6 rounded-lg">
+            <div className="bg-[#404040] p-6 rounded-lg">
               <h4 className="font-bold mb-2">What We Build:</h4>
               <ul className="space-y-2">
                 <li>• Service business websites</li>
@@ -230,7 +229,7 @@ const Index = () => {
       id: 'app-design',
       title: 'App Design & Development',
       description: 'Custom mobile and web applications that streamline your operations and enhance customer experience.',
-      gradient: 'from-cyan-500 to-blue-600',
+      gradient: 'from-orange-500 to-purple-900',
       tags: ['Mobile Apps', 'Web Apps', 'Custom Solutions'],
       imageUrl: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
       fallbackText: "App Development",
@@ -238,13 +237,13 @@ const Index = () => {
         <div>
           <h3 className="text-xl font-bold mb-4">Custom App Development</h3>
           <div className="space-y-4">
-            <div className="bg-blue-50 p-4 rounded-lg">
-              <h4 className="font-bold text-blue-800 mb-2">MeasurePro</h4>
+            <div className="bg-orange-500/20 p-4 rounded-lg">
+              <h4 className="font-bold text-orange-400 mb-2">MeasurePro</h4>
               <p>Window measurement app for contractors</p>
               <p className="text-sm mt-2">• Voice recording • PDF estimates • 75% faster quotes</p>
             </div>
-            <div className="bg-blue-50 p-4 rounded-lg">
-              <h4 className="font-bold text-blue-800 mb-2">CloserCoach</h4>
+            <div className="bg-orange-500/20 p-4 rounded-lg">
+              <h4 className="font-bold text-orange-400 mb-2">CloserCoach</h4>
               <p>AI training app for sales teams</p>
               <p className="text-sm mt-2">• Voice practice • Real scenarios • 35% better close rates</p>
             </div>
@@ -263,7 +262,7 @@ const Index = () => {
       id: 'ongoing-support',
       title: 'Ongoing Support & Optimization',
       description: 'Keep your systems running perfectly with continuous monitoring, updates, and optimization.',
-      gradient: 'from-gray-600 to-gray-800',
+      gradient: 'from-purple-900 to-orange-500',
       tags: ['Monthly Plans', 'Continuous Updates', '24/7 Monitoring'],
       imageUrl: "https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
       fallbackText: "Support",
@@ -271,7 +270,7 @@ const Index = () => {
         <div>
           <h3 className="text-xl font-bold mb-4">Support Plans</h3>
           <div className="space-y-4">
-            <div className="bg-gray-50 p-4 rounded-lg">
+            <div className="bg-[#404040] p-4 rounded-lg">
               <h4 className="font-bold mb-2">Basic Support - $500/month</h4>
               <ul className="text-sm space-y-1">
                 <li>• Monthly system check</li>
@@ -279,7 +278,7 @@ const Index = () => {
                 <li>• Email support</li>
               </ul>
             </div>
-            <div className="bg-gray-50 p-4 rounded-lg">
+            <div className="bg-[#404040] p-4 rounded-lg">
               <h4 className="font-bold mb-2">Active Support - $1,500/month</h4>
               <ul className="text-sm space-y-1">
                 <li>• Weekly optimization</li>
@@ -288,7 +287,7 @@ const Index = () => {
                 <li>• Minor updates included</li>
               </ul>
             </div>
-            <div className="bg-gray-50 p-4 rounded-lg">
+            <div className="bg-[#404040] p-4 rounded-lg">
               <h4 className="font-bold mb-2">Full Service - $3,000+/month</h4>
               <ul className="text-sm space-y-1">
                 <li>• Daily monitoring</li>
@@ -306,7 +305,7 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-[#262626] via-[#404040] to-[#3A3A3A]">
       {/* Header */}
-      <header className="fixed top-0 w-full bg-gray-800/95 backdrop-blur-sm border-b border-gray-600 z-50">
+      <header className="fixed top-0 w-full bg-[#262626]/95 backdrop-blur-sm border-b border-[#404040] z-50">
         <nav className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
           <a href="#" className="text-2xl font-bold text-orange-500">
             Automate AI Design
@@ -393,7 +392,7 @@ const Index = () => {
       </section>
 
       {/* Services Section */}
-      <section id="services" className="py-20 px-6 bg-gray-800">
+      <section id="services" className="py-20 px-6 bg-[#3A3A3A]">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
@@ -406,7 +405,7 @@ const Index = () => {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
             {services.map((service, index) => (
-              <Card key={index} className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-gray-600 shadow-lg cursor-pointer bg-gray-700/50 backdrop-blur-sm hover:border-orange-500/50"
+              <Card key={index} className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-[#404040] shadow-lg cursor-pointer bg-[#262626]/80 backdrop-blur-sm hover:border-orange-500/50"
                     onClick={() => setExpandedService(service)}>
                 <div className={`h-48 bg-gradient-to-br ${service.gradient} relative overflow-hidden rounded-t-lg`}>
                   <img 
@@ -433,7 +432,7 @@ const Index = () => {
                 <CardContent className="space-y-4">
                   <div className="flex flex-wrap gap-2">
                     {service.tags.map((tag, tagIndex) => (
-                      <span key={tagIndex} className="bg-gray-600 text-gray-200 text-xs px-2 py-1 rounded-full group-hover:bg-purple-900 transition-colors">
+                      <span key={tagIndex} className="bg-[#404040] text-gray-200 text-xs px-2 py-1 rounded-full group-hover:bg-purple-900 transition-colors">
                         {tag}
                       </span>
                     ))}
@@ -454,7 +453,7 @@ const Index = () => {
       {expandedService && (
         <div className="fixed inset-0 bg-black bg-opacity-70 z-50 overflow-y-auto" onClick={() => setExpandedService(null)}>
           <div className="min-h-screen px-4 py-8">
-            <div className="bg-gray-700 text-white rounded-lg max-w-4xl mx-auto p-8 border border-orange-500/30" onClick={(e) => e.stopPropagation()}>
+            <div className="bg-[#262626] text-white rounded-lg max-w-4xl mx-auto p-8 border border-orange-500/30" onClick={(e) => e.stopPropagation()}>
               <button onClick={() => setExpandedService(null)} className="float-right text-2xl hover:text-orange-400 transition-colors">✕</button>
               <h2 className="text-3xl font-bold mb-6 text-orange-400">{expandedService.title}</h2>
               {expandedService.expandedContent}
@@ -464,7 +463,7 @@ const Index = () => {
       )}
 
       {/* How We Work Section */}
-      <section id="how-we-work" className="py-20 px-6 bg-gray-700">
+      <section id="how-we-work" className="py-20 px-6 bg-[#404040]">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">How We Work</h2>
@@ -502,7 +501,7 @@ const Index = () => {
       </section>
 
       {/* Pricing Section */}
-      <section id="pricing" className="py-20 bg-gray-800">
+      <section id="pricing" className="py-20 bg-[#3A3A3A]">
         <div className="max-w-6xl mx-auto px-4">
           <h2 className="text-4xl font-bold text-center mb-12 text-white">Investment Options</h2>
           <div className="grid md:grid-cols-3 gap-8">
@@ -515,7 +514,7 @@ const Index = () => {
                 <li>✓ Tool recommendations</li>
               </ul>
             </div>
-            <div className="border-2 border-purple-900 bg-gray-700 text-white rounded-lg p-8 relative">
+            <div className="border-2 border-purple-900 bg-[#262626] text-white rounded-lg p-8 relative">
               <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
                 <span className="bg-purple-900 text-white px-4 py-1 rounded-full text-sm font-semibold">Most Popular</span>
               </div>
@@ -525,7 +524,7 @@ const Index = () => {
               <p>Medium: $5,000-15,000</p>
               <p>Complex: $15,000+</p>
             </div>
-            <div className="bg-gray-600 text-white rounded-lg p-8 border-2 border-transparent hover:border-purple-900 transition-colors">
+            <div className="bg-[#404040] text-white rounded-lg p-8 border-2 border-transparent hover:border-purple-900 transition-colors">
               <h3 className="text-2xl font-bold mb-4 text-purple-300">Ongoing Support</h3>
               <p className="text-4xl font-bold">Monthly</p>
               <p className="mt-6">Basic: $500/month</p>
@@ -537,14 +536,14 @@ const Index = () => {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-20 px-6 bg-gray-700">
+      <section id="contact" className="py-20 px-6 bg-[#404040]">
         <div className="max-w-2xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">Get Started Today</h2>
             <p className="text-xl text-gray-300">Ready to transform your business with AI automation?</p>
           </div>
 
-          <Card className="shadow-xl border-gray-500 bg-gray-800/50 backdrop-blur-sm border-orange-500/30">
+          <Card className="shadow-xl border-[#262626] bg-[#3A3A3A]/50 backdrop-blur-sm border-orange-500/30">
             <CardContent className="p-8">
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-4">
@@ -556,7 +555,7 @@ const Index = () => {
                       value={formData.name}
                       onChange={handleInputChange}
                       required
-                      className="mt-1 bg-gray-700 border-gray-500 text-white"
+                      className="mt-1 bg-[#262626] border-[#404040] text-white"
                     />
                   </div>
                   <div>
@@ -568,7 +567,7 @@ const Index = () => {
                       value={formData.email}
                       onChange={handleInputChange}
                       required
-                      className="mt-1 bg-gray-700 border-gray-500 text-white"
+                      className="mt-1 bg-[#262626] border-[#404040] text-white"
                     />
                   </div>
                 </div>
@@ -580,7 +579,7 @@ const Index = () => {
                     name="company"
                     value={formData.company}
                     onChange={handleInputChange}
-                    className="mt-1 bg-gray-700 border-gray-500 text-white"
+                    className="mt-1 bg-[#262626] border-[#404040] text-white"
                   />
                 </div>
                 
@@ -592,7 +591,7 @@ const Index = () => {
                     value={formData.message}
                     onChange={handleInputChange}
                     rows={4}
-                    className="mt-1 bg-gray-700 border-gray-500 text-white"
+                    className="mt-1 bg-[#262626] border-[#404040] text-white"
                     placeholder="Describe your current challenges and automation goals..."
                   />
                 </div>
@@ -607,7 +606,7 @@ const Index = () => {
       </section>
 
       {/* Footer */}
-      <footer className="bg-gray-800 text-white py-12 px-6 border-t border-gray-600">
+      <footer className="bg-[#262626] text-white py-12 px-6 border-t border-[#404040]">
         <div className="max-w-4xl mx-auto text-center">
           <div className="flex justify-center gap-8 mb-8">
             <a href="#services" className="hover:text-orange-400 transition-colors">Services</a>
