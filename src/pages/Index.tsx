@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -338,7 +337,7 @@ const Index = () => {
         
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="grid lg:grid-cols-1 gap-12 items-center min-h-[80vh]">
-            <div className="space-y-8 text-center max-w-4xl mx-auto ml-24 lg:ml-32">
+            <div className="space-y-8 text-center max-w-4xl mx-auto -ml-24 lg:-ml-32">
               <div className="space-y-6">
                 <p className="text-orange-400 font-semibold">Strategic Consulting & Implementation</p>
                 <h1 className="text-5xl lg:text-6xl font-bold text-white leading-tight">
