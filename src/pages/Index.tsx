@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -303,7 +304,7 @@ const Index = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-700 via-gray-800 to-gray-900">
+    <div className="min-h-screen bg-gradient-to-br from-[#262626] via-[#404040] to-[#3A3A3A]">
       {/* Header */}
       <header className="fixed top-0 w-full bg-gray-800/95 backdrop-blur-sm border-b border-gray-600 z-50">
         <nav className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
@@ -323,25 +324,14 @@ const Index = () => {
 
       {/* Hero Section */}
       <section className="pt-24 pb-12 px-6 relative min-h-screen">
-        {/* Background Image */}
-        <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-80"
-          style={{
-            backgroundImage: `url('/lovable-uploads/11f61c25-5de2-4d06-8665-d4999a6519f1.png')`
-          }}
-        />
-        
-        {/* Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-br from-gray-700/90 via-gray-800/90 to-gray-900/90" />
-        
         <div className="max-w-7xl mx-auto relative z-10">
-          <div className="grid lg:grid-cols-1 gap-12 items-center min-h-[80vh]">
-            <div className="space-y-8 text-center max-w-4xl mx-auto">
+          <div className="grid lg:grid-cols-2 gap-12 items-center min-h-[80vh]">
+            <div className="space-y-8">
               <div className="space-y-6">
                 <p className="text-orange-400 font-semibold">Strategic Consulting & Implementation</p>
                 <h1 className="text-5xl lg:text-6xl font-bold text-white leading-tight">
                   Transform Your Business with{' '}
-                  <span className="bg-gradient-to-r from-orange-400 to-purple-800 bg-clip-text text-transparent">
+                  <span className="bg-gradient-to-r from-orange-400 to-purple-900 bg-clip-text text-transparent">
                     AI-Powered Automation
                   </span>
                 </h1>
@@ -350,35 +340,53 @@ const Index = () => {
                 </p>
               </div>
               
-              <ul className="space-y-3 max-w-md mx-auto">
+              <ul className="space-y-3">
                 <li className="flex items-center gap-3 text-gray-300">
-                  <div className="w-5 h-5 bg-purple-800 rounded-full flex items-center justify-center">
+                  <div className="w-5 h-5 bg-purple-900 rounded-full flex items-center justify-center">
                     <span className="text-white text-xs">✓</span>
                   </div>
                   Trusted by SMBs across industries
                 </li>
                 <li className="flex items-center gap-3 text-gray-300">
-                  <div className="w-5 h-5 bg-purple-800 rounded-full flex items-center justify-center">
+                  <div className="w-5 h-5 bg-purple-900 rounded-full flex items-center justify-center">
                     <span className="text-white text-xs">✓</span>
                   </div>
                   100% Satisfaction Guaranteed
                 </li>
                 <li className="flex items-center gap-3 text-gray-300">
-                  <div className="w-5 h-5 bg-purple-800 rounded-full flex items-center justify-center">
+                  <div className="w-5 h-5 bg-purple-900 rounded-full flex items-center justify-center">
                     <span className="text-white text-xs">✓</span>
                   </div>
                   Free Initial Consultation
                 </li>
               </ul>
 
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <div className="flex flex-col sm:flex-row gap-4">
                 <Button size="lg" asChild className="text-lg px-8 py-6 bg-orange-500 text-white hover:bg-orange-600">
                   <a href="#contact">Schedule Free Consultation</a>
                 </Button>
-                <Button variant="outline" size="lg" asChild className="text-lg px-8 py-6 border-purple-800 text-purple-300 hover:bg-purple-800 hover:text-white">
+                <Button 
+                  variant="outline" 
+                  size="lg" 
+                  asChild 
+                  className="text-lg px-8 py-6 bg-purple-900 border-purple-900 text-white hover:bg-white hover:text-purple-900 hover:border-white transition-all"
+                >
                   <a href="#services">Learn More</a>
                 </Button>
               </div>
+            </div>
+
+            {/* Right side card with uploaded image */}
+            <div className="flex justify-center lg:justify-end">
+              <Card className="w-80 h-80 border-2 border-orange-500/30 bg-gray-800/50 backdrop-blur-sm shadow-2xl">
+                <CardContent className="p-0 h-full">
+                  <img 
+                    src="/lovable-uploads/bf995692-6730-4681-99e9-5f892949b37c.png"
+                    alt="Automate AI Design"
+                    className="w-full h-full object-cover rounded-lg"
+                  />
+                </CardContent>
+              </Card>
             </div>
           </div>
         </div>
@@ -425,7 +433,7 @@ const Index = () => {
                 <CardContent className="space-y-4">
                   <div className="flex flex-wrap gap-2">
                     {service.tags.map((tag, tagIndex) => (
-                      <span key={tagIndex} className="bg-gray-600 text-gray-200 text-xs px-2 py-1 rounded-full group-hover:bg-purple-800 transition-colors">
+                      <span key={tagIndex} className="bg-gray-600 text-gray-200 text-xs px-2 py-1 rounded-full group-hover:bg-purple-900 transition-colors">
                         {tag}
                       </span>
                     ))}
@@ -507,9 +515,9 @@ const Index = () => {
                 <li>✓ Tool recommendations</li>
               </ul>
             </div>
-            <div className="border-2 border-purple-800 bg-gray-700 text-white rounded-lg p-8 relative">
+            <div className="border-2 border-purple-900 bg-gray-700 text-white rounded-lg p-8 relative">
               <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
-                <span className="bg-purple-800 text-white px-4 py-1 rounded-full text-sm font-semibold">Most Popular</span>
+                <span className="bg-purple-900 text-white px-4 py-1 rounded-full text-sm font-semibold">Most Popular</span>
               </div>
               <h3 className="text-2xl font-bold mb-4 text-purple-300">Custom Projects</h3>
               <p className="text-4xl font-bold">Quoted</p>
@@ -517,7 +525,7 @@ const Index = () => {
               <p>Medium: $5,000-15,000</p>
               <p>Complex: $15,000+</p>
             </div>
-            <div className="bg-gray-600 text-white rounded-lg p-8 border-2 border-transparent hover:border-purple-800 transition-colors">
+            <div className="bg-gray-600 text-white rounded-lg p-8 border-2 border-transparent hover:border-purple-900 transition-colors">
               <h3 className="text-2xl font-bold mb-4 text-purple-300">Ongoing Support</h3>
               <p className="text-4xl font-bold">Monthly</p>
               <p className="mt-6">Basic: $500/month</p>
