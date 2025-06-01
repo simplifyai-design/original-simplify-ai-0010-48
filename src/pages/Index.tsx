@@ -323,11 +323,12 @@ const Index = () => {
 
       {/* Hero Section */}
       <section className="pt-24 pb-12 px-6 relative min-h-screen">
-        {/* Background Image */}
+        {/* Background Image with brighter white parts */}
         <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-80"
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: `url('/lovable-uploads/11f61c25-5de2-4d06-8665-d4999a6519f1.png')`
+            backgroundImage: `url('/lovable-uploads/11f61c25-5de2-4d06-8665-d4999a6519f1.png')`,
+            filter: 'brightness(1.3) contrast(1.1)'
           }}
         />
         
@@ -336,7 +337,7 @@ const Index = () => {
         
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="grid lg:grid-cols-1 gap-12 items-center min-h-[80vh]">
-            <div className="space-y-8 text-center max-w-4xl mx-auto">
+            <div className="space-y-8 text-center max-w-4xl mx-auto ml-8 lg:ml-16">
               <div className="space-y-6">
                 <p className="text-orange-400 font-semibold">Strategic Consulting & Implementation</p>
                 <h1 className="text-5xl lg:text-6xl font-bold text-white leading-tight">
@@ -375,7 +376,7 @@ const Index = () => {
                 <Button size="lg" asChild className="text-lg px-8 py-6 bg-orange-500 text-white hover:bg-orange-600">
                   <a href="#contact">Schedule Free Consultation</a>
                 </Button>
-                <Button variant="outline" size="lg" asChild className="text-lg px-8 py-6 border-purple-800 text-purple-300 hover:bg-purple-800 hover:text-white">
+                <Button variant="outline" size="lg" asChild className="text-lg px-8 py-6 border-purple-900 bg-purple-900 text-gray-100 hover:bg-purple-800 hover:text-white">
                   <a href="#services">Learn More</a>
                 </Button>
               </div>
