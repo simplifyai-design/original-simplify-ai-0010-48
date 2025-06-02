@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -324,17 +323,8 @@ const Index = () => {
 
       {/* Hero Section */}
       <section className="pt-24 pb-12 px-6 relative min-h-screen">
-        {/* Background Image with brighter white parts */}
-        <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{
-            backgroundImage: `url('/lovable-uploads/11f61c25-5de2-4d06-8665-d4999a6519f1.png')`,
-            filter: 'brightness(1.3) contrast(1.1)'
-          }}
-        />
-        
-        {/* Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-br from-gray-700/90 via-gray-800/90 to-gray-900/90" />
+        {/* Gradient Background Only */}
+        <div className="absolute inset-0 bg-gradient-to-br from-gray-700 via-gray-800 to-gray-900" />
         
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="grid lg:grid-cols-1 gap-12 items-center min-h-[80vh]">
@@ -393,8 +383,7 @@ const Index = () => {
             <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
               How We Can Transform Your Business
             </h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              From quick strategy sessions to full implementations, we offer flexible solutions that match your needs and budget
+            <p className="text-xl text-gray-300">From quick strategy sessions to full implementations, we offer flexible solutions that match your needs and budget
             </p>
           </div>
 
