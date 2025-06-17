@@ -5,7 +5,6 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
 import { ChevronDown, Brain, BarChart3, Target, Settings, Zap, GraduationCap, Shield } from 'lucide-react';
-
 const Index = () => {
   const [expandedService, setExpandedService] = useState<any>(null);
   const [scrollY, setScrollY] = useState(0);
@@ -21,7 +20,6 @@ const Index = () => {
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
-
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
 
@@ -30,10 +28,12 @@ const Index = () => {
     const MAX_LINK_DISTANCE = 120;
     const PARTICLE_SPEED = 0.3;
     const MOUSE_REPEL_RADIUS = 100;
-    const MOUSE_REPEL_STRENGTH = 0.3; 
-
+    const MOUSE_REPEL_STRENGTH = 0.3;
     let particles: any[] = [];
-    const mouse = { x: null as number | null, y: null as number | null };
+    const mouse = {
+      x: null as number | null,
+      y: null as number | null
+    };
 
     // Set canvas size
     const setCanvasSize = () => {
@@ -49,7 +49,6 @@ const Index = () => {
       speedX: number;
       speedY: number;
       color: string;
-
       constructor() {
         this.x = Math.random() * canvas.width;
         this.y = Math.random() * canvas.height;
@@ -58,11 +57,9 @@ const Index = () => {
         this.speedY = (Math.random() * 2 - 1) * PARTICLE_SPEED;
         this.color = `rgba(37, 99, 235, ${Math.random() * 0.5 + 0.2})`;
       }
-
       update() {
         if (this.x > canvas.width || this.x < 0) this.speedX = -this.speedX;
         if (this.y > canvas.height || this.y < 0) this.speedY = -this.speedY;
-        
         if (mouse.x !== null && mouse.y !== null) {
           const dx = this.x - mouse.x;
           const dy = this.y - mouse.y;
@@ -75,11 +72,9 @@ const Index = () => {
             this.y += forceDirectionY * force * MOUSE_REPEL_STRENGTH;
           }
         }
-        
         this.x += this.speedX;
         this.y += this.speedY;
       }
-
       draw() {
         ctx.fillStyle = this.color;
         ctx.beginPath();
@@ -131,17 +126,14 @@ const Index = () => {
       setCanvasSize();
       init();
     };
-
     const handleMouseMove = (event: MouseEvent) => {
       mouse.x = event.clientX;
       mouse.y = event.clientY;
     };
-
     const handleMouseOut = () => {
       mouse.x = null;
       mouse.y = null;
     };
-
     window.addEventListener('resize', handleResize);
     window.addEventListener('mousemove', handleMouseMove);
     window.addEventListener('mouseout', handleMouseOut);
@@ -158,37 +150,31 @@ const Index = () => {
       window.removeEventListener('mouseout', handleMouseOut);
     };
   }, []);
-
   useEffect(() => {
     const handleScroll = () => setScrollY(window.scrollY);
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value
     });
   };
-
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     console.log('Form submitted:', formData);
     // Handle form submission
   };
-
-  const services = [
-    {
-      id: 'ai-coaching',
-      title: 'AI Coaching & Advising',
-      description: 'One-on-one guidance to help business owners understand and leverage AI. Learn which processes to automate, discover the best AI tools for your needs, and get step-by-step implementation guidance.',
-      gradient: 'from-blue-500 to-indigo-600',
-      tags: ['1-on-1 Sessions', '$125/hour', 'Implementation Guidance'],
-      imageUrl: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
-      fallbackText: "AI Coaching",
-      expandedContent: (
-        <div>
+  const services = [{
+    id: 'ai-coaching',
+    title: 'AI Coaching & Advising',
+    description: 'One-on-one guidance to help business owners understand and leverage AI. Learn which processes to automate, discover the best AI tools for your needs, and get step-by-step implementation guidance.',
+    gradient: 'from-blue-500 to-indigo-600',
+    tags: ['1-on-1 Sessions', '$125/hour', 'Implementation Guidance'],
+    imageUrl: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+    fallbackText: "AI Coaching",
+    expandedContent: <div>
           <p className="mb-4">Personal AI coaching sessions designed to demystify AI and show you exactly how to use it in your business.</p>
           <h3 className="text-xl font-bold mb-3">What We Cover:</h3>
           <ul className="mb-6 space-y-2">
@@ -208,18 +194,15 @@ const Index = () => {
             </div>
           </div>
         </div>
-      )
-    },
-    {
-      id: 'workflow-automation',
-      title: 'Workflow & Process Automation',
-      description: "We design and deploy complete automation solutions that deliver massive ROI. For one manufacturing client, we automated their entire order-to-delivery process, cutting processing time from 45 minutes to just 5 and saving them over $50,000 in annual labor costs.",
-      gradient: 'from-emerald-500 to-teal-600',
-      tags: ['Process Audit', 'Custom Build', 'User Training'],
-      imageUrl: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
-      fallbackText: "Workflow Automation",
-      expandedContent: (
-        <div>
+  }, {
+    id: 'workflow-automation',
+    title: 'Workflow & Process Automation',
+    description: "We design and deploy complete automation solutions that deliver massive ROI. For one manufacturing client, we automated their entire order-to-delivery process, cutting processing time from 45 minutes to just 5 and saving them over $50,000 in annual labor costs.",
+    gradient: 'from-emerald-500 to-teal-600',
+    tags: ['Process Audit', 'Custom Build', 'User Training'],
+    imageUrl: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+    fallbackText: "Workflow Automation",
+    expandedContent: <div>
           <h3 className="text-xl font-bold mb-3">Our Process:</h3>
           <ol className="mb-6 space-y-3">
             <li><strong>1. Process Audit:</strong> Map your current workflows and identify bottlenecks</li>
@@ -238,18 +221,15 @@ const Index = () => {
             </div>
           </div>
         </div>
-      )
-    },
-    {
-      id: 'custom-ai-agents',
-      title: 'Custom AI Agents',
-      description: 'Build intelligent AI assistants tailored to your business. From customer service bots to internal knowledge assistants.',
-      gradient: 'from-purple-500 to-pink-600',
-      tags: ['Custom Development', 'AI Training', 'Integration'],
-      imageUrl: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
-      fallbackText: "AI Agents",
-      expandedContent: (
-        <div>
+  }, {
+    id: 'custom-ai-agents',
+    title: 'Custom AI Agents',
+    description: 'Build intelligent AI assistants tailored to your business. From customer service bots to internal knowledge assistants.',
+    gradient: 'from-purple-500 to-pink-600',
+    tags: ['Custom Development', 'AI Training', 'Integration'],
+    imageUrl: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+    fallbackText: "AI Agents",
+    expandedContent: <div>
           <h3 className="text-xl font-bold mb-3">Featured AI Agents:</h3>
           <div className="space-y-4 mb-6">
             <div className="bg-purple-50 p-4 rounded-lg">
@@ -268,18 +248,15 @@ const Index = () => {
           </div>
           <p className="text-gray-600">Each agent is custom-built and trained specifically for your business needs.</p>
         </div>
-      )
-    },
-    {
-      id: 'consulting-services',
-      title: 'Full Consulting Services',
-      description: "Our end-to-end consulting drives real transformation. We've helped clients achieve incredible results, including a 60% reduction in administrative work for a major healthcare provider, with a full return on investment in just 6 months.",
-      gradient: 'from-purple-500 to-violet-600',
-      tags: ['End-to-End', 'Strategic Planning', 'Full Implementation'],
-      imageUrl: "/lovable-uploads/c1d21a39-7e99-4558-84d5-d0c081c72a95.png",
-      fallbackText: "Consulting",
-      expandedContent: (
-        <div>
+  }, {
+    id: 'consulting-services',
+    title: 'Full Consulting Services',
+    description: "Our end-to-end consulting drives real transformation. We've helped clients achieve incredible results, including a 60% reduction in administrative work for a major healthcare provider, with a full return on investment in just 6 months.",
+    gradient: 'from-purple-500 to-violet-600',
+    tags: ['End-to-End', 'Strategic Planning', 'Full Implementation'],
+    imageUrl: "/lovable-uploads/c1d21a39-7e99-4558-84d5-d0c081c72a95.png",
+    fallbackText: "Consulting",
+    expandedContent: <div>
           <h3 className="text-xl font-bold mb-3">Complete Transformation Package</h3>
           <p className="mb-4">Our full consulting service includes everything:</p>
           <ul className="space-y-2 mb-6">
@@ -302,18 +279,15 @@ const Index = () => {
             </div>
           </div>
         </div>
-      )
-    },
-    {
-      id: 'ongoing-support',
-      title: 'Ongoing Support & Optimization',
-      description: 'Keep your systems running perfectly with continuous monitoring, updates, and optimization.',
-      gradient: 'from-gray-600 to-gray-800',
-      tags: ['Monthly Plans', 'Continuous Updates', '24/7 Monitoring'],
-      imageUrl: "https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
-      fallbackText: "Support",
-      expandedContent: (
-        <div>
+  }, {
+    id: 'ongoing-support',
+    title: 'Ongoing Support & Optimization',
+    description: 'Keep your systems running perfectly with continuous monitoring, updates, and optimization.',
+    gradient: 'from-gray-600 to-gray-800',
+    tags: ['Monthly Plans', 'Continuous Updates', '24/7 Monitoring'],
+    imageUrl: "https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+    fallbackText: "Support",
+    expandedContent: <div>
           <h3 className="text-xl font-bold mb-4">Support Plans</h3>
           <div className="space-y-4">
             <div className="bg-gray-50 p-4 rounded-lg">
@@ -344,22 +318,17 @@ const Index = () => {
             </div>
           </div>
         </div>
-      )
-    }
-  ];
-
-  return (
-    <div className="min-h-screen bg-slate-900 text-white overflow-x-hidden">
+  }];
+  return <div className="min-h-screen bg-slate-900 text-white overflow-x-hidden">
       {/* Particle Canvas */}
-      <canvas 
-        ref={canvasRef}
-        className="fixed top-0 left-0 w-full h-full pointer-events-none z-0"
-      />
+      <canvas ref={canvasRef} className="fixed top-0 left-0 w-full h-full pointer-events-none z-0" />
 
       {/* Hero Section */}
       <section className="relative min-h-screen flex flex-col justify-center items-center p-4 z-10">
         {/* Header/Navbar */}
-        <header className="absolute top-0 left-0 right-0 p-6 z-20" style={{ textShadow: '0px 2px 10px rgba(0, 0, 0, 0.5)' }}>
+        <header className="absolute top-0 left-0 right-0 p-6 z-20" style={{
+        textShadow: '0px 2px 10px rgba(0, 0, 0, 0.5)'
+      }}>
           <nav className="container mx-auto flex justify-between items-center">
             <h1 className="text-2xl font-bold tracking-tighter">SimplifyAI.design</h1>
             <div className="hidden md:flex items-center space-x-6">
@@ -375,7 +344,9 @@ const Index = () => {
         </header>
 
         {/* Hero Content */}
-        <main className="text-center z-20" style={{ textShadow: '0px 2px 10px rgba(0, 0, 0, 0.5)' }}>
+        <main className="text-center z-20" style={{
+        textShadow: '0px 2px 10px rgba(0, 0, 0, 0.5)'
+      }}>
           <h2 className="text-4xl md:text-6xl font-extrabold leading-tight mb-4">
             Drive Growth with <span className="text-blue-400">AI-Powered Automation</span>
           </h2>
@@ -405,18 +376,11 @@ const Index = () => {
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-            {services.map((service, index) => (
-              <Card key={index} className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-gray-600 shadow-lg cursor-pointer bg-gray-700/50 backdrop-blur-sm hover:border-orange-500/50"
-                    onClick={() => setExpandedService(service)}>
+            {services.map((service, index) => <Card key={index} className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-gray-600 shadow-lg cursor-pointer bg-gray-700/50 backdrop-blur-sm hover:border-orange-500/50" onClick={() => setExpandedService(service)}>
                 <div className={`h-48 bg-gradient-to-br ${service.gradient} relative overflow-hidden rounded-t-lg`}>
-                  <img 
-                    src={service.imageUrl} 
-                    alt={service.title}
-                    className="absolute inset-0 w-full h-full object-cover opacity-30"
-                    onError={(e) => {
-                      e.currentTarget.style.display = 'none';
-                    }}
-                  />
+                  <img src={service.imageUrl} alt={service.title} className="absolute inset-0 w-full h-full object-cover opacity-30" onError={e => {
+                e.currentTarget.style.display = 'none';
+              }} />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
                   <div className="relative z-10 h-full flex items-center justify-center text-white">
                     <h3 className="text-lg font-bold text-center px-4">{service.fallbackText}</h3>
@@ -432,11 +396,9 @@ const Index = () => {
 
                 <CardContent className="space-y-4">
                   <div className="flex flex-wrap gap-2">
-                    {service.tags.map((tag, tagIndex) => (
-                      <span key={tagIndex} className="bg-gray-600 text-gray-200 text-xs px-2 py-1 rounded-full group-hover:bg-purple-800 transition-colors">
+                    {service.tags.map((tag, tagIndex) => <span key={tagIndex} className="bg-gray-600 text-gray-200 text-xs px-2 py-1 rounded-full group-hover:bg-purple-800 transition-colors">
                         {tag}
-                      </span>
-                    ))}
+                      </span>)}
                   </div>
 
                   <div className="flex items-center gap-2 text-orange-400 font-semibold hover:text-orange-300 transition-colors">
@@ -444,24 +406,21 @@ const Index = () => {
                     <ChevronDown className="w-4 h-4" />
                   </div>
                 </CardContent>
-              </Card>
-            ))}
+              </Card>)}
           </div>
         </div>
       </section>
 
       {/* Service Overlay */}
-      {expandedService && (
-        <div className="fixed inset-0 bg-black bg-opacity-70 z-50 overflow-y-auto" onClick={() => setExpandedService(null)}>
+      {expandedService && <div className="fixed inset-0 bg-black bg-opacity-70 z-50 overflow-y-auto" onClick={() => setExpandedService(null)}>
           <div className="min-h-screen px-4 py-8">
-            <div className="bg-gray-700 text-white rounded-lg max-w-4xl mx-auto p-8 border border-orange-500/30" onClick={(e) => e.stopPropagation()}>
+            <div className="bg-gray-700 text-white rounded-lg max-w-4xl mx-auto p-8 border border-orange-500/30" onClick={e => e.stopPropagation()}>
               <button onClick={() => setExpandedService(null)} className="float-right text-2xl hover:text-orange-400 transition-colors">✕</button>
-              <h2 className="text-3xl font-bold mb-6 text-orange-400">{expandedService.title}</h2>
+              <h2 className="text-3xl font-bold mb-6 text-blue-700">{expandedService.title}</h2>
               {expandedService.expandedContent}
             </div>
           </div>
-        </div>
-      )}
+        </div>}
 
       {/* How We Work Section */}
       <section id="how-we-work" className="py-20 px-6 bg-gray-700 relative z-10">
@@ -472,31 +431,25 @@ const Index = () => {
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
-            {[
-              {
-                number: "1",
-                title: "Understand Your Needs",
-                description: "Discovery call or assessment to identify your challenges and goals"
-              },
-              {
-                number: "2",
-                title: "Design Your Solution",
-                description: "Custom strategy and recommendations tailored to your business"
-              },
-              {
-                number: "3",
-                title: "Deliver Results",
-                description: "Implementation and support to ensure successful adoption"
-              }
-            ].map((step, index) => (
-              <div key={index} className="text-center">
+            {[{
+            number: "1",
+            title: "Understand Your Needs",
+            description: "Discovery call or assessment to identify your challenges and goals"
+          }, {
+            number: "2",
+            title: "Design Your Solution",
+            description: "Custom strategy and recommendations tailored to your business"
+          }, {
+            number: "3",
+            title: "Deliver Results",
+            description: "Implementation and support to ensure successful adoption"
+          }].map((step, index) => <div key={index} className="text-center">
                 <div className="w-20 h-20 bg-orange-500 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6 shadow-lg">
                   {step.number}
                 </div>
                 <h3 className="text-xl font-bold mb-4 text-white">{step.title}</h3>
                 <p className="text-gray-300">{step.description}</p>
-              </div>
-            ))}
+              </div>)}
           </div>
         </div>
       </section>
@@ -550,51 +503,22 @@ const Index = () => {
                 <div className="grid md:grid-cols-2 gap-4">
                   <div>
                     <Label htmlFor="name" className="text-white">Name</Label>
-                    <Input
-                      id="name"
-                      name="name"
-                      value={formData.name}
-                      onChange={handleInputChange}
-                      required
-                      className="mt-1 bg-gray-700 border-gray-500 text-white"
-                    />
+                    <Input id="name" name="name" value={formData.name} onChange={handleInputChange} required className="mt-1 bg-gray-700 border-gray-500 text-white" />
                   </div>
                   <div>
                     <Label htmlFor="email" className="text-white">Email</Label>
-                    <Input
-                      id="email"
-                      name="email"
-                      type="email"
-                      value={formData.email}
-                      onChange={handleInputChange}
-                      required
-                      className="mt-1 bg-gray-700 border-gray-500 text-white"
-                    />
+                    <Input id="email" name="email" type="email" value={formData.email} onChange={handleInputChange} required className="mt-1 bg-gray-700 border-gray-500 text-white" />
                   </div>
                 </div>
                 
                 <div>
                   <Label htmlFor="company" className="text-white">Company</Label>
-                  <Input
-                    id="company"
-                    name="company"
-                    value={formData.company}
-                    onChange={handleInputChange}
-                    className="mt-1 bg-gray-700 border-gray-500 text-white"
-                  />
+                  <Input id="company" name="company" value={formData.company} onChange={handleInputChange} className="mt-1 bg-gray-700 border-gray-500 text-white" />
                 </div>
                 
                 <div>
                   <Label htmlFor="message" className="text-white">Tell us about your automation needs</Label>
-                  <Textarea
-                    id="message"
-                    name="message"
-                    value={formData.message}
-                    onChange={handleInputChange}
-                    rows={4}
-                    className="mt-1 bg-gray-700 border-gray-500 text-white"
-                    placeholder="Describe your current challenges and automation goals..."
-                  />
+                  <Textarea id="message" name="message" value={formData.message} onChange={handleInputChange} rows={4} className="mt-1 bg-gray-700 border-gray-500 text-white" placeholder="Describe your current challenges and automation goals..." />
                 </div>
 
                 <Button type="submit" size="lg" className="w-full text-lg py-6 bg-orange-500 text-white hover:bg-orange-600">
@@ -618,8 +542,6 @@ const Index = () => {
           <p className="text-gray-400">© 2024 SimplifyAI.design. All rights reserved.</p>
         </div>
       </footer>
-    </div>
-  );
+    </div>;
 };
-
 export default Index;
