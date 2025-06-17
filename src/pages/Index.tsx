@@ -414,9 +414,9 @@ const Index = () => {
       {/* Service Overlay */}
       {expandedService && <div className="fixed inset-0 bg-black bg-opacity-70 z-50 overflow-y-auto" onClick={() => setExpandedService(null)}>
           <div className="min-h-screen px-4 py-8">
-            <div onClick={e => e.stopPropagation()} className="bg-gray-700 text-blue-400 rounded-lg max-w-4xl mx-auto p-8 border border-purple-500/30">
+            <div onClick={e => e.stopPropagation()} className="bg-gray-700 text-white rounded-lg max-w-4xl mx-auto p-8 border border-purple-500/30">
               <button onClick={() => setExpandedService(null)} className="float-right text-2xl hover:text-orange-400 transition-colors">✕</button>
-              <h2 className="text-3xl font-bold mb-6 text-blue-400">{expandedService.title}</h2>
+              <h2 className="text-3xl font-bold mb-6 text-purple-700">{expandedService.title}</h2>
               {expandedService.expandedContent}
             </div>
           </div>
