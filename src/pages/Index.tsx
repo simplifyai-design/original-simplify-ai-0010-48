@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect, useRef } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -277,7 +276,7 @@ const Index = () => {
       description: "Our end-to-end consulting drives real transformation. We've helped clients achieve incredible results, including a 60% reduction in administrative work for a major healthcare provider, with a full return on investment in just 6 months.",
       gradient: 'from-orange-500 to-red-600',
       tags: ['End-to-End', 'Strategic Planning', 'Full Implementation'],
-      imageUrl: "https://images.unsplash.com/photo-1461749280684-dbebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+      imageUrl: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
       fallbackText: "Consulting",
       expandedContent: (
         <div>
