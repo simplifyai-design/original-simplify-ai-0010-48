@@ -183,14 +183,14 @@ const Index = () => {
             <li>• Step-by-step implementation guidance</li>
             <li>• Best practices and common pitfalls to avoid</li>
           </ul>
-          <div className="bg-gray-700 p-6 rounded-lg border border-gray-600">
+          <div className="bg-gray-600 p-6 rounded-lg border border-gray-500">
             <h3 className="text-xl font-bold mb-3 text-white">Success Story</h3>
             <p className="mb-3 text-gray-200">A restaurant owner learned to use ChatGPT for menu descriptions, social media posts, and email campaigns. Now creates a week's worth of content in 30 minutes.</p>
-            <div className="bg-blue-900 p-4 rounded border border-blue-700">
-              <p className="font-bold text-blue-200">Results:</p>
-              <p className="text-blue-100">• 10 hours saved weekly on marketing</p>
-              <p className="text-blue-100">• 3x more social media engagement</p>
-              <p className="text-blue-100">• Consistent brand voice across all channels</p>
+            <div className="bg-gray-700 p-4 rounded border border-gray-600">
+              <p className="font-bold text-white">Results:</p>
+              <p className="text-gray-200">• 10 hours saved weekly on marketing</p>
+              <p className="text-gray-200">• 3x more social media engagement</p>
+              <p className="text-gray-200">• Consistent brand voice across all channels</p>
             </div>
           </div>
         </div>
@@ -210,14 +210,14 @@ const Index = () => {
             <li><strong className="text-white">3. Implementation:</strong> Build and deploy the automation</li>
             <li><strong className="text-white">4. Training:</strong> Ensure your team can use and maintain the system</li>
           </ol>
-          <div className="bg-gray-700 p-6 rounded-lg border border-gray-600">
+          <div className="bg-gray-600 p-6 rounded-lg border border-gray-500">
             <h3 className="text-xl font-bold mb-3 text-white">Manufacturing Client Success</h3>
             <p className="mb-3 text-gray-200">Automated their entire order-to-delivery process, connecting sales, inventory, and shipping systems.</p>
-            <div className="bg-green-900 p-4 rounded border border-green-700">
-              <p className="font-bold text-green-200">Results:</p>
-              <p className="text-green-100">• Order processing: 45 min → 5 min</p>
-              <p className="text-green-100">• Zero inventory errors</p>
-              <p className="text-green-100">• $50K annual labor savings</p>
+            <div className="bg-gray-700 p-4 rounded border border-gray-600">
+              <p className="font-bold text-white">Results:</p>
+              <p className="text-gray-200">• Order processing: 45 min → 5 min</p>
+              <p className="text-gray-200">• Zero inventory errors</p>
+              <p className="text-gray-200">• $50K annual labor savings</p>
             </div>
           </div>
         </div>
@@ -232,18 +232,18 @@ const Index = () => {
     expandedContent: <div>
           <h3 className="text-xl font-bold mb-3 text-white">Featured AI Agents:</h3>
           <div className="space-y-4 mb-6">
-            <div className="bg-purple-900 p-4 rounded-lg border border-purple-700">
-              <h4 className="font-bold text-purple-200">ConfirmAI - Appointment Assistant</h4>
-              <p className="text-purple-100">AI voice agent that calls patients to confirm appointments</p>
-              <p className="text-sm mt-2 text-purple-200">842 appointments confirmed this week | 94% success rate</p>
+            <div className="bg-gray-600 p-4 rounded-lg border border-gray-500">
+              <h4 className="font-bold text-white">ConfirmAI - Appointment Assistant</h4>
+              <p className="text-gray-200">AI voice agent that calls patients to confirm appointments</p>
+              <p className="text-sm mt-2 text-gray-300">842 appointments confirmed this week | 94% success rate</p>
             </div>
-            <div className="bg-purple-900 p-4 rounded-lg border border-purple-700">
-              <h4 className="font-bold text-purple-200">Customer Service Bot</h4>
-              <p className="text-purple-100">24/7 AI assistant handling inquiries, orders, and support tickets</p>
+            <div className="bg-gray-600 p-4 rounded-lg border border-gray-500">
+              <h4 className="font-bold text-white">Customer Service Bot</h4>
+              <p className="text-gray-200">24/7 AI assistant handling inquiries, orders, and support tickets</p>
             </div>
-            <div className="bg-purple-900 p-4 rounded-lg border border-purple-700">
-              <h4 className="font-bold text-purple-200">Internal Knowledge Assistant</h4>
-              <p className="text-purple-100">AI trained on your company data to answer employee questions instantly</p>
+            <div className="bg-gray-600 p-4 rounded-lg border border-gray-500">
+              <h4 className="font-bold text-white">Internal Knowledge Assistant</h4>
+              <p className="text-gray-200">AI trained on your company data to answer employee questions instantly</p>
             </div>
           </div>
           <p className="text-gray-200">Each agent is custom-built and trained specifically for your business needs.</p>
@@ -268,14 +268,14 @@ const Index = () => {
             <li>✓ Team training</li>
             <li>✓ Ongoing optimization</li>
           </ul>
-          <div className="bg-gray-700 p-6 rounded-lg border border-gray-600">
+          <div className="bg-gray-600 p-6 rounded-lg border border-gray-500">
             <h3 className="text-xl font-bold mb-3 text-white">Healthcare Provider Transformation</h3>
             <p className="mb-3 text-gray-200">Complete digital transformation including patient portal, automated scheduling, AI triage, and staff workflows.</p>
-            <div className="bg-orange-900 p-4 rounded border border-orange-700">
-              <p className="font-bold text-orange-200">Results:</p>
-              <p className="text-orange-100">• 60% reduction in administrative work</p>
-              <p className="text-orange-100">• Patient satisfaction up 45%</p>
-              <p className="text-orange-100">• ROI achieved in 6 months</p>
+            <div className="bg-gray-700 p-4 rounded border border-gray-600">
+              <p className="font-bold text-white">Results:</p>
+              <p className="text-gray-200">• 60% reduction in administrative work</p>
+              <p className="text-gray-200">• Patient satisfaction up 45%</p>
+              <p className="text-gray-200">• ROI achieved in 6 months</p>
             </div>
           </div>
         </div>
@@ -290,7 +290,7 @@ const Index = () => {
     expandedContent: <div>
           <h3 className="text-xl font-bold mb-4 text-white">Support Plans</h3>
           <div className="space-y-4">
-            <div className="bg-gray-700 p-4 rounded-lg border border-gray-600">
+            <div className="bg-gray-600 p-4 rounded-lg border border-gray-500">
               <h4 className="font-bold mb-2 text-white">Basic Support - $500/month</h4>
               <ul className="text-sm space-y-1 text-gray-200">
                 <li>• Monthly system check</li>
@@ -298,7 +298,7 @@ const Index = () => {
                 <li>• Email support</li>
               </ul>
             </div>
-            <div className="bg-gray-700 p-4 rounded-lg border border-gray-600">
+            <div className="bg-gray-600 p-4 rounded-lg border border-gray-500">
               <h4 className="font-bold mb-2 text-white">Active Support - $1,500/month</h4>
               <ul className="text-sm space-y-1 text-gray-200">
                 <li>• Weekly optimization</li>
@@ -307,7 +307,7 @@ const Index = () => {
                 <li>• Minor updates included</li>
               </ul>
             </div>
-            <div className="bg-gray-700 p-4 rounded-lg border border-gray-600">
+            <div className="bg-gray-600 p-4 rounded-lg border border-gray-500">
               <h4 className="font-bold mb-2 text-white">Full Service - $3,000+/month</h4>
               <ul className="text-sm space-y-1 text-gray-200">
                 <li>• Daily monitoring</li>
@@ -376,7 +376,7 @@ const Index = () => {
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-            {services.map((service, index) => <Card key={index} className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-gray-600 shadow-lg cursor-pointer bg-gray-700/50 backdrop-blur-sm hover:border-orange-500/50" onClick={() => setExpandedService(service)}>
+            {services.map((service, index) => <Card key={index} className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-gray-600 shadow-lg cursor-pointer bg-gray-700/50 backdrop-blur-sm hover:border-emerald-500/50" onClick={() => setExpandedService(service)}>
                 <div className={`h-48 bg-gradient-to-br ${service.gradient} relative overflow-hidden rounded-t-lg`}>
                   <img src={service.imageUrl} alt={service.title} className="absolute inset-0 w-full h-full object-cover opacity-30" onError={e => {
                 e.currentTarget.style.display = 'none';
