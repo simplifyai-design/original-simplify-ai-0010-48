@@ -274,7 +274,7 @@ const Index = () => {
       id: 'consulting-services',
       title: 'Full Consulting Services',
       description: "Our end-to-end consulting drives real transformation. We've helped clients achieve incredible results, including a 60% reduction in administrative work for a major healthcare provider, with a full return on investment in just 6 months.",
-      gradient: 'from-orange-500 to-red-600',
+      gradient: 'from-purple-500 to-violet-600',
       tags: ['End-to-End', 'Strategic Planning', 'Full Implementation'],
       imageUrl: "/lovable-uploads/c1d21a39-7e99-4558-84d5-d0c081c72a95.png",
       fallbackText: "Consulting",
