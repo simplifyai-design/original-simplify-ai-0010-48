@@ -1,10 +1,11 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
 import { ChevronDown, Brain, BarChart3, Target, Settings, Zap, GraduationCap, Shield } from 'lucide-react';
+
 const Index = () => {
   const [expandedService, setExpandedService] = useState<any>(null);
   const [scrollY, setScrollY] = useState(0);
@@ -14,158 +15,26 @@ const Index = () => {
     company: '',
     message: ''
   });
-  const canvasRef = useRef<HTMLCanvasElement>(null);
 
-  // Particle animation setup
-  useEffect(() => {
-    const canvas = canvasRef.current;
-    if (!canvas) return;
-    const ctx = canvas.getContext('2d');
-    if (!ctx) return;
-
-    // Configuration
-    const PARTICLE_COUNT = 40;
-    const MAX_LINK_DISTANCE = 120;
-    const PARTICLE_SPEED = 0.3;
-    const MOUSE_REPEL_RADIUS = 100;
-    const MOUSE_REPEL_STRENGTH = 0.3;
-    let particles: any[] = [];
-    const mouse = {
-      x: null as number | null,
-      y: null as number | null
-    };
-
-    // Set canvas size
-    const setCanvasSize = () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-    };
-
-    // Particle class
-    class Particle {
-      x: number;
-      y: number;
-      size: number;
-      speedX: number;
-      speedY: number;
-      color: string;
-      constructor() {
-        this.x = Math.random() * canvas.width;
-        this.y = Math.random() * canvas.height;
-        this.size = Math.random() * 2 + 1;
-        this.speedX = (Math.random() * 2 - 1) * PARTICLE_SPEED;
-        this.speedY = (Math.random() * 2 - 1) * PARTICLE_SPEED;
-        this.color = `rgba(37, 99, 235, ${Math.random() * 0.5 + 0.2})`;
-      }
-      update() {
-        if (this.x > canvas.width || this.x < 0) this.speedX = -this.speedX;
-        if (this.y > canvas.height || this.y < 0) this.speedY = -this.speedY;
-        if (mouse.x !== null && mouse.y !== null) {
-          const dx = this.x - mouse.x;
-          const dy = this.y - mouse.y;
-          const distance = Math.sqrt(dx * dx + dy * dy);
-          if (distance < MOUSE_REPEL_RADIUS) {
-            const forceDirectionX = dx / distance;
-            const forceDirectionY = dy / distance;
-            const force = (MOUSE_REPEL_RADIUS - distance) / MOUSE_REPEL_RADIUS;
-            this.x += forceDirectionX * force * MOUSE_REPEL_STRENGTH;
-            this.y += forceDirectionY * force * MOUSE_REPEL_STRENGTH;
-          }
-        }
-        this.x += this.speedX;
-        this.y += this.speedY;
-      }
-      draw() {
-        ctx.fillStyle = this.color;
-        ctx.beginPath();
-        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-        ctx.fill();
-      }
-    }
-
-    // Initialize particles
-    const init = () => {
-      particles = [];
-      for (let i = 0; i < PARTICLE_COUNT; i++) {
-        particles.push(new Particle());
-      }
-    };
-
-    // Connect particles
-    const connectParticles = () => {
-      for (let a = 0; a < particles.length; a++) {
-        for (let b = a; b < particles.length; b++) {
-          const dx = particles[a].x - particles[b].x;
-          const dy = particles[a].y - particles[b].y;
-          const distance = Math.sqrt(dx * dx + dy * dy);
-          if (distance < MAX_LINK_DISTANCE) {
-            ctx.strokeStyle = `rgba(59, 130, 246, ${1 - distance / MAX_LINK_DISTANCE})`;
-            ctx.lineWidth = 0.5;
-            ctx.beginPath();
-            ctx.moveTo(particles[a].x, particles[a].y);
-            ctx.lineTo(particles[b].x, particles[b].y);
-            ctx.stroke();
-          }
-        }
-      }
-    };
-
-    // Animation loop
-    const animate = () => {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      for (let i = 0; i < particles.length; i++) {
-        particles[i].update();
-        particles[i].draw();
-      }
-      connectParticles();
-      requestAnimationFrame(animate);
-    };
-
-    // Event listeners
-    const handleResize = () => {
-      setCanvasSize();
-      init();
-    };
-    const handleMouseMove = (event: MouseEvent) => {
-      mouse.x = event.clientX;
-      mouse.y = event.clientY;
-    };
-    const handleMouseOut = () => {
-      mouse.x = null;
-      mouse.y = null;
-    };
-    window.addEventListener('resize', handleResize);
-    window.addEventListener('mousemove', handleMouseMove);
-    window.addEventListener('mouseout', handleMouseOut);
-
-    // Start
-    setCanvasSize();
-    init();
-    animate();
-
-    // Cleanup
-    return () => {
-      window.removeEventListener('resize', handleResize);
-      window.removeEventListener('mousemove', handleMouseMove);
-      window.removeEventListener('mouseout', handleMouseOut);
-    };
-  }, []);
   useEffect(() => {
     const handleScroll = () => setScrollY(window.scrollY);
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value
     });
   };
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     console.log('Form submitted:', formData);
     // Handle form submission
   };
+
   const services = [{
     id: 'ai-coaching',
     title: 'AI Coaching & Advising',
@@ -183,10 +52,10 @@ const Index = () => {
             <li>• Step-by-step implementation guidance</li>
             <li>• Best practices and common pitfalls to avoid</li>
           </ul>
-          <div className="bg-gray-600 p-6 rounded-lg border border-gray-500">
+          <div className="bg-gray-700 p-6 rounded-lg border border-gray-600">
             <h3 className="text-xl font-bold mb-3 text-white">Success Story</h3>
             <p className="mb-3 text-gray-200">A restaurant owner learned to use ChatGPT for menu descriptions, social media posts, and email campaigns. Now creates a week's worth of content in 30 minutes.</p>
-            <div className="bg-gray-700 p-4 rounded border border-gray-600">
+            <div className="bg-gray-800 p-4 rounded border border-gray-700">
               <p className="font-bold text-white">Results:</p>
               <p className="text-gray-200">• 10 hours saved weekly on marketing</p>
               <p className="text-gray-200">• 3x more social media engagement</p>
@@ -210,10 +79,10 @@ const Index = () => {
             <li><strong className="text-white">3. Implementation:</strong> Build and deploy the automation</li>
             <li><strong className="text-white">4. Training:</strong> Ensure your team can use and maintain the system</li>
           </ol>
-          <div className="bg-gray-600 p-6 rounded-lg border border-gray-500">
+          <div className="bg-gray-700 p-6 rounded-lg border border-gray-600">
             <h3 className="text-xl font-bold mb-3 text-white">Manufacturing Client Success</h3>
             <p className="mb-3 text-gray-200">Automated their entire order-to-delivery process, connecting sales, inventory, and shipping systems.</p>
-            <div className="bg-gray-700 p-4 rounded border border-gray-600">
+            <div className="bg-gray-800 p-4 rounded border border-gray-700">
               <p className="font-bold text-white">Results:</p>
               <p className="text-gray-200">• Order processing: 45 min → 5 min</p>
               <p className="text-gray-200">• Zero inventory errors</p>
@@ -232,16 +101,16 @@ const Index = () => {
     expandedContent: <div>
           <h3 className="text-xl font-bold mb-3 text-white">Featured AI Agents:</h3>
           <div className="space-y-4 mb-6">
-            <div className="bg-gray-600 p-4 rounded-lg border border-gray-500">
+            <div className="bg-gray-700 p-4 rounded-lg border border-gray-600">
               <h4 className="font-bold text-white">ConfirmAI - Appointment Assistant</h4>
               <p className="text-gray-200">AI voice agent that calls patients to confirm appointments</p>
               <p className="text-sm mt-2 text-gray-300">842 appointments confirmed this week | 94% success rate</p>
             </div>
-            <div className="bg-gray-600 p-4 rounded-lg border border-gray-500">
+            <div className="bg-gray-700 p-4 rounded-lg border border-gray-600">
               <h4 className="font-bold text-white">Customer Service Bot</h4>
               <p className="text-gray-200">24/7 AI assistant handling inquiries, orders, and support tickets</p>
             </div>
-            <div className="bg-gray-600 p-4 rounded-lg border border-gray-500">
+            <div className="bg-gray-700 p-4 rounded-lg border border-gray-600">
               <h4 className="font-bold text-white">Internal Knowledge Assistant</h4>
               <p className="text-gray-200">AI trained on your company data to answer employee questions instantly</p>
             </div>
@@ -268,10 +137,10 @@ const Index = () => {
             <li>✓ Team training</li>
             <li>✓ Ongoing optimization</li>
           </ul>
-          <div className="bg-gray-600 p-6 rounded-lg border border-gray-500">
+          <div className="bg-gray-700 p-6 rounded-lg border border-gray-600">
             <h3 className="text-xl font-bold mb-3 text-white">Healthcare Provider Transformation</h3>
             <p className="mb-3 text-gray-200">Complete digital transformation including patient portal, automated scheduling, AI triage, and staff workflows.</p>
-            <div className="bg-gray-700 p-4 rounded border border-gray-600">
+            <div className="bg-gray-800 p-4 rounded border border-gray-700">
               <p className="font-bold text-white">Results:</p>
               <p className="text-gray-200">• 60% reduction in administrative work</p>
               <p className="text-gray-200">• Patient satisfaction up 45%</p>
@@ -290,7 +159,7 @@ const Index = () => {
     expandedContent: <div>
           <h3 className="text-xl font-bold mb-4 text-white">Support Plans</h3>
           <div className="space-y-4">
-            <div className="bg-gray-600 p-4 rounded-lg border border-gray-500">
+            <div className="bg-gray-700 p-4 rounded-lg border border-gray-600">
               <h4 className="font-bold mb-2 text-white">Basic Support - $500/month</h4>
               <ul className="text-sm space-y-1 text-gray-200">
                 <li>• Monthly system check</li>
@@ -298,7 +167,7 @@ const Index = () => {
                 <li>• Email support</li>
               </ul>
             </div>
-            <div className="bg-gray-600 p-4 rounded-lg border border-gray-500">
+            <div className="bg-gray-700 p-4 rounded-lg border border-gray-600">
               <h4 className="font-bold mb-2 text-white">Active Support - $1,500/month</h4>
               <ul className="text-sm space-y-1 text-gray-200">
                 <li>• Weekly optimization</li>
@@ -307,7 +176,7 @@ const Index = () => {
                 <li>• Minor updates included</li>
               </ul>
             </div>
-            <div className="bg-gray-600 p-4 rounded-lg border border-gray-500">
+            <div className="bg-gray-700 p-4 rounded-lg border border-gray-600">
               <h4 className="font-bold mb-2 text-white">Full Service - $3,000+/month</h4>
               <ul className="text-sm space-y-1 text-gray-200">
                 <li>• Daily monitoring</li>
@@ -319,15 +188,27 @@ const Index = () => {
           </div>
         </div>
   }];
+
   return <div className="min-h-screen bg-slate-900 text-white overflow-x-hidden">
-      {/* Particle Canvas */}
-      <canvas ref={canvasRef} className="fixed top-0 left-0 w-full h-full pointer-events-none z-0" />
+      {/* Video Background */}
+      <video 
+        autoPlay 
+        muted 
+        loop 
+        playsInline
+        className="fixed top-0 left-0 w-full h-full object-cover pointer-events-none z-0"
+      >
+        <source src="https://pub-2318b5cce7c14fd9968cc87f77eed0bc.r2.dev" type="video/mp4" />
+      </video>
+
+      {/* Dark overlay for better text readability */}
+      <div className="fixed top-0 left-0 w-full h-full bg-black/50 pointer-events-none z-0" />
 
       {/* Hero Section */}
       <section className="relative min-h-screen flex flex-col justify-center items-center p-4 z-10">
         {/* Header/Navbar */}
         <header className="absolute top-0 left-0 right-0 p-6 z-20" style={{
-        textShadow: '0px 2px 10px rgba(0, 0, 0, 0.5)'
+        textShadow: '0px 2px 10px rgba(0, 0, 0, 0.8)'
       }}>
           <nav className="container mx-auto flex justify-between items-center">
             <h1 className="text-2xl font-bold tracking-tighter">SimplifyAI.design</h1>
@@ -345,7 +226,7 @@ const Index = () => {
 
         {/* Hero Content */}
         <main className="text-center z-20" style={{
-        textShadow: '0px 2px 10px rgba(0, 0, 0, 0.5)'
+        textShadow: '0px 2px 10px rgba(0, 0, 0, 0.8)'
       }}>
           <h2 className="text-4xl md:text-6xl font-extrabold leading-tight mb-4">
             Drive Growth with <span className="text-blue-400">AI-Powered Automation</span>
@@ -483,7 +364,7 @@ const Index = () => {
               <p className="text-4xl font-bold">Monthly</p>
               <p className="mt-6">Basic: $500/month</p>
               <p>Active: $1,500/month</p>
-              <p>Full: $3,000+/month</p>
+              <p>Complex: $3,000+/month</p>
             </div>
           </div>
         </div>
@@ -544,4 +425,5 @@ const Index = () => {
       </footer>
     </div>;
 };
+
 export default Index;
