@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -15,6 +15,149 @@ const Index = () => {
     company: '',
     message: ''
   });
+  const canvasRef = useRef<HTMLCanvasElement>(null);
+
+  // Particle animation setup
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+
+    const ctx = canvas.getContext('2d');
+    if (!ctx) return;
+
+    // Configuration
+    const PARTICLE_COUNT = 100;
+    const MAX_LINK_DISTANCE = 200;
+    const PARTICLE_SPEED = 0.5;
+    const MOUSE_REPEL_RADIUS = 150;
+    const MOUSE_REPEL_STRENGTH = 0.5;
+
+    let particles: any[] = [];
+    const mouse = { x: null as number | null, y: null as number | null };
+
+    // Set canvas size
+    const setCanvasSize = () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    };
+
+    // Particle class
+    class Particle {
+      x: number;
+      y: number;
+      size: number;
+      speedX: number;
+      speedY: number;
+      color: string;
+
+      constructor() {
+        this.x = Math.random() * canvas.width;
+        this.y = Math.random() * canvas.height;
+        this.size = Math.random() * 2 + 1;
+        this.speedX = (Math.random() * 2 - 1) * PARTICLE_SPEED;
+        this.speedY = (Math.random() * 2 - 1) * PARTICLE_SPEED;
+        this.color = `rgba(37, 99, 235, ${Math.random() * 0.5 + 0.2})`;
+      }
+
+      update() {
+        if (this.x > canvas.width || this.x < 0) this.speedX = -this.speedX;
+        if (this.y > canvas.height || this.y < 0) this.speedY = -this.speedY;
+        
+        if (mouse.x !== null && mouse.y !== null) {
+          const dx = this.x - mouse.x;
+          const dy = this.y - mouse.y;
+          const distance = Math.sqrt(dx * dx + dy * dy);
+          if (distance < MOUSE_REPEL_RADIUS) {
+            const forceDirectionX = dx / distance;
+            const forceDirectionY = dy / distance;
+            const force = (MOUSE_REPEL_RADIUS - distance) / MOUSE_REPEL_RADIUS;
+            this.x += forceDirectionX * force * MOUSE_REPEL_STRENGTH;
+            this.y += forceDirectionY * force * MOUSE_REPEL_STRENGTH;
+          }
+        }
+        
+        this.x += this.speedX;
+        this.y += this.speedY;
+      }
+
+      draw() {
+        ctx.fillStyle = this.color;
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        ctx.fill();
+      }
+    }
+
+    // Initialize particles
+    const init = () => {
+      particles = [];
+      for (let i = 0; i < PARTICLE_COUNT; i++) {
+        particles.push(new Particle());
+      }
+    };
+
+    // Connect particles
+    const connectParticles = () => {
+      for (let a = 0; a < particles.length; a++) {
+        for (let b = a; b < particles.length; b++) {
+          const dx = particles[a].x - particles[b].x;
+          const dy = particles[a].y - particles[b].y;
+          const distance = Math.sqrt(dx * dx + dy * dy);
+          if (distance < MAX_LINK_DISTANCE) {
+            ctx.strokeStyle = `rgba(59, 130, 246, ${1 - distance / MAX_LINK_DISTANCE})`;
+            ctx.lineWidth = 0.5;
+            ctx.beginPath();
+            ctx.moveTo(particles[a].x, particles[a].y);
+            ctx.lineTo(particles[b].x, particles[b].y);
+            ctx.stroke();
+          }
+        }
+      }
+    };
+
+    // Animation loop
+    const animate = () => {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      for (let i = 0; i < particles.length; i++) {
+        particles[i].update();
+        particles[i].draw();
+      }
+      connectParticles();
+      requestAnimationFrame(animate);
+    };
+
+    // Event listeners
+    const handleResize = () => {
+      setCanvasSize();
+      init();
+    };
+
+    const handleMouseMove = (event: MouseEvent) => {
+      mouse.x = event.clientX;
+      mouse.y = event.clientY;
+    };
+
+    const handleMouseOut = () => {
+      mouse.x = null;
+      mouse.y = null;
+    };
+
+    window.addEventListener('resize', handleResize);
+    window.addEventListener('mousemove', handleMouseMove);
+    window.addEventListener('mouseout', handleMouseOut);
+
+    // Start
+    setCanvasSize();
+    init();
+    animate();
+
+    // Cleanup
+    return () => {
+      window.removeEventListener('resize', handleResize);
+      window.removeEventListener('mousemove', handleMouseMove);
+      window.removeEventListener('mouseout', handleMouseOut);
+    };
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => setScrollY(window.scrollY);
@@ -303,81 +446,52 @@ const Index = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-700 via-gray-800 to-gray-900">
-      {/* Header */}
-      <header className="fixed top-0 w-full bg-gray-800/95 backdrop-blur-sm border-b border-gray-600 z-50">
-        <nav className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-          <a href="#" className="text-2xl font-bold text-orange-500">
-            Automate AI Design
-          </a>
-          <div className="hidden md:flex items-center space-x-8">
-            <a href="#services" className="text-gray-300 hover:text-orange-400 transition-colors">Services</a>
-            <a href="#how-we-work" className="text-gray-300 hover:text-orange-400 transition-colors">How We Work</a>
-            <a href="#pricing" className="text-gray-300 hover:text-orange-400 transition-colors">Pricing</a>
-            <Button asChild className="bg-orange-500 text-white hover:bg-orange-600">
-              <a href="#contact">Get Started</a>
-            </Button>
-          </div>
-        </nav>
-      </header>
+    <div className="min-h-screen bg-slate-900 text-white overflow-x-hidden">
+      {/* Particle Canvas */}
+      <canvas 
+        ref={canvasRef}
+        className="fixed top-0 left-0 w-full h-full pointer-events-none z-0"
+      />
 
       {/* Hero Section */}
-      <section className="pt-24 pb-12 px-6 relative min-h-screen">
-        {/* Gradient Background Only */}
-        <div className="absolute inset-0 bg-gradient-to-br from-gray-700 via-gray-800 to-gray-900" />
-        
-        <div className="max-w-7xl mx-auto relative z-10">
-          <div className="grid lg:grid-cols-1 gap-12 items-center min-h-[80vh]">
-            <div className="space-y-8 text-center max-w-4xl mx-auto pl-6 lg:pl-12">
-              <div className="space-y-6">
-                <p className="text-orange-400 font-semibold">Strategic Consulting & Implementation</p>
-                <h1 className="text-5xl lg:text-6xl font-bold text-white leading-tight">
-                  Transform Your Business with{' '}
-                  <span className="bg-gradient-to-r from-orange-400 to-purple-800 bg-clip-text text-transparent">
-                    AI-Powered Automation
-                  </span>
-                </h1>
-                <p className="text-xl text-gray-300 leading-relaxed">
-                  Expert consulting for small to medium-sized businesses. We design and build intelligent automation systems that learn, adapt, and scale with your business.
-                </p>
-              </div>
-              
-              <ul className="space-y-3 max-w-md mx-auto">
-                <li className="flex items-center gap-3 text-gray-300">
-                  <div className="w-5 h-5 bg-purple-800 rounded-full flex items-center justify-center">
-                    <span className="text-white text-xs">✓</span>
-                  </div>
-                  Trusted by SMBs across industries
-                </li>
-                <li className="flex items-center gap-3 text-gray-300">
-                  <div className="w-5 h-5 bg-purple-800 rounded-full flex items-center justify-center">
-                    <span className="text-white text-xs">✓</span>
-                  </div>
-                  100% Satisfaction Guaranteed
-                </li>
-                <li className="flex items-center gap-3 text-gray-300">
-                  <div className="w-5 h-5 bg-purple-800 rounded-full flex items-center justify-center">
-                    <span className="text-white text-xs">✓</span>
-                  </div>
-                  Free Initial Consultation
-                </li>
-              </ul>
-
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button size="lg" asChild className="text-lg px-8 py-6 bg-orange-500 text-white hover:bg-orange-600">
-                  <a href="#contact">Schedule Free Consultation</a>
-                </Button>
-                <Button variant="outline" size="lg" asChild className="text-lg px-8 py-6 border-purple-900 bg-purple-900 text-gray-100 hover:bg-purple-800 hover:text-white">
-                  <a href="#services">Learn More</a>
-                </Button>
-              </div>
+      <section className="relative min-h-screen flex flex-col justify-center items-center p-4 z-10">
+        {/* Header/Navbar */}
+        <header className="absolute top-0 left-0 right-0 p-6 z-20" style={{ textShadow: '0px 2px 10px rgba(0, 0, 0, 0.5)' }}>
+          <nav className="container mx-auto flex justify-between items-center">
+            <h1 className="text-2xl font-bold tracking-tighter">SimplifyAI.design</h1>
+            <div className="hidden md:flex items-center space-x-6">
+              <a href="#services" className="hover:text-blue-400 transition-colors">Solutions</a>
+              <a href="#how-we-work" className="hover:text-blue-400 transition-colors">Platform</a>
+              <a href="#pricing" className="hover:text-blue-400 transition-colors">Resources</a>
+              <a href="#contact" className="hover:text-blue-400 transition-colors">Company</a>
             </div>
+            <Button className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg transition-colors">
+              Get Started
+            </Button>
+          </nav>
+        </header>
+
+        {/* Hero Content */}
+        <main className="text-center z-20" style={{ textShadow: '0px 2px 10px rgba(0, 0, 0, 0.5)' }}>
+          <h2 className="text-4xl md:text-6xl font-extrabold leading-tight mb-4">
+            Drive Growth with <span className="text-blue-400">AI-Powered Automation</span>
+          </h2>
+          <p className="max-w-2xl mx-auto text-lg md:text-xl text-slate-300 mb-8">
+            You don't need to be an AI expert—that's our job. We dive deep into your business goals to build the custom automations that deliver maximum impact. Our commitment: to deliver powerful results, greater efficiency, and the freedom you deserve to live your life.
+          </p>
+          <div className="flex justify-center space-x-4">
+            <Button className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition-transform hover:scale-105" asChild>
+              <a href="#contact">Request a Demo</a>
+            </Button>
+            <Button className="bg-slate-700 hover:bg-slate-600 text-white font-bold py-3 px-6 rounded-lg transition-transform hover:scale-105" asChild>
+              <a href="#services">Learn More</a>
+            </Button>
           </div>
-        </div>
+        </main>
       </section>
 
       {/* Services Section */}
-      <section id="services" className="py-20 px-6 bg-gray-800">
+      <section id="services" className="py-20 px-6 bg-gray-800 relative z-10">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
@@ -447,7 +561,7 @@ const Index = () => {
       )}
 
       {/* How We Work Section */}
-      <section id="how-we-work" className="py-20 px-6 bg-gray-700">
+      <section id="how-we-work" className="py-20 px-6 bg-gray-700 relative z-10">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">How We Work</h2>
@@ -485,7 +599,7 @@ const Index = () => {
       </section>
 
       {/* Pricing Section */}
-      <section id="pricing" className="py-20 bg-gray-800">
+      <section id="pricing" className="py-20 bg-gray-800 relative z-10">
         <div className="max-w-6xl mx-auto px-4">
           <h2 className="text-4xl font-bold text-center mb-12 text-white">Investment Options</h2>
           <div className="grid md:grid-cols-3 gap-8">
@@ -520,7 +634,7 @@ const Index = () => {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-20 px-6 bg-gray-700">
+      <section id="contact" className="py-20 px-6 bg-gray-700 relative z-10">
         <div className="max-w-2xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">Get Started Today</h2>
@@ -590,7 +704,7 @@ const Index = () => {
       </section>
 
       {/* Footer */}
-      <footer className="bg-gray-800 text-white py-12 px-6 border-t border-gray-600">
+      <footer className="bg-gray-800 text-white py-12 px-6 border-t border-gray-600 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
           <div className="flex justify-center gap-8 mb-8">
             <a href="#services" className="hover:text-orange-400 transition-colors">Services</a>
@@ -598,7 +712,7 @@ const Index = () => {
             <a href="#pricing" className="hover:text-orange-400 transition-colors">Pricing</a>
             <a href="#contact" className="hover:text-orange-400 transition-colors">Contact</a>
           </div>
-          <p className="text-gray-400">© 2024 Automate AI Design. All rights reserved.</p>
+          <p className="text-gray-400">© 2024 SimplifyAI.design. All rights reserved.</p>
         </div>
       </footer>
     </div>
