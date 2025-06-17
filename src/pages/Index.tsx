@@ -214,7 +214,7 @@ const Index = () => {
     {
       id: 'workflow-automation',
       title: 'Workflow & Process Automation',
-      description: 'Complete automation solutions from audit to implementation. We review your processes, design automated workflows, build the system, and train your team.',
+      description: "We design and deploy complete automation solutions that deliver massive ROI. For one manufacturing client, we automated their entire order-to-delivery process, cutting processing time from 45 minutes to just 5 and saving them over $50,000 in annual labor costs.",
       gradient: 'from-emerald-500 to-teal-600',
       tags: ['Process Audit', 'Custom Build', 'User Training'],
       imageUrl: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
