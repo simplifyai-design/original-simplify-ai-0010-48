@@ -25,12 +25,12 @@ const Index = () => {
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
 
- // Configuration
-const PARTICLE_COUNT = 40;
-const MAX_LINK_DISTANCE = 120;
-const PARTICLE_SPEED = 0.3;
-const MOUSE_REPEL_RADIUS = 100;
-const MOUSE_REPEL_STRENGTH = 0.3;
+    // Configuration
+    const PARTICLE_COUNT = 100;
+    const MAX_LINK_DISTANCE = 200;
+    const PARTICLE_SPEED = 0.5;
+    const MOUSE_REPEL_RADIUS = 150;
+    const MOUSE_REPEL_STRENGTH = 0.5;
 
     let particles: any[] = [];
     const mouse = { x: null as number | null, y: null as number | null };
