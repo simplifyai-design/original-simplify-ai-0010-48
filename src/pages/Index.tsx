@@ -175,22 +175,22 @@ const Index = () => {
     imageUrl: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
     fallbackText: "AI Coaching",
     expandedContent: <div>
-          <p className="mb-4">Personal AI coaching sessions designed to demystify AI and show you exactly how to use it in your business.</p>
-          <h3 className="text-xl font-bold mb-3">What We Cover:</h3>
-          <ul className="mb-6 space-y-2">
+          <p className="mb-4 text-gray-200">Personal AI coaching sessions designed to demystify AI and show you exactly how to use it in your business.</p>
+          <h3 className="text-xl font-bold mb-3 text-white">What We Cover:</h3>
+          <ul className="mb-6 space-y-2 text-gray-200">
             <li>• Identify automation opportunities in your business</li>
             <li>• Review and recommend specific AI tools</li>
             <li>• Step-by-step implementation guidance</li>
             <li>• Best practices and common pitfalls to avoid</li>
           </ul>
-          <div className="bg-gray-50 p-6 rounded-lg">
-            <h3 className="text-xl font-bold mb-3">Success Story</h3>
-            <p className="mb-3">A restaurant owner learned to use ChatGPT for menu descriptions, social media posts, and email campaigns. Now creates a week's worth of content in 30 minutes.</p>
-            <div className="bg-blue-50 p-4 rounded">
-              <p className="font-bold">Results:</p>
-              <p>• 10 hours saved weekly on marketing</p>
-              <p>• 3x more social media engagement</p>
-              <p>• Consistent brand voice across all channels</p>
+          <div className="bg-gray-700 p-6 rounded-lg border border-gray-600">
+            <h3 className="text-xl font-bold mb-3 text-white">Success Story</h3>
+            <p className="mb-3 text-gray-200">A restaurant owner learned to use ChatGPT for menu descriptions, social media posts, and email campaigns. Now creates a week's worth of content in 30 minutes.</p>
+            <div className="bg-blue-900 p-4 rounded border border-blue-700">
+              <p className="font-bold text-blue-200">Results:</p>
+              <p className="text-blue-100">• 10 hours saved weekly on marketing</p>
+              <p className="text-blue-100">• 3x more social media engagement</p>
+              <p className="text-blue-100">• Consistent brand voice across all channels</p>
             </div>
           </div>
         </div>
@@ -203,21 +203,21 @@ const Index = () => {
     imageUrl: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
     fallbackText: "Workflow Automation",
     expandedContent: <div>
-          <h3 className="text-xl font-bold mb-3">Our Process:</h3>
-          <ol className="mb-6 space-y-3">
-            <li><strong>1. Process Audit:</strong> Map your current workflows and identify bottlenecks</li>
-            <li><strong>2. Design Framework:</strong> Create automated workflow with user-friendly interface</li>
-            <li><strong>3. Implementation:</strong> Build and deploy the automation</li>
-            <li><strong>4. Training:</strong> Ensure your team can use and maintain the system</li>
+          <h3 className="text-xl font-bold mb-3 text-white">Our Process:</h3>
+          <ol className="mb-6 space-y-3 text-gray-200">
+            <li><strong className="text-white">1. Process Audit:</strong> Map your current workflows and identify bottlenecks</li>
+            <li><strong className="text-white">2. Design Framework:</strong> Create automated workflow with user-friendly interface</li>
+            <li><strong className="text-white">3. Implementation:</strong> Build and deploy the automation</li>
+            <li><strong className="text-white">4. Training:</strong> Ensure your team can use and maintain the system</li>
           </ol>
-          <div className="bg-gray-50 p-6 rounded-lg">
-            <h3 className="text-xl font-bold mb-3">Manufacturing Client Success</h3>
-            <p className="mb-3">Automated their entire order-to-delivery process, connecting sales, inventory, and shipping systems.</p>
-            <div className="bg-green-50 p-4 rounded">
-              <p className="font-bold">Results:</p>
-              <p>• Order processing: 45 min → 5 min</p>
-              <p>• Zero inventory errors</p>
-              <p>• $50K annual labor savings</p>
+          <div className="bg-gray-700 p-6 rounded-lg border border-gray-600">
+            <h3 className="text-xl font-bold mb-3 text-white">Manufacturing Client Success</h3>
+            <p className="mb-3 text-gray-200">Automated their entire order-to-delivery process, connecting sales, inventory, and shipping systems.</p>
+            <div className="bg-green-900 p-4 rounded border border-green-700">
+              <p className="font-bold text-green-200">Results:</p>
+              <p className="text-green-100">• Order processing: 45 min → 5 min</p>
+              <p className="text-green-100">• Zero inventory errors</p>
+              <p className="text-green-100">• $50K annual labor savings</p>
             </div>
           </div>
         </div>
@@ -230,23 +230,23 @@ const Index = () => {
     imageUrl: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
     fallbackText: "AI Agents",
     expandedContent: <div>
-          <h3 className="text-xl font-bold mb-3">Featured AI Agents:</h3>
+          <h3 className="text-xl font-bold mb-3 text-white">Featured AI Agents:</h3>
           <div className="space-y-4 mb-6">
-            <div className="bg-purple-50 p-4 rounded-lg">
-              <h4 className="font-bold text-purple-800">ConfirmAI - Appointment Assistant</h4>
-              <p>AI voice agent that calls patients to confirm appointments</p>
-              <p className="text-sm mt-2">842 appointments confirmed this week | 94% success rate</p>
+            <div className="bg-purple-900 p-4 rounded-lg border border-purple-700">
+              <h4 className="font-bold text-purple-200">ConfirmAI - Appointment Assistant</h4>
+              <p className="text-purple-100">AI voice agent that calls patients to confirm appointments</p>
+              <p className="text-sm mt-2 text-purple-200">842 appointments confirmed this week | 94% success rate</p>
             </div>
-            <div className="bg-purple-50 p-4 rounded-lg">
-              <h4 className="font-bold text-purple-800">Customer Service Bot</h4>
-              <p>24/7 AI assistant handling inquiries, orders, and support tickets</p>
+            <div className="bg-purple-900 p-4 rounded-lg border border-purple-700">
+              <h4 className="font-bold text-purple-200">Customer Service Bot</h4>
+              <p className="text-purple-100">24/7 AI assistant handling inquiries, orders, and support tickets</p>
             </div>
-            <div className="bg-purple-50 p-4 rounded-lg">
-              <h4 className="font-bold text-purple-800">Internal Knowledge Assistant</h4>
-              <p>AI trained on your company data to answer employee questions instantly</p>
+            <div className="bg-purple-900 p-4 rounded-lg border border-purple-700">
+              <h4 className="font-bold text-purple-200">Internal Knowledge Assistant</h4>
+              <p className="text-purple-100">AI trained on your company data to answer employee questions instantly</p>
             </div>
           </div>
-          <p className="text-gray-600">Each agent is custom-built and trained specifically for your business needs.</p>
+          <p className="text-gray-200">Each agent is custom-built and trained specifically for your business needs.</p>
         </div>
   }, {
     id: 'consulting-services',
@@ -257,9 +257,9 @@ const Index = () => {
     imageUrl: "/lovable-uploads/c1d21a39-7e99-4558-84d5-d0c081c72a95.png",
     fallbackText: "Consulting",
     expandedContent: <div>
-          <h3 className="text-xl font-bold mb-3">Complete Transformation Package</h3>
-          <p className="mb-4">Our full consulting service includes everything:</p>
-          <ul className="space-y-2 mb-6">
+          <h3 className="text-xl font-bold mb-3 text-white">Complete Transformation Package</h3>
+          <p className="mb-4 text-gray-200">Our full consulting service includes everything:</p>
+          <ul className="space-y-2 mb-6 text-gray-200">
             <li>✓ Initial assessment and strategy</li>
             <li>✓ Tool selection and procurement</li>
             <li>✓ Process optimization</li>
@@ -268,14 +268,14 @@ const Index = () => {
             <li>✓ Team training</li>
             <li>✓ Ongoing optimization</li>
           </ul>
-          <div className="bg-gray-50 p-6 rounded-lg">
-            <h3 className="text-xl font-bold mb-3">Healthcare Provider Transformation</h3>
-            <p className="mb-3">Complete digital transformation including patient portal, automated scheduling, AI triage, and staff workflows.</p>
-            <div className="bg-orange-50 p-4 rounded">
-              <p className="font-bold">Results:</p>
-              <p>• 60% reduction in administrative work</p>
-              <p>• Patient satisfaction up 45%</p>
-              <p>• ROI achieved in 6 months</p>
+          <div className="bg-gray-700 p-6 rounded-lg border border-gray-600">
+            <h3 className="text-xl font-bold mb-3 text-white">Healthcare Provider Transformation</h3>
+            <p className="mb-3 text-gray-200">Complete digital transformation including patient portal, automated scheduling, AI triage, and staff workflows.</p>
+            <div className="bg-orange-900 p-4 rounded border border-orange-700">
+              <p className="font-bold text-orange-200">Results:</p>
+              <p className="text-orange-100">• 60% reduction in administrative work</p>
+              <p className="text-orange-100">• Patient satisfaction up 45%</p>
+              <p className="text-orange-100">• ROI achieved in 6 months</p>
             </div>
           </div>
         </div>
@@ -288,28 +288,28 @@ const Index = () => {
     imageUrl: "https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
     fallbackText: "Support",
     expandedContent: <div>
-          <h3 className="text-xl font-bold mb-4">Support Plans</h3>
+          <h3 className="text-xl font-bold mb-4 text-white">Support Plans</h3>
           <div className="space-y-4">
-            <div className="bg-gray-50 p-4 rounded-lg">
-              <h4 className="font-bold mb-2">Basic Support - $500/month</h4>
-              <ul className="text-sm space-y-1">
+            <div className="bg-gray-700 p-4 rounded-lg border border-gray-600">
+              <h4 className="font-bold mb-2 text-white">Basic Support - $500/month</h4>
+              <ul className="text-sm space-y-1 text-gray-200">
                 <li>• Monthly system check</li>
                 <li>• Bug fixes</li>
                 <li>• Email support</li>
               </ul>
             </div>
-            <div className="bg-gray-50 p-4 rounded-lg">
-              <h4 className="font-bold mb-2">Active Support - $1,500/month</h4>
-              <ul className="text-sm space-y-1">
+            <div className="bg-gray-700 p-4 rounded-lg border border-gray-600">
+              <h4 className="font-bold mb-2 text-white">Active Support - $1,500/month</h4>
+              <ul className="text-sm space-y-1 text-gray-200">
                 <li>• Weekly optimization</li>
                 <li>• Priority fixes</li>
                 <li>• Phone support</li>
                 <li>• Minor updates included</li>
               </ul>
             </div>
-            <div className="bg-gray-50 p-4 rounded-lg">
-              <h4 className="font-bold mb-2">Full Service - $3,000+/month</h4>
-              <ul className="text-sm space-y-1">
+            <div className="bg-gray-700 p-4 rounded-lg border border-gray-600">
+              <h4 className="font-bold mb-2 text-white">Full Service - $3,000+/month</h4>
+              <ul className="text-sm space-y-1 text-gray-200">
                 <li>• Daily monitoring</li>
                 <li>• Immediate response</li>
                 <li>• Continuous improvement</li>
@@ -414,9 +414,9 @@ const Index = () => {
       {/* Service Overlay */}
       {expandedService && <div className="fixed inset-0 bg-black bg-opacity-70 z-50 overflow-y-auto" onClick={() => setExpandedService(null)}>
           <div className="min-h-screen px-4 py-8">
-            <div onClick={e => e.stopPropagation()} className="bg-gray-700 text-white rounded-lg max-w-4xl mx-auto p-8 border border-purple-500/30">
-              <button onClick={() => setExpandedService(null)} className="float-right text-2xl hover:text-orange-400 transition-colors">✕</button>
-              <h2 className="text-3xl font-bold mb-6 text-purple-700">{expandedService.title}</h2>
+            <div onClick={e => e.stopPropagation()} className="bg-gray-800 text-white rounded-lg max-w-4xl mx-auto p-8 border border-purple-500/30">
+              <button onClick={() => setExpandedService(null)} className="float-right text-2xl hover:text-purple-400 transition-colors">✕</button>
+              <h2 className="text-3xl font-bold mb-6 text-purple-400">{expandedService.title}</h2>
               {expandedService.expandedContent}
             </div>
           </div>
