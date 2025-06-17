@@ -26,13 +26,12 @@ const Index = () => {
     if (!ctx) return;
 
     // Configuration
-const PARTICLE_COUNT = 40;
-const MAX_LINK_DISTANCE = 120;
-const PARTICLE_SPEED = 0.3;
-const MOUSE_REPEL_RADIUS = 100;
-const MOUSE_REPEL_STRENGTH = 0.3; 
+    const PARTICLE_COUNT = 40;
+    const MAX_LINK_DISTANCE = 120;
+    const PARTICLE_SPEED = 0.3;
+    const MOUSE_REPEL_RADIUS = 100;
+    const MOUSE_REPEL_STRENGTH = 0.3; 
 
-  
     let particles: any[] = [];
     const mouse = { x: null as number | null, y: null as number | null };
 
@@ -302,103 +301,6 @@ const MOUSE_REPEL_STRENGTH = 0.3;
               <p>• ROI achieved in 6 months</p>
             </div>
           </div>
-        </div>
-      )
-    },
-    {
-      id: 'training-videos',
-      title: 'Training & Education',
-      description: 'Professional AI and automation training videos custom-created for your team. From Disney Pixar style to corporate professional.',
-      gradient: 'from-green-500 to-emerald-600',
-      tags: ['Custom Videos', 'Multiple Styles', 'Team Training'],
-      imageUrl: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
-      fallbackText: "Training",
-      expandedContent: (
-        <div>
-          <h3 className="text-xl font-bold mb-4">Custom Training Videos</h3>
-          <p className="mb-6">We create engaging training content in any style to match your company culture.</p>
-          <div className="grid gap-4">
-            <a href="https://youtu.be/9MPf-pO5mhI" target="_blank" className="bg-gray-50 p-4 rounded-lg hover:bg-gray-100 transition">
-              <h4 className="font-bold text-green-800 mb-2">The Power of Feedback</h4>
-              <p className="text-gray-600">Disney Pixar style - Perfect for engaging team training</p>
-              <p className="text-blue-600 mt-2">▶ Watch Video</p>
-            </a>
-            <a href="https://youtu.be/3nd54SrD6-0" target="_blank" className="bg-gray-50 p-4 rounded-lg hover:bg-gray-100 transition">
-              <h4 className="font-bold text-green-800 mb-2">Our Home, Planet Earth</h4>
-              <p className="text-gray-600">Modern style - Environmental awareness training</p>
-              <p className="text-blue-600 mt-2">▶ Watch Video</p>
-            </a>
-            <a href="https://youtu.be/ZusJ_Sy3kbY" target="_blank" className="bg-gray-50 p-4 rounded-lg hover:bg-gray-100 transition">
-              <h4 className="font-bold text-green-800 mb-2">Spread Kindness</h4>
-              <p className="text-gray-600">Character animation - Culture and values training</p>
-              <p className="text-blue-600 mt-2">▶ Watch Video</p>
-            </a>
-          </div>
-        </div>
-      )
-    },
-    {
-      id: 'website-design',
-      title: 'Website Design & Development',
-      description: 'Professional websites that convert visitors into customers. Integrated with your automation systems for seamless operations.',
-      gradient: 'from-indigo-500 to-purple-600',
-      tags: ['Custom Design', 'Conversion Focused', 'Automation Ready'],
-      imageUrl: "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
-      fallbackText: "Website Design",
-      expandedContent: (
-        <div>
-          <h3 className="text-xl font-bold mb-4">Professional Web Development</h3>
-          <div className="space-y-6">
-            <a href="https://jcwindowcovering.com" target="_blank" className="block bg-gray-900 text-white p-6 rounded-lg hover:bg-gray-800 transition">
-              <h4 className="text-2xl font-bold mb-2">J&C Window Covering</h4>
-              <p className="text-lg mb-2">Premium Blinds Installation - $45/window</p>
-              <p className="text-gray-300">Features: Automated scheduling, instant quotes, payment processing</p>
-              <p className="text-blue-400 mt-3">Visit Live Site →</p>
-            </a>
-            <div className="bg-gray-50 p-6 rounded-lg">
-              <h4 className="font-bold mb-2">What We Build:</h4>
-              <ul className="space-y-2">
-                <li>• Service business websites</li>
-                <li>• E-commerce platforms</li>
-                <li>• Professional portfolios</li>
-                <li>• Automated booking systems</li>
-                <li>• Integrated payment processing</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      )
-    },
-    {
-      id: 'app-design',
-      title: 'App Design & Development',
-      description: 'Custom mobile and web applications that streamline your operations and enhance customer experience.',
-      gradient: 'from-cyan-500 to-blue-600',
-      tags: ['Mobile Apps', 'Web Apps', 'Custom Solutions'],
-      imageUrl: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
-      fallbackText: "App Development",
-      expandedContent: (
-        <div>
-          <h3 className="text-xl font-bold mb-4">Custom App Development</h3>
-          <div className="space-y-4">
-            <div className="bg-blue-50 p-4 rounded-lg">
-              <h4 className="font-bold text-blue-800 mb-2">MeasurePro</h4>
-              <p>Window measurement app for contractors</p>
-              <p className="text-sm mt-2">• Voice recording • PDF estimates • 75% faster quotes</p>
-            </div>
-            <div className="bg-blue-50 p-4 rounded-lg">
-              <h4 className="font-bold text-blue-800 mb-2">CloserCoach</h4>
-              <p>AI training app for sales teams</p>
-              <p className="text-sm mt-2">• Voice practice • Real scenarios • 35% better close rates</p>
-            </div>
-          </div>
-          <h4 className="font-bold mt-6 mb-2">We Build:</h4>
-          <ul className="space-y-2">
-            <li>• Customer portals</li>
-            <li>• Internal tools</li>
-            <li>• Mobile-first applications</li>
-            <li>• AI-powered interfaces</li>
-          </ul>
         </div>
       )
     },
