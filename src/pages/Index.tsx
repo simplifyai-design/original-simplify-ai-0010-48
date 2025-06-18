@@ -196,9 +196,13 @@ const Index = () => {
         muted 
         loop 
         playsInline
+        preload="auto"
         className="fixed top-0 left-0 w-full h-full object-cover pointer-events-none z-0"
+        onLoadedData={() => console.log('Video loaded')}
+        onError={(e) => console.error('Video error:', e)}
       >
         <source src="https://pub-2318b5cce7c14fd9968cc87f77eed0bc.r2.dev" type="video/mp4" />
+        Your browser does not support the video tag.
       </video>
 
       {/* Dark overlay for better text readability */}
