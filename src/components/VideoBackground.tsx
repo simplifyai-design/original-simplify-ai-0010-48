@@ -1,14 +1,25 @@
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 const VideoBackground = () => {
   const [videoLoaded, setVideoLoaded] = useState(false);
   const [videoError, setVideoError] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    // Detect mobile devices
+    const checkMobile = () => {
+      const isMobileDevice = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+      setIsMobile(isMobileDevice);
+    };
+    
+    checkMobile();
+  }, []);
 
   return (
     <>
-      {/* Video Background */}
-      {!videoError && (
+      {/* Video Background - only load on desktop or if mobile supports autoplay */}
+      {!videoError && !isMobile && (
         <video 
           autoPlay 
           muted 
@@ -34,8 +45,8 @@ const VideoBackground = () => {
         </video>
       )}
 
-      {/* Fallback background */}
-      {(!videoLoaded || videoError) && (
+      {/* Fallback background for mobile or when video fails */}
+      {(isMobile || !videoLoaded || videoError) && (
         <div className="fixed top-0 left-0 w-full h-full bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800 z-0" />
       )}
 
