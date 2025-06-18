@@ -76,7 +76,7 @@ const VideoBackground = () => {
           onPlay={() => console.log('Video started playing')}
           onPause={() => console.log('Video paused')}
         >
-          <source src="https://simplifyai.design/0617(2).mp4" type="video/mp4" />
+          <source src="https://assets.simplifyai.design/0617(2).mp4" type="video/mp4" />
           <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
