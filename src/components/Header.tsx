@@ -1,14 +1,11 @@
-
 import React from 'react';
 import { Button } from '@/components/ui/button';
-
 const Header = () => {
-  return (
-    <header className="absolute top-0 left-0 right-0 p-6 z-20" style={{
-      textShadow: '0px 2px 10px rgba(0, 0, 0, 0.8)'
-    }}>
-      <nav className="container mx-auto flex justify-between items-center">
-        <h1 className="text-2xl font-bold tracking-tighter">SimplifyAI.design</h1>
+  return <header className="absolute top-0 left-0 right-0 p-6 z-20" style={{
+    textShadow: '0px 2px 10px rgba(0, 0, 0, 0.8)'
+  }}>
+      <nav className="container mx-auto flex justify-between items-center py-[50px] bg-[#000a0e]/[0.46] rounded-xl">
+        <h1 className="text-2xl font-bold tracking-tighter text-green-600">SimplifyAI.design</h1>
         <div className="hidden md:flex items-center space-x-6">
           <a href="#services" className="hover:text-blue-400 transition-colors">Solutions</a>
           <a href="#how-we-work" className="hover:text-blue-400 transition-colors">Platform</a>
@@ -19,8 +16,6 @@ const Header = () => {
           Get Started
         </Button>
       </nav>
-    </header>
-  );
+    </header>;
 };
-
 export default Header;

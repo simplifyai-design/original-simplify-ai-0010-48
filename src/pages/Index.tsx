@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import Header from '@/components/Header';
 import VideoBackground from '@/components/VideoBackground';
@@ -8,22 +7,18 @@ import HowWeWorkSection from '@/components/HowWeWorkSection';
 import PricingSection from '@/components/PricingSection';
 import ContactSection from '@/components/ContactSection';
 import Footer from '@/components/Footer';
-
 const Index = () => {
   const [scrollY, setScrollY] = useState(0);
-
   useEffect(() => {
     const handleScroll = () => setScrollY(window.scrollY);
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-
-  return (
-    <div className="min-h-screen bg-slate-900 text-white overflow-x-hidden">
+  return <div className="min-h-screen bg-slate-900 text-white overflow-x-hidden">
       <VideoBackground />
 
       {/* Hero Section */}
-      <section className="relative min-h-screen flex flex-col justify-center items-center p-4 z-10">
+      <section className="relative min-h-screen flex flex-col justify-center items-center p-4 z-10 my-0">
         <Header />
         <HeroSection />
       </section>
@@ -33,8 +28,6 @@ const Index = () => {
       <PricingSection />
       <ContactSection />
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default Index;
