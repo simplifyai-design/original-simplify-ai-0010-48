@@ -1,8 +1,8 @@
 import React from 'react';
 const PricingSection = () => {
-  return <section id="pricing" className="py-20 relative z-10 bg-slate-800">
+  return <section id="pricing" className="py-20 relative z-10 bg-slate-950">
       <div className="max-w-6xl mx-auto px-4">
-        <h2 className="text-4xl font-bold text-center mb-12 text-white">Investment Options</h2>
+        <h2 className="font-bold text-center mb-12 text-white text-5xl">Investment Options</h2>
         <div className="grid md:grid-cols-3 gap-8">
           <div className="text-gray-900 rounded-lg p-8 border-2 border-transparent hover:border-purple-800 transition-colors bg-slate-700">
             <h3 className="text-2xl font-bold mb-4 text-violet-300">Strategy Session</h3>
