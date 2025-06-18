@@ -1,4 +1,5 @@
 
+
 import React, { useState, useEffect } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -198,7 +199,7 @@ const Index = () => {
         muted 
         loop 
         playsInline
-        preload="metadata"
+        preload="none"
         className="fixed top-0 left-0 w-full h-full object-cover pointer-events-none z-0"
         onLoadedData={() => {
           console.log('Video loaded successfully');
@@ -212,7 +213,6 @@ const Index = () => {
         onLoadStart={() => console.log('Video loading started')}
       >
         <source src="https://pub-2318b5cce7c14fd9968cc87f77eed0bc.r2.dev/video.mp4" type="video/mp4" />
-        <source src="https://pub-2318b5cce7c14fd9968cc87f77eed0bc.r2.dev" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
 
@@ -447,3 +447,4 @@ const Index = () => {
 };
 
 export default Index;
+
