@@ -1,11 +1,8 @@
-
 import React, { useState } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { ChevronDown } from 'lucide-react';
-
 const ServicesSection = () => {
   const [expandedService, setExpandedService] = useState<any>(null);
-
   const services = [{
     id: 'ai-coaching',
     title: 'AI Coaching & Advising',
@@ -159,46 +156,41 @@ const ServicesSection = () => {
           </div>
         </div>
   }];
-
-  return (
-    <>
-      <section id="services" className="py-20 px-6 bg-gray-800 relative z-10">
+  return <>
+      <section id="services" className="py-20 px-6 relative z-10 bg-gray-950">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
+            <h2 className="text-4xl lg:text-5xl font-bold mb-6 text-slate-50">
               How We Can Transform Your Business
             </h2>
-            <p className="text-xl text-gray-300">From quick strategy sessions to full implementations, we offer flexible solutions that match your needs and budget
+            <p className="text-xl text-blue-700">From quick strategy sessions to full implementations, we offer flexible solutions that match your needs and budget
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-            {services.map((service, index) => 
-              <Card key={index} className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-gray-600 shadow-lg cursor-pointer bg-gray-700/50 backdrop-blur-sm hover:border-emerald-500/50 flex flex-col h-full" onClick={() => setExpandedService(service)}>
+            {services.map((service, index) => <Card key={index} onClick={() => setExpandedService(service)} className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-gray-600 shadow-lg cursor-pointer backdrop-blur-sm hover:border-emerald-500/50 flex flex-col h-full bg-slate-900">
                 <div className={`h-48 bg-gradient-to-br ${service.gradient} relative overflow-hidden rounded-t-lg`}>
                   <img src={service.imageUrl} alt={service.title} className="absolute inset-0 w-full h-full object-cover opacity-30" onError={e => {
-                    e.currentTarget.style.display = 'none';
-                  }} />
+                e.currentTarget.style.display = 'none';
+              }} />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
                   <div className="relative z-10 h-full flex items-center justify-center text-white">
                     <h3 className="text-lg font-bold text-center px-4">{service.fallbackText}</h3>
                   </div>
                 </div>
                 
-                <CardHeader className="flex-grow">
+                <CardHeader className="flex-grow bg-slate-900">
                   <CardTitle className="text-lg text-white group-hover:text-orange-400 transition-colors">{service.title}</CardTitle>
                   <CardDescription className="text-gray-300 leading-relaxed text-sm">
                     {service.description}
                   </CardDescription>
                 </CardHeader>
 
-                <CardContent className="space-y-4 mt-auto">
+                <CardContent className="space-y-4 mt-auto bg-slate-900">
                   <div className="flex flex-wrap gap-2 min-h-[2.5rem] items-start">
-                    {service.tags.map((tag, tagIndex) => 
-                      <span key={tagIndex} className="bg-gray-600 text-gray-200 text-xs px-2 py-1 rounded-full group-hover:bg-purple-800 transition-colors">
+                    {service.tags.map((tag, tagIndex) => <span key={tagIndex} className="bg-gray-600 text-gray-200 text-xs px-2 py-1 rounded-full group-hover:bg-purple-800 transition-colors">
                         {tag}
-                      </span>
-                    )}
+                      </span>)}
                   </div>
 
                   <div className="flex items-center gap-2 text-orange-400 font-semibold hover:text-orange-300 transition-colors">
@@ -206,15 +198,13 @@ const ServicesSection = () => {
                     <ChevronDown className="w-4 h-4" />
                   </div>
                 </CardContent>
-              </Card>
-            )}
+              </Card>)}
           </div>
         </div>
       </section>
 
       {/* Service Overlay */}
-      {expandedService && 
-        <div className="fixed inset-0 bg-black bg-opacity-70 z-50 overflow-y-auto" onClick={() => setExpandedService(null)}>
+      {expandedService && <div className="fixed inset-0 bg-black bg-opacity-70 z-50 overflow-y-auto" onClick={() => setExpandedService(null)}>
           <div className="min-h-screen px-4 py-8">
             <div onClick={e => e.stopPropagation()} className="bg-gray-800 text-white rounded-lg max-w-4xl mx-auto p-8 border border-purple-500/30">
               <button onClick={() => setExpandedService(null)} className="float-right text-2xl hover:text-purple-400 transition-colors">✕</button>
@@ -222,10 +212,7 @@ const ServicesSection = () => {
               {expandedService.expandedContent}
             </div>
           </div>
-        </div>
-      }
-    </>
-  );
+        </div>}
+    </>;
 };
-
 export default ServicesSection;
