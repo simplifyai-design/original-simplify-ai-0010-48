@@ -82,13 +82,19 @@ const VideoBackground = () => {
         </video>
       )}
 
-      {/* Enhanced fallback background */}
+      {/* Enhanced dynamic fallback background */}
       {(!shouldShowVideo || !videoLoaded || videoError) && (
-        <div className="fixed top-0 left-0 w-full h-full z-0">
-          {/* Animated gradient background */}
-          <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800 animate-pulse" />
-          {/* Moving gradient overlay */}
-          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-blue-600/20 to-transparent transform -skew-x-12 animate-pulse" />
+        <div className="fixed top-0 left-0 w-full h-full z-0 overflow-hidden">
+          {/* Base gradient with high contrast */}
+          <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-blue-800 to-purple-900" />
+          
+          {/* Animated moving gradients for dynamic effect */}
+          <div className="absolute inset-0 bg-gradient-to-r from-blue-600/40 via-transparent to-purple-600/40 animate-pulse" />
+          <div className="absolute inset-0 bg-gradient-to-l from-cyan-500/30 via-transparent to-indigo-600/30 transform translate-x-full animate-[slide-in-right_4s_ease-in-out_infinite_alternate]" />
+          <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-blue-400/20 to-transparent transform -rotate-45 animate-[spin_8s_linear_infinite]" />
+          
+          {/* Additional contrast layer */}
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-slate-800/50 to-black/60" />
         </div>
       )}
 
