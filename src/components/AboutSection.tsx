@@ -7,11 +7,13 @@ const AboutSection = () => {
         
         {/* Your Headshot Image */}
         <div className="md:w-1/3 flex-shrink-0">
-          <img 
-            src="https://simplifyai.design/BAHeadshot.png" 
-            alt="Brandon, Founder of SimplifyAI Design" 
-            className="rounded-full w-64 h-64 mx-auto object-cover border-4 border-slate-700 shadow-lg"
-          />
+          <div className="rounded-2xl overflow-hidden shadow-lg border-2 border-slate-700">
+            <img 
+              src="https://simplifyai.design/BAHeadshot.png" 
+              alt="Brandon, Founder of SimplifyAI Design" 
+              className="w-full h-full object-cover"
+            />
+          </div>
         </div>
 
         {/* Your Philosophy / Story */}
