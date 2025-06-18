@@ -3,7 +3,7 @@ import { Button } from '@/components/ui/button';
 const HeroSection = () => {
   return <main style={{
     textShadow: '0px 2px 10px rgba(0, 0, 0, 0.8)'
-  }} className="text-center z-20 bg-[#000a0e]/[0.66] py-[4px]">
+  }} className="text-center z-20 py-[4px] bg-[#000a0e]/50">
       <h2 className="text-4xl md:text-6xl font-extrabold leading-tight mb-4">
         Drive Growth with <span className="text-blue-400">AI-Powered Automation</span>
       </h2>
