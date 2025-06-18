@@ -4,7 +4,7 @@ const Header = () => {
   return <header className="absolute top-0 left-0 right-0 p-6 z-20" style={{
     textShadow: '0px 2px 10px rgba(0, 0, 0, 0.8)'
   }}>
-      <nav className="container mx-auto flex justify-between items-center bg-[#000a0e]/[0.46] rounded-md py-[2px]">
+      <nav className="container mx-auto flex justify-between items-center bg-[#000a0e]/[0.46] py-[2px] rounded-lg">
         <h1 className="font-bold tracking-tighter text-green-600 text-3xl">SimplifyAI.design</h1>
         <div className="hidden md:flex items-center space-x-6">
           <a href="#services" className="hover:text-blue-400 transition-colors">Solutions</a>
