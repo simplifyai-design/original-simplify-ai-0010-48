@@ -5,16 +5,21 @@ import HeroSection from '@/components/HeroSection';
 import ServicesSection from '@/components/ServicesSection';
 import HowWeWorkSection from '@/components/HowWeWorkSection';
 import PricingSection from '@/components/PricingSection';
+import AboutSection from '@/components/AboutSection'; // <-- This line is new
 import ContactSection from '@/components/ContactSection';
 import Footer from '@/components/Footer';
+
 const Index = () => {
   const [scrollY, setScrollY] = useState(0);
+
   useEffect(() => {
     const handleScroll = () => setScrollY(window.scrollY);
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-  return <div className="min-h-screen bg-slate-900 text-white overflow-x-hidden">
+
+  return (
+    <div className="min-h-screen bg-slate-900 text-white overflow-x-hidden">
       <VideoBackground />
 
       {/* Hero Section */}
@@ -26,8 +31,11 @@ const Index = () => {
       <ServicesSection />
       <HowWeWorkSection />
       <PricingSection />
+      <AboutSection /> 
       <ContactSection />
       <Footer />
-    </div>;
+    </div>
+  );
 };
+
 export default Index;
