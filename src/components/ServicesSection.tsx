@@ -174,7 +174,7 @@ const ServicesSection = () => {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
             {services.map((service, index) => 
-              <Card key={index} className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-gray-600 shadow-lg cursor-pointer bg-gray-700/50 backdrop-blur-sm hover:border-emerald-500/50" onClick={() => setExpandedService(service)}>
+              <Card key={index} className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-gray-600 shadow-lg cursor-pointer bg-gray-700/50 backdrop-blur-sm hover:border-emerald-500/50 flex flex-col h-full" onClick={() => setExpandedService(service)}>
                 <div className={`h-48 bg-gradient-to-br ${service.gradient} relative overflow-hidden rounded-t-lg`}>
                   <img src={service.imageUrl} alt={service.title} className="absolute inset-0 w-full h-full object-cover opacity-30" onError={e => {
                     e.currentTarget.style.display = 'none';
@@ -185,15 +185,15 @@ const ServicesSection = () => {
                   </div>
                 </div>
                 
-                <CardHeader>
+                <CardHeader className="flex-grow">
                   <CardTitle className="text-lg text-white group-hover:text-orange-400 transition-colors">{service.title}</CardTitle>
                   <CardDescription className="text-gray-300 leading-relaxed text-sm">
                     {service.description}
                   </CardDescription>
                 </CardHeader>
 
-                <CardContent className="space-y-4">
-                  <div className="flex flex-wrap gap-2">
+                <CardContent className="space-y-4 mt-auto">
+                  <div className="flex flex-wrap gap-2 min-h-[2.5rem] items-start">
                     {service.tags.map((tag, tagIndex) => 
                       <span key={tagIndex} className="bg-gray-600 text-gray-200 text-xs px-2 py-1 rounded-full group-hover:bg-purple-800 transition-colors">
                         {tag}
