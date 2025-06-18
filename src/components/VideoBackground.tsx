@@ -82,19 +82,24 @@ const VideoBackground = () => {
         </video>
       )}
 
-      {/* Enhanced dynamic fallback background */}
+      {/* Animated fallback background with uploaded image */}
       {(!shouldShowVideo || !videoLoaded || videoError) && (
         <div className="fixed top-0 left-0 w-full h-full z-0 overflow-hidden">
-          {/* Base gradient with high contrast */}
-          <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-blue-800 to-purple-900" />
+          {/* Main background image with subtle movement */}
+          <div 
+            className="absolute inset-0 bg-cover bg-center bg-no-repeat animate-[pan_20s_ease-in-out_infinite_alternate]"
+            style={{
+              backgroundImage: `url('/lovable-uploads/5fa355f9-d698-429a-9adc-4bdefd6d0042.png')`,
+              transform: 'scale(1.1)' // Slight zoom to allow for panning motion
+            }}
+          />
           
-          {/* Animated moving gradients for dynamic effect */}
-          <div className="absolute inset-0 bg-gradient-to-r from-blue-600/40 via-transparent to-purple-600/40 animate-pulse" />
-          <div className="absolute inset-0 bg-gradient-to-l from-cyan-500/30 via-transparent to-indigo-600/30 transform translate-x-full animate-[slide-in-right_4s_ease-in-out_infinite_alternate]" />
-          <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-blue-400/20 to-transparent transform -rotate-45 animate-[spin_8s_linear_infinite]" />
+          {/* Animated overlay layers for extra motion */}
+          <div className="absolute inset-0 bg-gradient-to-r from-blue-900/30 via-transparent to-cyan-900/30 animate-[slide-horizontal_8s_ease-in-out_infinite_alternate]" />
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-blue-500/10 to-transparent animate-pulse" />
           
-          {/* Additional contrast layer */}
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-slate-800/50 to-black/60" />
+          {/* Subtle moving light effect */}
+          <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/5 to-transparent transform rotate-45 translate-x-full animate-[sweep_12s_ease-in-out_infinite]" />
         </div>
       )}
 
