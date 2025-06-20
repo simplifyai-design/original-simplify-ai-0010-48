@@ -1,3 +1,4 @@
+
 /* Chatbot Main Styles */
 
 .scb-chat-bubble {
@@ -6,19 +7,20 @@
     right: 20px;
     width: 60px;
     height: 60px;
-    background-color: #007bff; /* Primary Blue - CHANGE TO YOUR BRAND COLOR */
+    background: linear-gradient(135deg, #1e40af, #3b82f6); /* Blue gradient to match site */
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+    box-shadow: 0 8px 25px rgba(59, 130, 246, 0.4), 0 4px 12px rgba(0,0,0,0.3);
     z-index: 9999;
-    transition: transform 0.2s ease-in-out;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 }
 
 .scb-chat-bubble:hover {
     transform: scale(1.1);
+    box-shadow: 0 12px 35px rgba(59, 130, 246, 0.6), 0 6px 15px rgba(0,0,0,0.4);
 }
 
 .scb-chat-window {
@@ -29,12 +31,12 @@
     max-width: 90vw;
     height: 70vh;
     max-height: 550px;
-    background-color: rgba(249, 250, 251, 0.85); /* Slightly off-white, translucent */
-    backdrop-filter: blur(12px); /* Frosted glass effect */
+    background: linear-gradient(145deg, #000a0e, #0f172a); /* Same dark blue as hero section */
+    backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(59, 130, 246, 0.3);
     border-radius: 16px;
-    box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.5), 0 0 20px rgba(59, 130, 246, 0.2);
     display: flex;
     flex-direction: column;
     overflow: hidden;
@@ -52,8 +54,8 @@
 
 .scb-chat-header {
     padding: 1rem;
-    background-color: rgba(255, 255, 255, 0.5);
-    border-bottom: 1px solid rgba(0,0,0,0.1);
+    background: linear-gradient(135deg, rgba(30, 64, 175, 0.8), rgba(59, 130, 246, 0.6));
+    border-bottom: 1px solid rgba(59, 130, 246, 0.3);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -62,8 +64,9 @@
 
 .scb-chat-header h3 {
     margin: 0;
-    color: #1f2937;
+    color: #ffffff;
     font-weight: 600;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.3);
 }
 
 .scb-close-chat {
@@ -71,8 +74,13 @@
     border: none;
     font-size: 24px;
     cursor: pointer;
-    color: #6b7280;
+    color: #e2e8f0;
     line-height: 1;
+    transition: color 0.2s;
+}
+
+.scb-close-chat:hover {
+    color: #ffffff;
 }
 
 .scb-chat-messages {
@@ -82,6 +90,7 @@
     display: flex;
     flex-direction: column;
     gap: 12px;
+    background: linear-gradient(180deg, rgba(15, 23, 42, 0.9), rgba(30, 41, 59, 0.8));
 }
 
 .scb-message {
@@ -90,48 +99,72 @@
     max-width: 85%;
     word-wrap: break-word;
     line-height: 1.4;
+    backdrop-filter: blur(8px);
 }
 
 .scb-message.sent {
-    background-color: #007bff; /* Your brand's blue */
+    background: linear-gradient(135deg, #3b82f6, #1e40af);
     color: white;
     align-self: flex-end;
     border-bottom-right-radius: 4px;
+    box-shadow: 0 2px 8px rgba(59, 130, 246, 0.3);
 }
 
 .scb-message.received {
-    background-color: #ffffff;
-    color: #1f2937;
+    background: rgba(51, 65, 85, 0.9);
+    color: #e2e8f0;
     align-self: flex-start;
-    border: 1px solid #e5e7eb;
+    border: 1px solid rgba(59, 130, 246, 0.2);
     border-bottom-left-radius: 4px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.scb-message.thinking {
+    background: rgba(59, 130, 246, 0.2);
+    color: #93c5fd;
+    align-self: flex-start;
+    border: 1px solid rgba(59, 130, 246, 0.3);
+    border-bottom-left-radius: 4px;
+    animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 0.6; }
+    50% { opacity: 1; }
 }
 
 .scb-chat-form {
     display: flex;
     padding: 1rem;
-    border-top: 1px solid rgba(0,0,0,0.1);
-    background-color: rgba(255, 255, 255, 0.5);
+    border-top: 1px solid rgba(59, 130, 246, 0.3);
+    background: linear-gradient(135deg, rgba(30, 64, 175, 0.6), rgba(59, 130, 246, 0.4));
     flex-shrink: 0;
 }
 
 .scb-chat-input {
     flex-grow: 1;
-    border: 1px solid #d1d5db;
+    border: 1px solid rgba(59, 130, 246, 0.4);
     border-radius: 20px;
     padding: 10px 15px;
     font-size: 16px;
-    background-color: #ffffff;
+    background: rgba(51, 65, 85, 0.8);
+    color: #e2e8f0;
+    backdrop-filter: blur(8px);
+}
+
+.scb-chat-input::placeholder {
+    color: #94a3b8;
 }
 
 .scb-chat-input:focus {
     outline: none;
-    border-color: #007bff;
-    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.2);
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.3);
+    background: rgba(51, 65, 85, 0.9);
 }
 
 .scb-chat-form button {
-    background-color: #007bff;
+    background: linear-gradient(135deg, #3b82f6, #1e40af);
     color: white;
     border: none;
     border-radius: 50%;
@@ -143,9 +176,12 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: background-color 0.2s;
+    transition: all 0.2s;
+    box-shadow: 0 2px 8px rgba(59, 130, 246, 0.3);
 }
 
 .scb-chat-form button:hover {
-    background-color: #0056b3; /* Darker blue */
+    background: linear-gradient(135deg, #1e40af, #1e3a8a);
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
 }
