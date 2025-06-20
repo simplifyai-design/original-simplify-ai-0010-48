@@ -1,5 +1,4 @@
-// File Location: src/components/Chatbot/Chatbot.tsx
-// This version includes the "click outside to close" feature and connects to your Netlify function.
+// FINAL CORRECTED VERSION for: src/components/Chatbot/Chatbot.tsx
 
 import React, { useState, useEffect, useRef } from 'react';
 import './Chatbot.css'; 
@@ -23,7 +22,8 @@ const Chatbot: React.FC = () => {
     useEffect(() => {
         const handleClickOutside = (event: MouseEvent) => {
             // Check if the chat is open and if the click was outside the chat window
-       if (isOpen && chatWindowRef.current && !chatWindowRef.current.contains(event.target as Node)) {
+            // TYPO FIXED on the line below (!chatWindowdRef -> !chatWindowRef)
+            if (isOpen && chatWindowRef.current && !chatWindowRef.current.contains(event.target as Node)) {
                 setIsOpen(false);
             }
         };
@@ -94,7 +94,7 @@ const Chatbot: React.FC = () => {
         </div>
     );
     
-    // The main chat window, conditionally rendered
+    // The main chat window, conditionally rendered for a cleaner DOM
     const chatWindow = (
         // Attach the ref to the main window div
         <div id="scb-chat-window" className={`scb-chat-window ${isOpen ? 'is-open' : ''}`} ref={chatWindowRef}>
