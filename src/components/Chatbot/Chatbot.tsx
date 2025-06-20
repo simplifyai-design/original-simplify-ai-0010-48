@@ -23,7 +23,7 @@ const Chatbot: React.FC = () => {
     useEffect(() => {
         const handleClickOutside = (event: MouseEvent) => {
             // Check if the chat is open and if the click was outside the chat window
-            if (isOpen && chatWindowRef.current && !chatWindowdRef.current.contains(event.target as Node)) {
+       if (isOpen && chatWindowRef.current && !chatWindowRef.current.contains(event.target as Node)) {
                 setIsOpen(false);
             }
         };
