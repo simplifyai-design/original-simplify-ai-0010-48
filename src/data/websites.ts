@@ -1,23 +1,43 @@
+// File Location: src/data/websites.ts
+// This file contains the data for your website showcase modal.
 
-export const websites = [
+// We are defining the structure of a website object for clarity
+export interface Website {
+  title: string;
+  url: string;
+  description: string;
+}
+
+// This is the list of your actual websites that will be displayed
+export const websites: Website[] = [
   {
-    title: "E-commerce Platform",
-    url: "https://demo.vercel.store",
-    description: "Modern e-commerce with AI-powered recommendations"
+    title: "BidPro",
+    url: "https://preview--bidpro-landing-revamp.lovable.app/",
+    description: "A dynamic landing page for an AI-powered bidding tool for contractors."
   },
   {
-    title: "Healthcare Portal",
-    url: "https://react-health-dashboard.vercel.app", 
-    description: "Patient management system with automated workflows"
+    title: "Confirm AI",
+    url: "https://confirmai.net/",
+    description: "A powerful AI application for intelligent confirmation and scheduling."
   },
   {
-    title: "Real Estate CRM",
-    url: "https://react-real-estate-tau.vercel.app",
-    description: "Property management with AI lead qualification"
+    title: "Window Cover Prosper",
+    url: "https://preview--window-cover-prosper-site.lovable.app/",
+    description: "A modern, clean website for a local window covering business."
   },
   {
-    title: "Restaurant Management",
-    url: "https://restaurant-pos-react.vercel.app",
-    description: "Complete restaurant operations with automation"
-  }
+    title: "SH Forestry",
+    url: "https://shforestry.net/",
+    description: "A professional landing page for a forestry consulting service."
+  },
+  {
+    title: "DFW Comfort Craft",
+    url: "https://preview--dfw-comfort-craft.lovable.app/",
+    description: "An approachable and user-friendly site for an HVAC services company."
+  },
+  {
+    title: "Pixel Tailwind Canvas",
+    url: "https://preview--pixel-tailwind-canvas.lovable.app/",
+    description: "A creative exploration of Tailwind CSS capabilities and design."
+  },
 ];
