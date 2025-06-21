@@ -26,7 +26,7 @@ const AboutSection = () => {
               className="w-full h-full object-cover"
             />
             {/* Play Button Overlay */}
-            <div className="absolute inset-0 flex items-center justify-center bg-black/30 group-hover:bg-black/40 transition-colors">
+            <div className="absolute inset-0 flex items-center justify-center bg-black/0 group-hover:bg-black/30 transition-colors">
               <div className="bg-white/90 rounded-full p-4 shadow-lg group-hover:scale-110 transition-transform">
                 <Play className="w-8 h-8 text-slate-900 ml-1" fill="currentColor" />
               </div>
