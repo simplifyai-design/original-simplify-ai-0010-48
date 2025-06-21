@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 const quotes = [
   {
@@ -29,21 +29,36 @@ const quotes = [
 ];
 
 const QuotesCarousel = () => {
+  const [currentQuote, setCurrentQuote] = useState(0);
+  const [isVisible, setIsVisible] = useState(true);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIsVisible(false);
+      
+      setTimeout(() => {
+        setCurrentQuote((prev) => (prev + 1) % quotes.length);
+        setIsVisible(true);
+      }, 500); // Half second for exit animation
+    }, 4000); // Show each quote for 4 seconds
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
-    <div className="w-full overflow-hidden py-8 mt-8">
-      <div className="animate-[scroll-quotes_60s_linear_infinite] whitespace-nowrap">
-        {quotes.map((quote, index) => (
-          <span
-            key={index}
-            className="inline-block mx-16 text-white/90 font-playfair text-lg md:text-xl italic"
-            style={{ fontFamily: 'Playfair Display, serif' }}
-          >
-            "{quote.text}"
-            <span className="text-white/70 not-italic text-base ml-2">
-              ― {quote.source}
-            </span>
-          </span>
-        ))}
+    <div className="w-full py-8 mt-8 min-h-[100px] flex items-center justify-center">
+      <div
+        className={`text-white/90 font-playfair text-lg md:text-xl italic text-center px-8 transition-all duration-500 ${
+          isVisible 
+            ? 'opacity-100 transform translate-x-0' 
+            : 'opacity-0 transform translate-x-8'
+        }`}
+        style={{ fontFamily: 'Playfair Display, serif' }}
+      >
+        "{quotes[currentQuote].text}"
+        <div className="text-white/70 not-italic text-base mt-2">
+          ― {quotes[currentQuote].source}
+        </div>
       </div>
     </div>
   );

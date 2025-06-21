@@ -8,7 +8,7 @@ const HeroSection = () => {
       style={{
         textShadow: '0px 2px 10px rgba(0, 0, 0, 0.8)',
       }}
-      className="text-center z-20 bg-[#000a0e]/50 px-4 py-4 my-2"
+      className="text-center z-20 px-4 py-4 my-2"
     >
       <h1 className="text-3xl sm:text-4xl md:text-6xl font-extrabold leading-tight mb-4">
         Stop Drowning in Manual Work. <br />

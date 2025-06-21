@@ -127,6 +127,14 @@ const Chatbot: React.FC = () => {
         return <Mic size={20} />;
     };
 
+    // Get placeholder text based on current state
+    const getPlaceholderText = () => {
+        if (status === 'connected') {
+            return 'Listening...';
+        }
+        return 'Type your message...';
+    };
+
     return (
         <>
             <div id="scb-chat-bubble" className="scb-chat-bubble" onClick={toggleChat}>
@@ -152,7 +160,7 @@ const Chatbot: React.FC = () => {
                             type="text"
                             id="scb-chat-input"
                             className="scb-chat-input"
-                            placeholder={status === 'connected' ? 'Listening...' : "Type or click mic..."}
+                            placeholder={getPlaceholderText()}
                             autoComplete="off"
                             value={inputValue}
                             onChange={(e) => setInputValue(e.target.value)}
@@ -162,7 +170,7 @@ const Chatbot: React.FC = () => {
                             type="button" 
                             onClick={handleActionButtonClick}
                             className={`scb-action-button ${status === 'connected' ? 'listening' : ''}`} 
-                            aria-label={inputValue ? 'Send message' : 'Toggle voice input'}
+                            aria-label={inputValue ? 'Send message' : (status === 'connected' ? 'Stop listening' : 'Start voice input')}
                         >
                             {renderActionButton()}
                         </button>
@@ -174,4 +182,3 @@ const Chatbot: React.FC = () => {
 };
 
 export default Chatbot;
-
