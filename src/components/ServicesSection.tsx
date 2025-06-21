@@ -1,10 +1,34 @@
 
 import React, { useState } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { ChevronDown } from 'lucide-react';
+import { ChevronDown, ExternalLink, X } from 'lucide-react';
 
 const ServicesSection = () => {
   const [expandedService, setExpandedService] = useState<any>(null);
+  const [showcaseWebsite, setShowcaseWebsite] = useState<any>(null);
+
+  const websites = [
+    {
+      title: "E-commerce Platform",
+      url: "https://example-ecommerce.com",
+      description: "Full-featured online store with AI-powered recommendations"
+    },
+    {
+      title: "Healthcare Portal",
+      url: "https://example-healthcare.com", 
+      description: "Patient management system with automated workflows"
+    },
+    {
+      title: "Real Estate CRM",
+      url: "https://example-realestate.com",
+      description: "Property management with AI lead qualification"
+    },
+    {
+      title: "Restaurant Management",
+      url: "https://example-restaurant.com",
+      description: "Complete restaurant operations with automation"
+    }
+  ];
 
   const services = [
     {
@@ -25,36 +49,51 @@ const ServicesSection = () => {
       )
     },
     {
-      id: 'workflow-automation',
-      title: 'Workflow & Process Automation',
-      description: "We design and deploy complete automation solutions that deliver massive ROI. For one manufacturing client, we automated their entire order-to-delivery process, cutting processing time from 45 minutes to just 5 and saving them over $50,000 in annual labor costs.",
-      gradient: 'from-emerald-500 to-teal-600',
-      tags: ['Process Audit', 'Custom Build', 'User Training'],
+      id: 'automation-solutions',
+      title: 'Automation & AI Solutions',
+      description: "We design and deploy complete automation solutions and custom AI agents that deliver massive ROI. From workflow automation that cuts processing time by 90% to intelligent agents like our ConfirmAI assistant, we build systems tailored to your business needs.",
+      gradient: 'from-emerald-500 to-purple-600',
+      tags: ['Process Audit', 'Custom AI Agents', 'Workflow Automation', 'User Training'],
       imageUrl: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
-      fallbackText: "Workflow Automation",
+      fallbackText: "Automation & AI",
       expandedContent: (
         <div className="p-6">
-          <h3 className="text-2xl font-bold mb-4">Workflow & Process Automation</h3>
+          <h3 className="text-2xl font-bold mb-4">Automation & AI Solutions</h3>
           <p className="text-gray-300 mb-4">
-            Complete automation solutions that streamline your business processes and deliver significant ROI.
+            Complete automation solutions and custom AI agents that streamline your business processes and deliver significant ROI.
           </p>
         </div>
       )
     },
     {
-      id: 'custom-ai-agents',
-      title: 'Custom AI Agents',
-      description: "From AI-powered appointment assistants like our ConfirmAI agent to internal knowledge bots, we build intelligent agents tailored to your business needs, freeing up your team to focus on high-value work.",
-      gradient: 'from-purple-500 to-pink-600',
-      tags: ['Custom Development', 'AI Training', 'Integration'],
-      imageUrl: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
-      fallbackText: "AI Agents",
+      id: 'website-showcase',
+      title: 'Website Development',
+      description: "Modern, responsive websites and web applications built with cutting-edge technology. From e-commerce platforms to business portals, we create digital experiences that drive results.",
+      gradient: 'from-cyan-500 to-blue-600',
+      tags: ['Responsive Design', 'Modern Tech', 'Custom Development'],
+      imageUrl: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+      fallbackText: "Websites",
       expandedContent: (
         <div className="p-6">
-          <h3 className="text-2xl font-bold mb-4">Custom AI Agents</h3>
+          <h3 className="text-2xl font-bold mb-4">Website Showcase</h3>
           <p className="text-gray-300 mb-4">
-            Intelligent agents built specifically for your business needs and workflows.
+            Explore our portfolio of websites and web applications built for various industries.
           </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {websites.map((website, index) => (
+              <div
+                key={index}
+                onClick={() => setShowcaseWebsite(website)}
+                className="bg-slate-800 p-4 rounded-lg cursor-pointer hover:bg-slate-700 transition-colors border border-slate-600 hover:border-cyan-500"
+              >
+                <div className="flex items-center justify-between mb-2">
+                  <h4 className="text-white font-semibold">{website.title}</h4>
+                  <ExternalLink className="w-4 h-4 text-cyan-400" />
+                </div>
+                <p className="text-gray-400 text-sm">{website.description}</p>
+              </div>
+            ))}
+          </div>
         </div>
       )
     },
@@ -103,13 +142,13 @@ const ServicesSection = () => {
                   <img
                     src={service.imageUrl}
                     alt={service.title}
-                    className="absolute inset-0 w-full h-full object-cover opacity-30"
+                    className="absolute inset-0 w-full h-full object-cover opacity-30 transition-transform duration-700 group-hover:scale-110 group-hover:rotate-1"
                     onError={(e) => {
                       e.currentTarget.style.display = 'none';
                     }}
                   />
                   <div className="absolute inset-0 flex items-center justify-center">
-                    <span className="text-white text-lg font-semibold">{service.fallbackText}</span>
+                    <span className="text-white text-lg font-semibold transform transition-transform duration-300 group-hover:scale-105">{service.fallbackText}</span>
                   </div>
                 </div>
                 
@@ -142,9 +181,10 @@ const ServicesSection = () => {
         </div>
       </section>
 
+      {/* Service Details Modal */}
       {expandedService && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
-          <div className="bg-slate-900 rounded-lg max-w-2xl w-full max-h-96 overflow-y-auto">
+          <div className="bg-slate-900 rounded-lg max-w-4xl w-full max-h-96 overflow-y-auto">
             {expandedService.expandedContent}
             <div className="p-6 pt-0">
               <button
@@ -154,6 +194,32 @@ const ServicesSection = () => {
                 Close
               </button>
             </div>
+          </div>
+        </div>
+      )}
+
+      {/* Website Showcase Modal */}
+      {showcaseWebsite && (
+        <div className="fixed inset-0 bg-black/90 z-[9999] flex items-center justify-center p-4">
+          <div className="relative w-full max-w-6xl h-full max-h-[90vh] bg-white rounded-lg overflow-hidden">
+            <div className="flex items-center justify-between p-4 bg-slate-800 text-white">
+              <div>
+                <h3 className="text-lg font-semibold">{showcaseWebsite.title}</h3>
+                <p className="text-sm text-gray-300">{showcaseWebsite.description}</p>
+              </div>
+              <button
+                onClick={() => setShowcaseWebsite(null)}
+                className="text-white hover:text-gray-300 p-2"
+              >
+                <X className="w-6 h-6" />
+              </button>
+            </div>
+            <iframe
+              src={showcaseWebsite.url}
+              className="w-full h-full border-0"
+              title={showcaseWebsite.title}
+              sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-navigation"
+            />
           </div>
         </div>
       )}
