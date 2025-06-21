@@ -5,11 +5,6 @@ import Header from '@/components/Header';
 import VideoBackground from '@/components/VideoBackground';
 import HeroSection from '@/components/HeroSection';
 import QuotesCarousel from '@/components/QuotesCarousel';
-import ServicesSection from '@/components/ServicesSection';
-import HowWeWorkSection from '@/components/HowWeWorkSection';
-import PricingSection from '@/components/PricingSection';
-import AboutSection from '@/components/AboutSection';
-import ContactSection from '@/components/ContactSection';
 import Footer from '@/components/Footer';
 
 const Index = () => {
@@ -28,24 +23,14 @@ const Index = () => {
       {/* Hero Section */}
       <section className="relative min-h-screen flex flex-col justify-center items-center p-4 z-10 my-0">
         <Header />
-        <div
-          className="bg-[#000a0e]/50 px-4 py-4 my-2 rounded-lg"
-        >
+        <div className="bg-[#000a0e]/50 px-4 py-4 my-2 rounded-lg">
           <HeroSection />
           <QuotesCarousel />
         </div>
       </section>
 
-      <ServicesSection />
-      <HowWeWorkSection />
-      <PricingSection />
-      <AboutSection /> 
-      <ContactSection />
       <Footer />
-
-      {/* ============== Add The Chatbot Component Here ============== */}
       <Chatbot />
-
     </div>
   );
 };

@@ -15,8 +15,14 @@ interface WebsiteShowcaseProps {
 
 const WebsiteShowcase = ({ website, onClose }: WebsiteShowcaseProps) => {
   return (
-    <div className="fixed inset-0 bg-black/90 z-[9999] flex items-center justify-center p-4">
-      <div className="relative w-full max-w-6xl h-full max-h-[90vh] bg-white rounded-lg overflow-hidden">
+    <div 
+      className="fixed inset-0 bg-black/95 z-[9999] flex items-center justify-center p-4"
+      onClick={onClose}
+    >
+      <div 
+        className="relative w-full max-w-6xl h-full max-h-[90vh] bg-white rounded-lg overflow-hidden"
+        onClick={(e) => e.stopPropagation()}
+      >
         <div className="flex items-center justify-between p-4 bg-slate-800 text-white">
           <div>
             <h3 className="text-lg font-semibold">{website.title}</h3>
