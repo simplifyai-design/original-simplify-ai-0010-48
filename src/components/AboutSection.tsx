@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Play } from 'lucide-react';
 
@@ -53,11 +52,11 @@ const AboutSection = () => {
 
       {/* Video Modal */}
       {isVideoPlaying && (
-        <div className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4" onClick={handleCloseVideo}>
+        <div className="fixed inset-0 bg-black/80 z-[9999] flex items-center justify-center p-4" onClick={handleCloseVideo}>
           <div className="relative max-w-4xl w-full" onClick={(e) => e.stopPropagation()}>
             <button 
               onClick={handleCloseVideo}
-              className="absolute -top-10 right-0 text-white hover:text-gray-300 text-2xl font-bold"
+              className="absolute -top-10 right-0 text-white hover:text-gray-300 text-2xl font-bold z-[10000]"
             >
               ×
             </button>
