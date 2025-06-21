@@ -61,7 +61,7 @@ const AboutSection = () => {
               ×
             </button>
             <video 
-              src="https://pub-2318b5cce7c14fd9968cc87f77eed0bc.r2.dev/Brandon%20Video2.mp4"
+              src="https://pub-2318b5cce7c14fd9968cc87f77eed0bc.r2.dev/BrandonVd4.mp4"
               controls
               autoPlay
               className="w-full rounded-lg"
