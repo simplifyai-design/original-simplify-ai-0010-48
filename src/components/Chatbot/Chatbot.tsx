@@ -1,7 +1,7 @@
-// FINAL VERSION with VOICE for: src/components/Chatbot/Chatbot.tsx
+// FINAL CORRECTED VERSION for: src/components/Chatbot/Chatbot.tsx
 
 import React, { useState, useEffect, useRef } from 'react';
-import { Mic, Send } from 'lucide-react'; // Using lucide-react icons
+import { Mic, Send } from 'lucide-react';
 import { useConversation } from '@11labs/react';
 import './Chatbot.css'; 
 
@@ -49,6 +49,7 @@ const Chatbot: React.FC = () => {
     // --- Existing Logic, slightly modified ---
     useEffect(() => {
         const handleClickOutside = (event: MouseEvent) => {
+            // TYPO FIX: Changed !chatWindowdRef to !chatWindowRef
             if (isOpen && chatWindowRef.current && !chatWindowRef.current.contains(event.target as Node)) {
                 if (status === 'connected') stop(); // Stop voice session if clicking out
                 setIsOpen(false);
@@ -118,7 +119,7 @@ const Chatbot: React.FC = () => {
             </div>
             
             {isOpen && (
-                <div id="scb-chat-window" className="scb-chat-window" ref={chatWindowRef}>
+                <div id="scb-chat-window" className={`scb-chat-window ${isOpen ? 'is-open' : ''}`} ref={chatWindowRef}>
                     <div className="scb-chat-header">
                         <h3>Simplify Bot</h3>
                         <button id="scb-close-chat" className="scb-close-chat" onClick={toggleChat}>&times;</button>
