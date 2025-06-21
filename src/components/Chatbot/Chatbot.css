@@ -1,3 +1,4 @@
+
 /* FINAL CSS for Chatbot.css */
 
 /* Main chat bubble icon in the corner */
@@ -7,19 +8,21 @@
   right: 20px;
   width: 60px;
   height: 60px;
-  background-color: #007bff; /* A standard blue */
+  background-color: #1e293b; /* Darker slate to match site theme */
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
   z-index: 999;
-  transition: transform 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out, background-color 0.2s ease;
+  border: 2px solid #475569;
 }
 
 .scb-chat-bubble:hover {
   transform: scale(1.1);
+  background-color: #334155;
 }
 
 /* The main chat window */
@@ -31,14 +34,14 @@
   max-width: 90vw;
   height: 60vh;
   max-height: 700px;
-  background-color: #1a202c; /* Dark background */
+  background-color: #0f172a; /* Very dark slate */
   border-radius: 16px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
   display: flex;
   flex-direction: column;
   overflow: hidden;
   z-index: 1000;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid #334155;
   opacity: 1;
   transform: translateY(0);
   transition: opacity 0.3s ease, transform 0.3s ease;
@@ -47,26 +50,31 @@
 /* Chat window header */
 .scb-chat-header {
   padding: 16px;
-  background-color: rgba(255, 255, 255, 0.05);
+  background-color: #1e293b;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid #334155;
 }
 
 .scb-chat-header h3 {
   margin: 0;
   font-size: 1.1rem;
   font-weight: 600;
-  color: #e2e8f0; /* Light gray text */
+  color: #f1f5f9;
 }
 
 .scb-close-chat {
   background: none;
   border: none;
-  color: #a0aec0; /* Lighter gray for close button */
+  color: #94a3b8;
   font-size: 24px;
   cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.scb-close-chat:hover {
+  color: #f1f5f9;
 }
 
 /* Area for messages to appear */
@@ -77,6 +85,7 @@
   display: flex;
   flex-direction: column;
   gap: 12px;
+  background-color: #1e293b; /* Contrasting background for message area */
 }
 
 /* Individual message bubble styles */
@@ -85,17 +94,17 @@
   border-radius: 18px;
   max-width: 80%;
   line-height: 1.5;
-  color: #e2e8f0;
+  color: #f1f5f9;
 }
 
 .scb-message.received {
-  background-color: #2d3748; /* Darker blue-gray */
+  background-color: #334155;
   align-self: flex-start;
   border-bottom-left-radius: 4px;
 }
 
 .scb-message.sent {
-  background-color: #2b6cb0; /* Brighter blue for user */
+  background-color: #3b82f6;
   color: white;
   align-self: flex-end;
   border-bottom-right-radius: 4px;
@@ -104,20 +113,80 @@
 .scb-message.thinking {
   align-self: flex-start;
   font-style: italic;
-  color: #a0aec0;
+  color: #94a3b8;
 }
-
-
-/* --- NEW STYLES for the redesigned input area --- */
 
 /* The container for the text input and the action button */
 .scb-chat-form {
   display: flex;
   align-items: center;
   padding: 12px;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  background-color: rgba(255, 255, 255, 0.05);
-  gap: 10px;
+  border-top: 1px solid #334155;
+  background-color: #0f172a;
+  gap: 8px;
 }
 
 /* The text input field */
+.scb-chat-input {
+  flex: 1;
+  padding: 10px 12px;
+  border: 1px solid #334155;
+  border-radius: 20px;
+  background-color: #1e293b;
+  color: #f1f5f9;
+  outline: none;
+  font-size: 14px;
+  transition: border-color 0.2s ease;
+}
+
+.scb-chat-input:focus {
+  border-color: #3b82f6;
+}
+
+.scb-chat-input:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.scb-chat-input::placeholder {
+  color: #64748b;
+}
+
+/* The smaller action button (mic/send toggle) */
+.scb-action-button {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: none;
+  background-color: #3b82f6;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+  flex-shrink: 0;
+}
+
+.scb-action-button:hover {
+  background-color: #2563eb;
+  transform: scale(1.05);
+}
+
+.scb-action-button.listening {
+  background-color: #ef4444;
+  animation: pulse 2s infinite;
+}
+
+.scb-action-button.listening:hover {
+  background-color: #dc2626;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}

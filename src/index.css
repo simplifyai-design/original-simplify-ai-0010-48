@@ -117,3 +117,39 @@
   0% { transform: rotate(45deg) translateX(-100%) translateY(-100%); }
   100% { transform: rotate(45deg) translateX(100%) translateY(100%); }
 }
+
+/* Quote scrolling animation */
+@keyframes scroll-quotes {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+
+/* Desktop animations (slowed down by 3%) */
+@media (min-width: 769px) {
+  .animate-\[pan_20s_ease-in-out_infinite_alternate\] {
+    animation: pan 20.6s ease-in-out infinite alternate;
+  }
+  
+  .animate-\[slide-horizontal_8s_ease-in-out_infinite_alternate\] {
+    animation: slide-horizontal 8.2s ease-in-out infinite alternate;
+  }
+  
+  .animate-\[sweep_12s_ease-in-out_infinite\] {
+    animation: sweep 12.4s ease-in-out infinite;
+  }
+}
+
+/* Mobile animations (sped up by 10%) */
+@media (max-width: 768px) {
+  .animate-\[pan_20s_ease-in-out_infinite_alternate\] {
+    animation: pan 18s ease-in-out infinite alternate;
+  }
+  
+  .animate-\[slide-horizontal_8s_ease-in-out_infinite_alternate\] {
+    animation: slide-horizontal 7.2s ease-in-out infinite alternate;
+  }
+  
+  .animate-\[sweep_12s_ease-in-out_infinite\] {
+    animation: sweep 10.8s ease-in-out infinite;
+  }
+}
