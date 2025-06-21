@@ -1,5 +1,4 @@
 
-
 // CORRECTED VERSION for: src/components/Chatbot/Chatbot.tsx
 
 import React, { useState, useEffect, useRef } from 'react';
@@ -132,7 +131,7 @@ const Chatbot: React.FC = () => {
         if (status === 'connected') {
             return 'Listening...';
         }
-        return 'Type your message...';
+        return 'Type or click mic to speak...';
     };
 
     return (

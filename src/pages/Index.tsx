@@ -28,11 +28,11 @@ const Index = () => {
       {/* Hero Section */}
       <section className="relative min-h-screen flex flex-col justify-center items-center p-4 z-10 my-0">
         <Header />
-        <QuotesCarousel />
         <div
           className="bg-[#000a0e]/50 px-4 py-4 my-2 rounded-lg"
         >
           <HeroSection />
+          <QuotesCarousel />
         </div>
       </section>
 
