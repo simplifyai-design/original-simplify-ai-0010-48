@@ -1,4 +1,5 @@
-// FINAL CORRECTED VERSION for: src/components/Chatbot/Chatbot.tsx
+
+// CORRECTED VERSION for: src/components/Chatbot/Chatbot.tsx
 
 import React, { useState, useEffect, useRef } from 'react';
 import { Mic, Send } from 'lucide-react';
@@ -23,9 +24,9 @@ const Chatbot: React.FC = () => {
     // --- 11Labs Voice Integration ---
     const {
         status,
-        start,
-        stop,
-        transcript,
+        startSession,
+        endSession,
+        userTranscript,
     } = useConversation({
         agentId: "agent_01jy9rbd3te3ssm7xhtjrann42", // Your Agent ID
         getWsToken: async () => {
@@ -34,8 +35,8 @@ const Chatbot: React.FC = () => {
             return data.token;
         },
         onMessage: (message) => {
-            if (message.type === 'text' && message.text) {
-                setMessages(prev => [...prev, { type: 'received', text: message.text }]);
+            if (message.source === 'ai' && message.message) {
+                setMessages(prev => [...prev, { type: 'received', text: message.message }]);
             }
         },
         onError: (error) => {
@@ -46,23 +47,22 @@ const Chatbot: React.FC = () => {
 
     // This handles adding the user's final speech transcript to the chat log
     useEffect(() => {
-        if (transcript?.text) {
-             setMessages(prev => [...prev, { type: 'sent', text: transcript.text }]);
+        if (userTranscript?.message) {
+             setMessages(prev => [...prev, { type: 'sent', text: userTranscript.message }]);
         }
-    }, [transcript]);
+    }, [userTranscript]);
 
     // Effect to handle clicking outside the chat window to close it
     useEffect(() => {
         const handleClickOutside = (event: MouseEvent) => {
-            // Corrected this line to remove the typo
             if (isOpen && chatWindowRef.current && !chatWindowRef.current.contains(event.target as Node)) {
-                if (status === 'connected') stop(); // Stop voice session if clicking out
+                if (status === 'connected') endSession(); // Stop voice session if clicking out
                 setIsOpen(false);
             }
         };
         document.addEventListener('mousedown', handleClickOutside);
         return () => document.removeEventListener('mousedown', handleClickOutside);
-    }, [isOpen, status, stop]); 
+    }, [isOpen, status, endSession]); 
 
     // Effect to scroll to the bottom when new messages are added
     useEffect(() => {
@@ -74,7 +74,7 @@ const Chatbot: React.FC = () => {
     const toggleChat = () => {
         setIsOpen(!isOpen);
         if (isOpen && status === 'connected') { // if closing window, stop voice session
-            stop();
+            endSession();
         }
     };
 
@@ -116,9 +116,9 @@ const Chatbot: React.FC = () => {
             if(form) form.requestSubmit();
         } else {
             if (status === 'connected') {
-                stop();
+                endSession();
             } else {
-                start();
+                startSession();
             }
         }
     };
