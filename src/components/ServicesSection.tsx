@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { ChevronDown, ExternalLink, X } from 'lucide-react';
@@ -10,22 +9,22 @@ const ServicesSection = () => {
   const websites = [
     {
       title: "E-commerce Platform",
-      url: "https://example-ecommerce.com",
-      description: "Full-featured online store with AI-powered recommendations"
+      url: "https://demo.vercel.store",
+      description: "Modern e-commerce with AI-powered recommendations"
     },
     {
       title: "Healthcare Portal",
-      url: "https://example-healthcare.com", 
+      url: "https://react-health-dashboard.vercel.app", 
       description: "Patient management system with automated workflows"
     },
     {
       title: "Real Estate CRM",
-      url: "https://example-realestate.com",
+      url: "https://react-real-estate-tau.vercel.app",
       description: "Property management with AI lead qualification"
     },
     {
       title: "Restaurant Management",
-      url: "https://example-restaurant.com",
+      url: "https://restaurant-pos-react.vercel.app",
       description: "Complete restaurant operations with automation"
     }
   ];
@@ -206,6 +205,7 @@ const ServicesSection = () => {
               <div>
                 <h3 className="text-lg font-semibold">{showcaseWebsite.title}</h3>
                 <p className="text-sm text-gray-300">{showcaseWebsite.description}</p>
+                <p className="text-xs text-cyan-400 mt-1">{showcaseWebsite.url}</p>
               </div>
               <button
                 onClick={() => setShowcaseWebsite(null)}
@@ -219,6 +219,9 @@ const ServicesSection = () => {
               className="w-full h-full border-0"
               title={showcaseWebsite.title}
               sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-navigation"
+              onError={(e) => {
+                console.log('Iframe failed to load:', showcaseWebsite.url);
+              }}
             />
           </div>
         </div>
