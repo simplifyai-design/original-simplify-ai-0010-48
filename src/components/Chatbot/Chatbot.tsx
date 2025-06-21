@@ -1,4 +1,5 @@
 
+
 // CORRECTED VERSION for: src/components/Chatbot/Chatbot.tsx
 
 import React, { useState, useEffect, useRef } from 'react';
@@ -26,7 +27,6 @@ const Chatbot: React.FC = () => {
         status,
         startSession,
         endSession,
-        userTranscript,
     } = useConversation({
         agentId: "agent_01jy9rbd3te3ssm7xhtjrann42", // Your Agent ID
         getWsToken: async () => {
@@ -37,6 +37,8 @@ const Chatbot: React.FC = () => {
         onMessage: (message) => {
             if (message.source === 'ai' && message.message) {
                 setMessages(prev => [...prev, { type: 'received', text: message.message }]);
+            } else if (message.source === 'user' && message.message) {
+                setMessages(prev => [...prev, { type: 'sent', text: message.message }]);
             }
         },
         onError: (error) => {
@@ -44,13 +46,6 @@ const Chatbot: React.FC = () => {
             setMessages(prev => [...prev, { type: 'received', text: 'Sorry, my voice service is having an issue.' }]);
         }
     });
-
-    // This handles adding the user's final speech transcript to the chat log
-    useEffect(() => {
-        if (userTranscript?.message) {
-             setMessages(prev => [...prev, { type: 'sent', text: userTranscript.message }]);
-        }
-    }, [userTranscript]);
 
     // Effect to handle clicking outside the chat window to close it
     useEffect(() => {
@@ -179,3 +174,4 @@ const Chatbot: React.FC = () => {
 };
 
 export default Chatbot;
+
