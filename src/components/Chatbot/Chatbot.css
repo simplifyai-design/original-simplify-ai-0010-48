@@ -133,7 +133,7 @@
   border: 1px solid #334155;
   border-radius: 20px;
   background-color: #1e293b;
-  color: #f1f5f9;
+  color: #cbd5e1;
   outline: none;
   font-size: 14px;
   transition: border-color 0.2s ease;
@@ -149,7 +149,7 @@
 }
 
 .scb-chat-input::placeholder {
-  color: #64748b;
+  color: #94a3b8;
 }
 
 /* The smaller action button (mic/send toggle) */
