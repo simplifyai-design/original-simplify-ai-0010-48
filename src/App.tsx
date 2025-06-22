@@ -1,4 +1,11 @@
-
+/*
+================================================================================
+  STEP 1: UPDATE YOUR MAIN APP ROUTER
+  File to Edit: src/App.tsx
+  Action: Replace the entire content of this file with the code below.
+  Purpose: This sets up the main router for your new multi-page website.
+================================================================================
+*/
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Index from './pages/Index';
 import ServicesPage from './pages/ServicesPage';
@@ -7,8 +14,8 @@ import AutomationServicesPage from './pages/AutomationServicesPage';
 import AboutPage from './pages/AboutPage';
 import ContactPage from './pages/ContactPage';
 import NotFound from './pages/NotFound';
-import Header from './components/Header';
-import Footer from './components/Footer';
+import Header from './components/ui/Header'; 
+import Footer from './components/ui/Footer';
 
 function App() {
   return (
@@ -33,3 +40,5 @@ function App() {
 }
 
 export default App;
+```tsx
+/*
