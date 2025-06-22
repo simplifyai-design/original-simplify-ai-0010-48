@@ -1,4 +1,3 @@
-*/
 import React from 'react';
 
 const AutomationPackageCard = ({ title, description, outcome }: {title: string, description: string, outcome: string}) => (
