@@ -1,17 +1,23 @@
 
 import React from 'react';
-import { X } from 'lucide-react';
+import { X, ExternalLink } from 'lucide-react';
+import { Website } from '../../data/websites';
 
 interface WebsiteShowcaseProps {
+  website: Website;
   onClose: () => void;
 }
 
-const WebsiteShowcase = ({ onClose }: WebsiteShowcaseProps) => {
+const WebsiteShowcase = ({ website, onClose }: WebsiteShowcaseProps) => {
+  const handleVisitWebsite = () => {
+    window.open(website.url, '_blank');
+  };
+
   return (
     <div className="fixed inset-0 bg-black/80 flex items-center justify-center z-50 p-4">
       <div className="bg-slate-800 rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
         <div className="p-6 border-b border-slate-700 flex justify-between items-center">
-          <h2 className="text-2xl font-bold text-white">Our Website Portfolio</h2>
+          <h2 className="text-2xl font-bold text-white">{website.title}</h2>
           <button 
             onClick={onClose}
             className="text-slate-400 hover:text-white transition-colors"
@@ -21,45 +27,32 @@ const WebsiteShowcase = ({ onClose }: WebsiteShowcaseProps) => {
         </div>
         
         <div className="p-6">
-          <div className="grid md:grid-cols-2 gap-6">
-            <div className="bg-slate-700/50 p-4 rounded-lg">
-              <h3 className="text-lg font-semibold text-blue-300 mb-2">E-commerce Platform</h3>
-              <p className="text-slate-300 text-sm mb-3">
-                A modern online store with custom features and seamless checkout experience.
-              </p>
-              <div className="bg-slate-600 h-32 rounded flex items-center justify-center text-slate-400">
-                Website Preview
-              </div>
+          <p className="text-slate-300 mb-6">{website.description}</p>
+          
+          <div className="bg-slate-700/50 p-6 rounded-lg mb-6">
+            <div className="flex items-center justify-between mb-4">
+              <h3 className="text-lg font-semibold text-blue-300">Website Preview</h3>
+              <button
+                onClick={handleVisitWebsite}
+                className="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition-colors"
+              >
+                Visit Website <ExternalLink size={16} />
+              </button>
             </div>
             
-            <div className="bg-slate-700/50 p-4 rounded-lg">
-              <h3 className="text-lg font-semibold text-blue-300 mb-2">Professional Services</h3>
-              <p className="text-slate-300 text-sm mb-3">
-                Clean, professional design with integrated booking and client management.
-              </p>
-              <div className="bg-slate-600 h-32 rounded flex items-center justify-center text-slate-400">
-                Website Preview
-              </div>
+            <div className="bg-slate-600 h-64 rounded flex items-center justify-center text-slate-400 mb-4">
+              <iframe
+                src={website.url}
+                className="w-full h-full rounded"
+                title={website.title}
+                onError={() => {
+                  // Fallback if iframe fails
+                }}
+              />
             </div>
             
-            <div className="bg-slate-700/50 p-4 rounded-lg">
-              <h3 className="text-lg font-semibold text-blue-300 mb-2">Restaurant Chain</h3>
-              <p className="text-slate-300 text-sm mb-3">
-                Multi-location restaurant website with online ordering and reservations.
-              </p>
-              <div className="bg-slate-600 h-32 rounded flex items-center justify-center text-slate-400">
-                Website Preview
-              </div>
-            </div>
-            
-            <div className="bg-slate-700/50 p-4 rounded-lg">
-              <h3 className="text-lg font-semibold text-blue-300 mb-2">Tech Startup</h3>
-              <p className="text-slate-300 text-sm mb-3">
-                Modern SaaS landing page with interactive demos and user onboarding.
-              </p>
-              <div className="bg-slate-600 h-32 rounded flex items-center justify-center text-slate-400">
-                Website Preview
-              </div>
+            <div className="text-sm text-slate-400">
+              URL: <a href={website.url} target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:text-blue-300">{website.url}</a>
             </div>
           </div>
         </div>
