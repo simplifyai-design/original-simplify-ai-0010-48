@@ -1,50 +1,55 @@
-
-import React from 'react';
-import { X } from 'lucide-react';
-
-interface Website {
-  title: string;
-  url: string;
-  description: string;
-}
+*/
+import React, { useRef, useEffect } from 'react';
+import { websites } from '@/data/websites'; // Assuming your data is here
+import { ArrowUpRight } from 'lucide-react';
 
 interface WebsiteShowcaseProps {
-  website: Website;
   onClose: () => void;
 }
 
-const WebsiteShowcase = ({ website, onClose }: WebsiteShowcaseProps) => {
+const WebsiteShowcase: React.FC<WebsiteShowcaseProps> = ({ onClose }) => {
+  const modalRef = useRef<HTMLDivElement>(null);
+
+  // Click outside to close logic
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (modalRef.current && !modalRef.current.contains(event.target as Node)) {
+        onClose();
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [onClose]);
+
   return (
-    <div 
-      className="fixed inset-0 bg-black/95 z-[9999] flex items-center justify-center p-4"
-      onClick={onClose}
-    >
-      <div 
-        className="relative w-full max-w-6xl h-full max-h-[90vh] bg-white rounded-lg overflow-hidden"
-        onClick={(e) => e.stopPropagation()}
-      >
-        <div className="flex items-center justify-between p-4 bg-slate-800 text-white">
-          <div>
-            <h3 className="text-lg font-semibold">{website.title}</h3>
-            <p className="text-sm text-gray-300">{website.description}</p>
-            <p className="text-xs text-cyan-400 mt-1">{website.url}</p>
-          </div>
-          <button
-            onClick={onClose}
-            className="text-white hover:text-gray-300 p-2"
-          >
-            <X className="w-6 h-6" />
-          </button>
+    <div className="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center p-4 z-50 backdrop-blur-sm">
+      <div ref={modalRef} className="bg-slate-900 border border-blue-500/30 rounded-2xl max-w-4xl w-full p-8 shadow-2xl">
+        <div className="flex justify-between items-center mb-6">
+          <h2 className="text-3xl font-bold text-white">Website Portfolio</h2>
+          <button onClick={onClose} className="text-slate-400 hover:text-white">&times;</button>
         </div>
-        <iframe
-          src={website.url}
-          className="w-full h-full border-0"
-          title={website.title}
-          sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-navigation"
-          onError={(e) => {
-            console.log('Iframe failed to load:', website.url);
-          }}
-        />
+        <p className="text-slate-300 mb-8">
+          Explore our collection of custom websites and web applications built for various industries and business needs.
+        </p>
+        <div className="grid md:grid-cols-2 gap-6 max-h-[60vh] overflow-y-auto pr-4">
+          {websites.map((site) => (
+            <a
+              key={site.title}
+              href={site.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-slate-800/50 p-6 rounded-lg border border-transparent hover:border-blue-500/50 transition-all group"
+            >
+              <div className="flex justify-between items-center mb-2">
+                <h3 className="text-xl font-semibold text-white">{site.title}</h3>
+                <ArrowUpRight className="text-slate-400 group-hover:text-blue-400 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
+              </div>
+              <p className="text-slate-400">{site.description}</p>
+            </a>
+          ))}
+        </div>
       </div>
     </div>
   );
