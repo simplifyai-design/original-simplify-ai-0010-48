@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import ServiceCard from './ServiceCard';
 import ServiceModal from './ServiceModal';
-import WebsiteShowcase from './WebsiteShowcase';
+import WebsiteShowcase from './ui/WebsiteShowcase';
 import { services } from '../data/services';
 import { websites } from '../data/websites';
 
