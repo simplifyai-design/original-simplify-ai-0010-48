@@ -28,8 +28,8 @@ const WebsitesPage = () => {
       <Header />
       
       {/* Main Content */}
-      <div className="pt-24 pb-20">
-        <section className="py-12 px-6 relative z-10">
+      <div className="pt-20 pb-16">
+        <section className="py-8 px-6 relative z-10">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
               <h1 className="text-4xl lg:text-5xl font-bold text-white mb-6">

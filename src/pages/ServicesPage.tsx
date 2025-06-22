@@ -13,7 +13,7 @@ const ServicesPage = () => {
       <Header />
       
       {/* Add padding top to account for fixed header and bottom for footer */}
-      <div className="pt-24 pb-20">
+      <div className="pt-20 pb-16">
         <ServicesSection />
         <HowWeWorkSection />
         <PricingSection />
