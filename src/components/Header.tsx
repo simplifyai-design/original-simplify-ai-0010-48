@@ -1,6 +1,5 @@
 
 import React from 'react';
-import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 
 const Header = () => {
@@ -12,15 +11,12 @@ const Header = () => {
         <Link to="/" className="font-bold tracking-tighter text-green-600 text-xl md:text-3xl">
           SimplifyAI.design
         </Link>
-        <div className="hidden lg:flex items-center space-x-6">
+        <div className="flex items-center space-x-6">
           <Link to="/services" className="hover:text-blue-400 transition-colors text-sm">Services</Link>
           <Link to="/websites" className="hover:text-blue-400 transition-colors text-sm">Websites</Link>
           <Link to="/about" className="hover:text-blue-400 transition-colors text-sm">About</Link>
           <Link to="/contact" className="hover:text-blue-400 transition-colors text-sm">Contact</Link>
         </div>
-        <Button className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-1 px-2 md:py-2 md:px-4 rounded-lg transition-colors text-xs md:text-sm" asChild>
-          <Link to="/contact">Get Started</Link>
-        </Button>
       </nav>
     </header>
   );
