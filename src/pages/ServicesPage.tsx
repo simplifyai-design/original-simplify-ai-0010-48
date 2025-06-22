@@ -1,11 +1,11 @@
-*/
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Code, BotMessageSquare, BarChart } from 'lucide-react';
 
+// A reusable card component for this hub page
 const ServiceHubCard = ({ icon, title, description, buttonText, linkTo }: { icon: React.ReactNode, title: string, description: string, buttonText: string, linkTo: string }) => (
-  <div className="bg-slate-800/50 p-8 rounded-2xl border border-blue-500/20 shadow-lg hover:shadow-blue-500/20 transition-shadow duration-300 flex flex-col text-center items-center">
-    <div className="bg-blue-500/20 p-4 rounded-full mb-4">
+  <div className="bg-slate-800/50 p-8 rounded-2xl border border-slate-700 shadow-lg hover:shadow-blue-500/20 transition-shadow duration-300 flex flex-col text-center items-center">
+    <div className="bg-slate-700 p-4 rounded-full mb-4">
       {icon}
     </div>
     <h3 className="text-2xl font-bold mb-3 text-white">{title}</h3>
@@ -18,7 +18,7 @@ const ServiceHubCard = ({ icon, title, description, buttonText, linkTo }: { icon
 
 const ServicesPage = () => {
   return (
-    <div className="py-20 px-4">
+    <div className="py-24 px-4">
       <div className="text-center max-w-3xl mx-auto mb-16">
         <h1 className="text-5xl md:text-6xl font-bold mb-4 text-white">Our Services</h1>
         <p className="text-xl text-slate-300">
@@ -37,7 +37,7 @@ const ServicesPage = () => {
         <ServiceHubCard
           icon={<BotMessageSquare size={32} className="text-blue-300" />}
           title="Automation & AI Solutions"
-          description="We design and deploy intelligent systems that save you time, reduce costs, and drive business growth by handling your manual work for you."
+          description="We design and deploy intelligent systems that save you time, reduce costs, and drive growth by handling your manual work for you."
           buttonText="Explore Automation Packages"
           linkTo="/automation-services"
         />
@@ -54,5 +54,3 @@ const ServicesPage = () => {
 };
 
 export default ServicesPage;
-```tsx
-/*
