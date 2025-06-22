@@ -68,9 +68,9 @@ const WebsitesPage = () => {
                     />
                   </div>
                   
-                  <div className="p-6">
-                    <h3 className="text-xl font-bold text-white mb-2">{website.title}</h3>
-                    <p className="text-gray-400 mb-4">{website.description}</p>
+                  <div className="p-4 bg-slate-800/80">
+                    <h3 className="text-lg font-bold text-white mb-2">{website.title}</h3>
+                    <p className="text-gray-400 mb-3 text-sm">{website.description}</p>
                     <div className="flex items-center text-cyan-400 text-sm">
                       <span>View Live Site</span>
                       <span className="ml-2">→</span>
