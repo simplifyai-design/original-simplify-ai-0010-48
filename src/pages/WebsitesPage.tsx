@@ -28,8 +28,8 @@ const WebsitesPage = () => {
       <Header />
       
       {/* Main Content */}
-      <div className="pt-20 pb-20">
-        <section className="py-20 px-6 relative z-10">
+      <div className="pt-24 pb-20">
+        <section className="py-12 px-6 relative z-10">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
               <h1 className="text-4xl lg:text-5xl font-bold text-white mb-6">
@@ -57,6 +57,17 @@ const WebsitesPage = () => {
                     setTimeout(() => handleWebsiteClick(website), 100);
                   }}
                 >
+                  {/* Website Preview Image */}
+                  <div className="h-48 bg-gradient-to-br from-slate-700 to-slate-800 overflow-hidden">
+                    <iframe
+                      src={website.url}
+                      className="w-full h-full border-0 pointer-events-none transform scale-50 origin-top-left"
+                      style={{ width: '200%', height: '200%' }}
+                      title={`Preview of ${website.title}`}
+                      loading="lazy"
+                    />
+                  </div>
+                  
                   <div className="p-6">
                     <h3 className="text-xl font-bold text-white mb-2">{website.title}</h3>
                     <p className="text-gray-400 mb-4">{website.description}</p>

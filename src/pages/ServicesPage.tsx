@@ -12,8 +12,8 @@ const ServicesPage = () => {
     <div className="min-h-screen bg-slate-900 text-white overflow-x-hidden">
       <Header />
       
-      {/* Add padding top to account for fixed header */}
-      <div className="pt-20">
+      {/* Add padding top to account for fixed header and bottom for footer */}
+      <div className="pt-24 pb-20">
         <ServicesSection />
         <HowWeWorkSection />
         <PricingSection />
