@@ -28,10 +28,10 @@ const WebsitesPage = () => {
       <Header />
       
       {/* Main Content */}
-      <div className="pt-20 pb-16">
-        <section className="py-8 px-6 relative z-10">
+      <div className="pt-16 pb-12">
+        <section className="py-6 px-6 relative z-10">
           <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-16">
+            <div className="text-center mb-12">
               <h1 className="text-4xl lg:text-5xl font-bold text-white mb-6">
                 Website Portfolio
               </h1>
@@ -51,14 +51,14 @@ const WebsitesPage = () => {
               {websites.map((website, index) => (
                 <div
                   key={index}
-                  className="bg-slate-800 rounded-lg overflow-hidden border border-slate-700 hover:border-cyan-500 transition-colors cursor-pointer"
+                  className="bg-slate-800 rounded-lg overflow-hidden border border-slate-700 hover:border-cyan-500 transition-colors cursor-pointer relative"
                   onClick={() => {
                     setIsShowcaseOpen(true);
                     setTimeout(() => handleWebsiteClick(website), 100);
                   }}
                 >
                   {/* Website Preview Image */}
-                  <div className="h-48 bg-gradient-to-br from-slate-700 to-slate-800 overflow-hidden">
+                  <div className="h-64 bg-gradient-to-br from-slate-700 to-slate-800 overflow-hidden">
                     <iframe
                       src={website.url}
                       className="w-full h-full border-0 pointer-events-none transform scale-50 origin-top-left"
@@ -68,9 +68,10 @@ const WebsitesPage = () => {
                     />
                   </div>
                   
-                  <div className="p-4 bg-slate-800/80">
-                    <h3 className="text-lg font-bold text-white mb-2">{website.title}</h3>
-                    <p className="text-gray-400 mb-3 text-sm">{website.description}</p>
+                  {/* Information overlay - positioned at bottom */}
+                  <div className="absolute bottom-0 left-0 right-0 h-20 p-3 bg-slate-800/60 backdrop-blur-sm">
+                    <h3 className="text-lg font-bold text-white mb-1">{website.title}</h3>
+                    <p className="text-gray-300 mb-2 text-sm line-clamp-2">{website.description}</p>
                     <div className="flex items-center text-cyan-400 text-sm">
                       <span>View Live Site</span>
                       <span className="ml-2">→</span>
