@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import Chatbot from '@/components/Chatbot/Chatbot';
-import WebsiteShowcase from '@/components/WebsiteShowcase';
+import WebsiteShowcase from '@/components/ui/WebsiteShowcase';
 import { websites } from '@/data/websites';
 
 const WebsitesPage = () => {

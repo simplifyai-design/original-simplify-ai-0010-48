@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import WebsiteShowcase from '@/components/ui/WebsiteShowcase';
+import PortfolioModal from '@/components/ui/PortfolioModal';
 
 // A reusable component for the tier cards to keep the code clean
 const TierCard = ({ title, description, features }: {title: string, description: string, features: string[]}) => (
@@ -59,7 +60,7 @@ const WebsiteServicesPage = () => {
 
       {/* Portfolio Modal */}
       {isPortfolioOpen && (
-        <WebsiteShowcase onClose={() => setIsPortfolioOpen(false)} />
+        <PortfolioModal onClose={() => setIsPortfolioOpen(false)} />
       )}
     </div>
   );
