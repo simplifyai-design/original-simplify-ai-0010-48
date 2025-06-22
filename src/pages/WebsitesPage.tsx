@@ -1,137 +1,68 @@
-
+*/
 import React, { useState } from 'react';
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
-import Chatbot from '@/components/Chatbot/Chatbot';
-import WebsiteShowcase from '@/components/ui/WebsiteShowcase';
-import { websites } from '@/data/websites';
+import WebsiteShowcase from '@/components/ui/WebsiteShowcase'; 
 
-const WebsitesPage = () => {
-  const [isShowcaseOpen, setIsShowcaseOpen] = useState(false);
-  const [selectedWebsite, setSelectedWebsite] = useState<any>(null);
+const TierCard = ({ title, description, features }: {title: string, description: string, features: string[]}) => (
+  <div className="bg-slate-800/50 p-8 rounded-2xl border border-blue-500/20 shadow-lg h-full flex flex-col">
+    <h3 className="text-2xl font-bold text-blue-300 mb-4">{title}</h3>
+    <p className="text-slate-300 mb-6">{description}</p>
+    <ul className="text-slate-300 space-y-2 list-disc list-inside mb-6 flex-grow">
+      {features.map(feature => <li key={feature}>{feature}</li>)}
+    </ul>
+    <a href="/contact" className="mt-auto block text-center bg-slate-700 hover:bg-slate-600 text-white font-bold py-3 px-6 rounded-lg transition-colors duration-300">
+      Get Started
+    </a>
+  </div>
+);
 
-  const handleWebsiteClick = (website: any) => {
-    setSelectedWebsite(website);
-  };
 
-  const handleCloseWebsite = () => {
-    setSelectedWebsite(null);
-  };
-
-  const handleCloseShowcase = () => {
-    setIsShowcaseOpen(false);
-    setSelectedWebsite(null);
-  };
+const WebsiteServicesPage = () => {
+  const [isPortfolioOpen, setIsPortfolioOpen] = useState(false);
 
   return (
-    <div className="min-h-screen bg-slate-900 text-white overflow-x-hidden">
-      <Header />
-      
-      {/* Main Content */}
-      <div className="pt-16 pb-12">
-        <section className="py-6 px-6 relative z-10">
-          <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-12">
-              <h1 className="text-4xl lg:text-5xl font-bold text-white mb-6">
-                Website Portfolio
-              </h1>
-              <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
-                Explore our collection of custom websites and web applications built for various industries and business needs.
-              </p>
-              <button
-                onClick={() => setIsShowcaseOpen(true)}
-                className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg transition-colors"
-              >
-                View Portfolio
-              </button>
-            </div>
-
-            {/* Portfolio Preview Grid */}
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {websites.map((website, index) => (
-                <div
-                  key={index}
-                  className="bg-slate-800 rounded-lg overflow-hidden border border-slate-700 hover:border-cyan-500 transition-colors cursor-pointer relative"
-                  onClick={() => {
-                    setIsShowcaseOpen(true);
-                    setTimeout(() => handleWebsiteClick(website), 100);
-                  }}
-                >
-                  {/* Website Preview Image */}
-                  <div className="h-64 bg-gradient-to-br from-slate-700 to-slate-800 overflow-hidden">
-                    <iframe
-                      src={website.url}
-                      className="w-full h-full border-0 pointer-events-none transform scale-50 origin-top-left"
-                      style={{ width: '200%', height: '200%' }}
-                      title={`Preview of ${website.title}`}
-                      loading="lazy"
-                    />
-                  </div>
-                  
-                  {/* Information overlay - positioned at bottom */}
-                  <div className="absolute bottom-0 left-0 right-0 h-20 p-3 bg-slate-800/60 backdrop-blur-sm">
-                    <h3 className="text-lg font-bold text-white mb-1">{website.title}</h3>
-                    <p className="text-gray-300 mb-2 text-sm line-clamp-2">{website.description}</p>
-                    <div className="flex items-center text-cyan-400 text-sm">
-                      <span>View Live Site</span>
-                      <span className="ml-2">→</span>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+    <div className="py-20 px-4">
+      <div className="text-center max-w-3xl mx-auto mb-16">
+        <h1 className="text-5xl md:text-6xl font-bold mb-4 text-white">Websites That Work as Hard as You Do</h1>
+        <p className="text-xl text-slate-300">
+          We build beautiful, high-performance websites designed to be the engine of your business growth. Explore our packages below.
+        </p>
       </div>
 
-      {/* Website Showcase Modal */}
-      {isShowcaseOpen && (
-        <div className="fixed inset-0 bg-black/90 z-[9998] flex items-center justify-center p-4">
-          <div className="relative w-full max-w-6xl h-full max-h-[90vh] bg-slate-900 rounded-lg overflow-hidden">
-            <div className="flex items-center justify-between p-4 bg-slate-800 text-white border-b border-slate-700">
-              <h2 className="text-xl font-semibold">Website Portfolio</h2>
-              <button
-                onClick={handleCloseShowcase}
-                className="text-white hover:text-gray-300 p-2"
-              >
-                ✕
-              </button>
-            </div>
-            
-            <div className="p-6 h-full overflow-y-auto">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {websites.map((website, index) => (
-                  <div
-                    key={index}
-                    onClick={() => handleWebsiteClick(website)}
-                    className="bg-slate-800 p-6 rounded-lg cursor-pointer hover:bg-slate-700 transition-colors border border-slate-600 hover:border-cyan-500"
-                  >
-                    <div className="flex items-center justify-between mb-3">
-                      <h3 className="text-white font-semibold text-lg">{website.title}</h3>
-                      <span className="text-cyan-400 text-xl">→</span>
-                    </div>
-                    <p className="text-gray-400 mb-3">{website.description}</p>
-                    <p className="text-cyan-400 text-sm">{website.url}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
-
-      {/* Individual Website Modal */}
-      {selectedWebsite && (
-        <WebsiteShowcase
-          website={selectedWebsite}
-          onClose={handleCloseWebsite}
+      <div className="max-w-7xl mx-auto grid md:grid-cols-3 gap-8 mb-20">
+        <TierCard 
+          title="The Essential Launchpad"
+          description="Perfect for new businesses or those needing a professional online presence quickly. We build a sleek, modern, single-page website that clearly communicates your value."
+          features={["Responsive one-page design", "Mobile-first layout", "Contact form integration", "Basic SEO setup", "Professional copywriting"]}
         />
-      )}
+        <TierCard 
+          title="The Growth Engine"
+          description="Our most popular package for businesses ready to scale. We expand your site into a multi-page platform designed to attract and convert customers through targeted content."
+          features={["Multi-page site architecture", "Blog setup", "Advanced SEO optimization", "Direct calendar booking integration", "Everything in Launchpad"]}
+        />
+        <TierCard 
+          title="The Custom Platform"
+          description="For businesses with unique needs. We go beyond a standard website to build a full-featured web application or e-commerce platform with custom functionality."
+          features={["E-commerce integration", "Custom interactive features", "AI Chatbot integration", "User accounts & dashboards", "Everything in Growth Engine"]}
+        />
+      </div>
 
-      <Footer />
-      <Chatbot />
+      <div className="text-center">
+        <h2 className="text-4xl font-bold mb-4 text-white">Our Work in Action</h2>
+        <button 
+          onClick={() => setIsPortfolioOpen(true)}
+          className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg transition-colors duration-300 text-lg"
+        >
+          View Our Website Portfolio
+        </button>
+      </div>
+
+      {isPortfolioOpen && (
+        <WebsiteShowcase onClose={() => setIsPortfolioOpen(false)} />
+      )}
     </div>
   );
 };
 
-export default WebsitesPage;
+export default WebsiteServicesPage;
+```tsx
+/*
