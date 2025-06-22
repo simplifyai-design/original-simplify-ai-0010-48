@@ -7,8 +7,8 @@ import AutomationServicesPage from './pages/AutomationServicesPage';
 import AboutPage from './pages/AboutPage';
 import ContactPage from './pages/ContactPage';
 import NotFound from './pages/NotFound';
-import Header from './components/ui/Header';
-import Footer from './components/ui/Footer';
+import Header from './components/Header';
+import Footer from './components/Footer';
 
 function App() {
   return (
