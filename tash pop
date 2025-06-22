@@ -1,0 +1,82 @@
+[1mdiff --git a/package-lock.json b/package-lock.json[m
+[1mindex fcb663d..7409f61 100644[m
+[1m--- a/package-lock.json[m
+[1m+++ b/package-lock.json[m
+[36m@@ -45,6 +45,7 @@[m
+         "input-otp": "^1.2.4",[m
+         "lucide-react": "^0.462.0",[m
+         "next-themes": "^0.3.0",[m
+[32m+[m[32m        "openai": "^5.6.0",[m
+         "react": "^18.3.1",[m
+         "react-day-picker": "^8.10.1",[m
+         "react-dom": "^18.3.1",[m
+[36m@@ -127,13 +128,9 @@[m
+       }[m
+     },[m
+     "node_modules/@babel/runtime": {[m
+[31m-      "version": "7.25.9",[m
+[31m-      "resolved": "https://registry.npmjs.org/@babel/runtime/-/runtime-7.25.9.tgz",[m
+[31m-      "integrity": "sha512-4zpTHZ9Cm6L9L+uIqghQX8ZXg8HKFcjYO3qHoO8zTmRm6HQUJ8SSJ+KRvbMBZn0EGVlT4DRYeQ/6hjlyXBh+Kg==",[m
+[31m-      "license": "MIT",[m
+[31m-      "dependencies": {[m
+[31m-        "regenerator-runtime": "^0.14.0"[m
+[31m-      },[m
+[32m+[m[32m      "version": "7.27.6",[m
+[32m+[m[32m      "resolved": "https://registry.npmjs.org/@babel/runtime/-/runtime-7.27.6.tgz",[m
+[32m+[m[32m      "integrity": "sha512-vbavdySgbTTrmFE+EsiqUTzlOr5bzlnJtUv9PynGCAKvfQqjIXbvFdumPM/GxMDfyuGMJaJAU6TO4zc1Jf1i8Q==",[m
+       "engines": {[m
+         "node": ">=6.9.0"[m
+       }[m
+[36m@@ -3087,11 +3084,10 @@[m
+       }[m
+     },[m
+     "node_modules/@typescript-eslint/typescript-estree/node_modules/brace-expansion": {[m
+[31m-      "version": "2.0.1",[m
+[31m-      "resolved": "https://registry.npmjs.org/brace-expansion/-/brace-expansion-2.0.1.tgz",[m
+[31m-      "integrity": "sha512-XnAIvQ8eM+kC6aULx6wuQiwVsnzsi9d3WxzV3FpWTGA19F621kwdbsAcFKXgKUHZWsy+mY6iL1sHTxWEFCytDA==",[m
+[32m+[m[32m      "version": "2.0.2",[m
+[32m+[m[32m      "resolved": "https://registry.npmjs.org/brace-expansion/-/brace-expansion-2.0.2.tgz",[m
+[32m+[m[32m      "integrity": "sha512-Jt0vHyM+jmUBqojB7E1NIYadt0vI0Qxjxd2TErW94wDz+E2LAm5vKMXXwg6ZZBTHPuUlDgQHKXvjGBdfcF1ZDQ==",[m
+       "dev": true,[m
+[31m-      "license": "MIT",[m
+       "dependencies": {[m
+         "balanced-match": "^1.0.0"[m
+       }[m
+[36m@@ -3347,11 +3343,10 @@[m
+       }[m
+     },[m
+     "node_modules/brace-expansion": {[m
+[31m-      "version": "1.1.11",[m
+[31m-      "resolved": "https://registry.npmjs.org/brace-expansion/-/brace-expansion-1.1.11.tgz",[m
+[31m-      "integrity": "sha512-iCuPHDFgrHX7H2vEI/5xpz07zSHB00TpugqhmYtVmMO6518mCuRMoOYFldEBl0g187ufozdaHgWKcYFb61qGiA==",[m
+[32m+[m[32m      "version": "1.1.12",[m
+[32m+[m[32m      "resolved": "https://registry.npmjs.org/brace-expansion/-/brace-expansion-1.1.12.tgz",[m
+[32m+[m[32m      "integrity": "sha512-9T9UjW3r0UW5c1Q7GTwllptXwhvYmEzFhzMfZ9H7FQWt+uZePjZPjBP/W1ZEyZ1twGWom5/56TF4lPcqjnDHcg==",[m
+       "dev": true,[m
+[31m-      "license": "MIT",[m
+       "dependencies": {[m
+         "balanced-match": "^1.0.0",[m
+         "concat-map": "0.0.1"[m
+[36m@@ -4676,10 +4671,9 @@[m
+       }[m
+     },[m
+     "node_modules/glob/node_modules/brace-expansion": {[m
+[31m-      "version": "2.0.1",[m
+[31m-      "resolved": "https://registry.npmjs.org/brace-expansion/-/brace-expansion-2.0.1.tgz",[m
+[31m-      "integrity": "sha512-XnAIvQ8eM+kC6aULx6wuQiwVsnzsi9d3WxzV3FpWTGA19F621kwdbsAcFKXgKUHZWsy+mY6iL1sHTxWEFCytDA==",[m
+[31m-      "license": "MIT",[m
+[32m+[m[32m      "version": "2.0.2",[m
+[32m+[m[32m      "resolved": "https://registry.npmjs.org/brace-expansion/-/brace-expansion-2.0.2.tgz",[m
+[32m+[m[32m      "integrity": "sha512-Jt0vHyM+jmUBqojB7E1NIYadt0vI0Qxjxd2TErW94wDz+E2LAm5vKMXXwg6ZZBTHPuUlDgQHKXvjGBdfcF1ZDQ==",[m
+       "dependencies": {[m
+         "balanced-match": "^1.0.0"[m
+       }[m
+[36m@@ -5574,16 +5568,15 @@[m
+       }[m
+     },[m
+     "node_modules/nanoid": {[m
+[31m-      "version": "3.3.7",[m
+[31m-      "resolved": "https://registry.npmjs.org/nanoid/-/nanoid-3.3.7.tgz",[m
+[31m-      "integrity": "sha512-eSRppjcPIatRIMC1U6UngP8XFcz8MQWGQdt1MTBQ7NaAmvXDfvNxbvWV3x2y6CdEUciCSsDHDQZbhYaB8QEo2g==",[m
+[32m+[m[32m      "version": "3.3.11",[m
+[32m+[m[32m      "re
