@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Play } from 'lucide-react';
 
@@ -14,11 +15,11 @@ const AboutSection = () => {
 
   return (
     <section id="about" className="py-20 px-6 bg-slate-950 relative z-10">
-      <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-8 md:gap-12">
+      <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-8 md:gap-12">
         
-        {/* Your Headshot Image with Play Button */}
-        <div className="md:w-1/3 flex-shrink-0 relative">
-          <div className="rounded-2xl overflow-hidden shadow-lg border-2 border-slate-700 relative group cursor-pointer" onClick={handlePlayVideo}>
+        {/* Your Headshot Image with Play Button - Made Larger */}
+        <div className="md:w-1/2 flex-shrink-0 relative">
+          <div className="rounded-2xl overflow-hidden shadow-lg border-2 border-slate-700 relative group cursor-pointer max-w-md mx-auto" onClick={handlePlayVideo}>
             <img 
               src="https://assets.simplifyai.design/BAHeadshot.png" 
               alt="Brandon, Founder of SimplifyAI Design" 
@@ -34,7 +35,7 @@ const AboutSection = () => {
         </div>
 
         {/* Your Philosophy / Story */}
-        <div className="md:w-2/3 text-center md:text-left">
+        <div className="md:w-1/2 text-center md:text-left">
           <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
             Our Philosophy: Better Systems, Better Life.
           </h2>
@@ -50,13 +51,13 @@ const AboutSection = () => {
         
       </div>
 
-      {/* Video Modal */}
+      {/* Video Modal - Fixed z-index to be highest */}
       {isVideoPlaying && (
-        <div className="fixed inset-0 bg-black/80 z-[9999] flex items-center justify-center p-4" onClick={handleCloseVideo}>
+        <div className="fixed inset-0 bg-black/80 z-[99999] flex items-center justify-center p-4" onClick={handleCloseVideo}>
           <div className="relative max-w-4xl w-full" onClick={(e) => e.stopPropagation()}>
             <button 
               onClick={handleCloseVideo}
-              className="absolute -top-10 right-0 text-white hover:text-gray-300 text-2xl font-bold z-[10000]"
+              className="absolute -top-10 right-0 text-white hover:text-gray-300 text-2xl font-bold z-[100000]"
             >
               ×
             </button>
