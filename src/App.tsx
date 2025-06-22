@@ -1,9 +1,9 @@
-*/
+
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Index from './pages/Index';
 import ServicesPage from './pages/ServicesPage';
-import WebsiteServicesPage from './pages/WebsiteServicesPage'; // We will create this
-import AutomationServicesPage from './pages/AutomationServicesPage'; // We will create this
+import WebsiteServicesPage from './pages/WebsiteServicesPage';
+import AutomationServicesPage from './pages/AutomationServicesPage';
 import AboutPage from './pages/AboutPage';
 import ContactPage from './pages/ContactPage';
 import NotFound from './pages/NotFound';
@@ -33,6 +33,3 @@ function App() {
 }
 
 export default App;
-
-```tsx
-/*

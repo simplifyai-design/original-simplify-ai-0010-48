@@ -1,6 +1,5 @@
-*/
 import React, { useState } from 'react';
-import WebsiteShowcase from '@/components/ui/WebsiteShowcase'; // Assuming this is your portfolio component
+import WebsiteShowcase from '@/components/ui/WebsiteShowcase';
 
 // A reusable component for the tier cards to keep the code clean
 const TierCard = ({ title, description, features }: {title: string, description: string, features: string[]}) => (
@@ -15,7 +14,6 @@ const TierCard = ({ title, description, features }: {title: string, description:
     </a>
   </div>
 );
-
 
 const WebsiteServicesPage = () => {
   const [isPortfolioOpen, setIsPortfolioOpen] = useState(false);
@@ -68,5 +66,3 @@ const WebsiteServicesPage = () => {
 };
 
 export default WebsiteServicesPage;
-```tsx
-/*

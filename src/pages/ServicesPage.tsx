@@ -1,4 +1,4 @@
-*/
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Code, BotMessageSquare, BarChart } from 'lucide-react';
@@ -54,5 +54,3 @@ const ServicesPage = () => {
 };
 
 export default ServicesPage;
-```tsx
-/*
