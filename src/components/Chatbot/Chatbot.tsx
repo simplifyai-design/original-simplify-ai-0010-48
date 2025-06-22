@@ -83,13 +83,7 @@ const Chatbot: React.FC = () => {
         setMessages(prev => [...prev, { type: 'thinking', text: '...' }]);
 
         try {
-<<<<<<< Updated upstream
             const response = await fetch('/.netlify/functions/chatbot', {
-=======
-            // --- BACKEND COMMUNICATION ---
-            // Replace with your actual deployed backend URLconst response = await fetch
-            ('http://localhost:5000/ask', {
->>>>>>> Stashed changes
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ message: userMessage }),
