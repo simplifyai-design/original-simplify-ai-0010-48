@@ -1,9 +1,9 @@
-
+*/
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Code, BotMessageSquare, BarChart } from 'lucide-react';
 
-const ServiceHubCard = ({ icon, title, description, buttonText, linkTo }: any) => (
+const ServiceHubCard = ({ icon, title, description, buttonText, linkTo }: { icon: React.ReactNode, title: string, description: string, buttonText: string, linkTo: string }) => (
   <div className="bg-slate-800/50 p-8 rounded-2xl border border-blue-500/20 shadow-lg hover:shadow-blue-500/20 transition-shadow duration-300 flex flex-col text-center items-center">
     <div className="bg-blue-500/20 p-4 rounded-full mb-4">
       {icon}
@@ -54,3 +54,5 @@ const ServicesPage = () => {
 };
 
 export default ServicesPage;
+```tsx
+/*
